@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Databases on AVD / Portfolio</title>
+    <link>https://andresvdata.com/portfolio/tags/databases/</link>
+    <description>Recent content in Databases on AVD / Portfolio</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; {year}</copyright>
+    <lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://andresvdata.com/portfolio/tags/databases/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Detection of illicit activities</title>
+      <link>https://andresvdata.com/portfolio/project/illicit-activities/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.com/portfolio/project/illicit-activities/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This was a project that was followed with the CRISP-DM data mining methodology.
+
+
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;crisp.jpg&#34; &gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;In the data collection of the commercialization and transport of a product, different business rules were identified to detect various illegal activities that may be taking place in the context of the business.&lt;br&gt;
+In identification x rules were subdivided into 2 groups:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Statistical Analysis:&lt;/strong&gt; Those rules that are sensitive to a trend and seasonality, two models were evaluated. ARIMA and PROPHET. The one that gave the best flexibility and fit to the data in the presence of outliers was selected. PROPHET was the selected model in order to train the model with the historical data to identify those atypical values ​​of the evaluated variables.&lt;br&gt;
+Atypical values ​​can occur due to a global phenomenon in a group of similar values, therefore, the determination of atypical values ​​was carried out by verifying two phases by similar groups and those values ​​that were identified as anomalous were passed through the second phase to determine if in the unique behavior it was also outside of a seasonality and historical trend.&lt;br&gt;
+
+
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;prophet.png&#34; &gt;
+
+
+&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Through the PROPHET model, the identification of atypical values is carried out (values outside of a seasonality and historical trend). Which those values that are outside a range of uncertainty that was previously evaluated and set under different parameters, is identified as an outlier after going through two verification processes.&lt;br&gt;
+
+
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;fases.JPG&#34; &gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Classification Analysis:&lt;/strong&gt; Those rules that had been exactly identified, different data extraction and/or transformation processes were carried out in order to have tangible those actions that can be considered illicit in the context of the business.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;DecisionTree.png&#34; &gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Finally, all the outliers identified from these two previous analyzes were unified in a database in order to make a visualization report of the results of the proposed models.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Once the models were evaluated and the results were validated, this process was automatized.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tools:&lt;/strong&gt; &lt;em&gt;SQL Management Studio, Anaconda, Jupyter Notebook, GIT, Azure Devops&lt;/em&gt; &lt;br&gt;
+&lt;strong&gt;Languajes:&lt;/strong&gt; &lt;em&gt;SQL,Python&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;Python Libraries:&lt;/strong&gt; &lt;em&gt;Pandas, Numpy, Seaborn, Sci-learn, Prophet, Arima,traceback&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>London Energy Consumption (SmartEnerx Dashboard)</title>
+      <link>https://andresvdata.com/portfolio/project/energy-consumption/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.com/portfolio/project/energy-consumption/</guid>
+      <description>&lt;p&gt;This a project was made in &lt;strong&gt;Data Science For All: Colombia&lt;/strong&gt; program of &lt;a href=&#34;https://www.correlation-one.com/blog/data-science-for-all-colombia-graduates-500-new-data-professionals&#34;&gt;Correlation One&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;An entire Data Science project was developed, generating a visualization dashboard built with Dash-Python for the forecast of energy in London for the coming months.&lt;br&gt;
+The data was obtained from the real project developed by &lt;a href=&#34;https://www.ukpowernetworks.co.uk/&#34;&gt;UK Power Networks&lt;/a&gt; (Energy provider in the United Kingdom) in the page &lt;a href=&#34;https://www.kaggle.com/datasets/jeanmidev/smart-meters-in-london&#34;&gt;Kaggle&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;context&#34;&gt;Context&lt;/h1&gt;
+&lt;p&gt;Energy is one of the main topics on the &lt;code&gt;UN agenda&lt;/code&gt; for the following years, to assure global accessibility
+and reduce the related generation of pollution. According to the UN, energy currently provides 60%
+of the greenhouse gas emissions, although &lt;code&gt;13% of the global population&lt;/code&gt; has no access to electricity.
+For these reasons, countries like the UK are making eorts to create public policies focused on
+converting their current energy source to clean alternatives.
+To understand the dynamics of residential energy consumption in large cities, in 2014, the UK
+Government hired UK Power Networks for a project focused on collecting information about energy
+production and consumption through smart meters installed in a selected group of London households.&lt;/p&gt;
+&lt;p&gt;This information is useful to determine the current residential sector energy consumption charac-
+teristics. For UK Power Networks and the UK Government, it is important to know in detail &lt;code&gt;the patterns of energy consumption in London&#39;s households&lt;/code&gt;, to create strategies to ease &lt;code&gt;the transition to clean energy sources&lt;/code&gt;.  `
+This project is focused on providing relevant information to the public and private entities, such
+as the government of the United Kingdom, London authorities, energy suppliers, network operators,
+researchers, and in general players of the energy market about energy consumption patterns and
+demand trends of London households to allow them to make better decisions in eciently planning
+and operation of the electricity distribution networks, improving customer service and adopting of low
+carbon strategies. Last but not least, this study can be used as a guide for other countries that want
+to advance in the implementation of alternative energies.&lt;/p&gt;
+&lt;h2 id=&#34;datafolio&#34;&gt;Datafolio&lt;/h2&gt;
+&lt;p&gt;The Datafolio is visual &lt;code&gt;snapshot&lt;/code&gt; of the data project.&lt;br&gt;
+
+
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;datafolio.JPG&#34; &gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;video-context&#34;&gt;Video Context&lt;/h2&gt;
+&lt;p&gt;This video shows the aim to &lt;code&gt;define, analyze and process&lt;/code&gt; the information in this project.
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/Nfx-dNObHsw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;exploratory-data-analysis&#34;&gt;Exploratory Data Analysis&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;EDA&lt;/code&gt; was used to analyze and investigate data sets and summarize the  main characteristics of this project, data visualization methods were employed .&lt;br&gt;
+&lt;p align=&#34;center&#34;&gt;
+&lt;iframe src=&#34;./eda/3dfe8222-03df-48b4-80d0-191ee3ae995c.html&#34;    width=&#34;100%&#34;  height=&#34;800px&#34;   style=&#34;border:none;&#34; align=&#34;center&#34; &gt;&lt;/iframe&gt;
+&lt;br&gt;
+&lt;a href=&#34;https://jp-tok.dataplatform.cloud.ibm.com/analytics/notebooks/v2/3dfe8222-03df-48b4-80d0-191ee3ae995c/view?access_token=cd222a34f1cdfc20577db398678ff80f000b072322bd90f751409afb3ae2650a&#34;&gt;&lt;em&gt;EDA Fullscreen&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;modeling&#34;&gt;Modeling&lt;/h2&gt;
+&lt;p&gt;I have more &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; to say.&lt;/p&gt;
+&lt;p&gt;The Prophet Forecasting model
+Prophet is a time series forecasting model that is based on an additive model approach, where non-linear trends are fit with three main model components:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Growth (or trend) g(t)&lt;/li&gt;
+&lt;li&gt;Seasonality s(t)&lt;/li&gt;
+&lt;li&gt;Holidays h(t)&lt;/li&gt;
+&lt;li&gt;Error term is included to represent any changes which are not accommodated by the model &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;One can tune the trend and seasonality hyperparameters to fit the model as well as possible, changing its value using cross-validation. The forecasting is phrased as a curve-fitting task, with time as the only regressor, so the model is univariate.
+These components are combined in the following equation:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;y(t) = g(t) + s(t) + h(t) + 𝝐t
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This formulation is similar to a &lt;code&gt;generalized additive model (GAM)&lt;/code&gt;, a class of regression models with potentially non-linear smoothers applied to the regressors, that has the advantage of being flexible, accurate, fast to implement, and interpretable parameters&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. In this case, Prophet has some advantages compared to other time series models, such as its capacity to handle seasonal variations, missing data, and outliers.&lt;br&gt;
+This model is an open-source tool provided by &lt;code&gt;Facebook Inc.&lt;/code&gt; through the prophet package, available in &lt;code&gt;Python&lt;/code&gt; and &lt;code&gt;R&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;implementation-prophet-forecasting-model&#34;&gt;Implementation Prophet Forecasting model&lt;/h3&gt;
+&lt;p&gt;The modeling process can be divided into three main steps: data preparation, hyperparameter tuning and fitting of the model, and cross-validation and forecasting.&lt;br&gt;
+In this case, the model was implemented using the aggregated daily energy consumption data and the national UK holidays data. For the hyperparameter tuning and the &lt;code&gt;cross-validation&lt;/code&gt;, the dataset was automatically split into training and testing periods on a rolling basis, according to a defined train period and a forecasting horizon, which were established as 540 and 180 days. For that reason, the data used to perform the forecasting later will be included into the training set, since random samples cannot be used in time series.
+Fitting the model is a very straightforward process but some key hyperparameters were adjusted to optimize the model performance. We perform an iterative process to select which of all the hyperparameters were most likely to be tuned by comparing the &lt;code&gt;MAPE&lt;/code&gt; obtained by adjusting each individual hyperparameter  with a baseline MAPE with a standard fitted model. The most relevant hyperparameters were the type of trend, its flexibility or the seasonality and its strength, so its values were optimized using the grid search method.
+After the hyperparameter tuning and the after cross-validation we obtained the best performing model, which exhibits a MAPE of 1.357%. This model was  used for the forecasting and the comparison with the other time series models.&lt;/p&gt;
+&lt;h3 id=&#34;prophet-model-by-category&#34;&gt;Prophet model by Category&lt;/h3&gt;
+&lt;p&gt;For a more in-depth analysis, the same procedure was applied to the aggregated data by &lt;code&gt;ACORN categories&lt;/code&gt;, obtaining the corresponding metrics and forecast. This gave us insights of the behavior
+that the daily energy consumption has across the distinct &lt;code&gt;ACORN groups&lt;/code&gt; and its impact on the
+performance of the model. Some of the fitted models are presented to compare their predicted values
+to the observations
+
+
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;fig1.png&#34; &gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;The described process of fitting the model was performed to the dataset of each category, obtaining
+the following metrics:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;MSE&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;MAE&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;MAPE&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Comfortable Communities&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;0.2&lt;/td&gt;
+&lt;td&gt;2.41&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Rising Prosperity&lt;/td&gt;
+&lt;td&gt;0.73&lt;/td&gt;
+&lt;td&gt;0.23&lt;/td&gt;
+&lt;td&gt;2.27&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Affluent Achievers&lt;/td&gt;
+&lt;td&gt;3.54&lt;/td&gt;
+&lt;td&gt;0.49&lt;/td&gt;
+&lt;td&gt;2.98&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Financially Stretched&lt;/td&gt;
+&lt;td&gt;0.27&lt;/td&gt;
+&lt;td&gt;0.14&lt;/td&gt;
+&lt;td&gt;1.62&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Not Private Households&lt;/td&gt;
+&lt;td&gt;45.7&lt;/td&gt;
+&lt;td&gt;1.89&lt;/td&gt;
+&lt;td&gt;15.06&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Urban Adversity&lt;/td&gt;
+&lt;td&gt;0.11&lt;/td&gt;
+&lt;td&gt;0.09&lt;/td&gt;
+&lt;td&gt;1.40&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Both metrics and the plots show us a generally good response of the model across the diferent
+categories, with a &lt;code&gt;MAPE&lt;/code&gt; in a range of 1% - 2.5%. However, in particular the &lt;code&gt;Not Private Households&lt;/code&gt;
+category shows a poor performance due to the high variation across the period, it makes harder to
+take the accuracy of the predictions.
+It&amp;rsquo;s possible to see that the energy demand will increase in the upcoming years, and die to the
+average energy growth demand will increase at the seasons stands approximately 4% (according to the
+prophet model), compared with previous years and it won&amp;rsquo;t be signifcantly diferent, so the number
+of departments, categories and commercial growth over the median will be more.&lt;/p&gt;
+&lt;p&gt;Finally, computing the variable&amp;rsquo;s importance for doing the classification in the model, we identifed
+that the most important variables were: season, and population. We&amp;rsquo;d like to clarify that all the
+information was summarized just to have a general overview and take to most of the performance out
+of the model, to clear the bigger picture, and to stay tuned with the changes. It was also summed up
+to prevent the model to be over fitted.&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;(Taylor &amp;amp; Letham, 2017)&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;(Menculini et al., 2021)
+&lt;strong&gt;Tools:&lt;/strong&gt; &lt;em&gt;SQL Management Studio, Anaconda, Jupyter Notebook&lt;/em&gt; &lt;br&gt;
+&lt;strong&gt;Languajes:&lt;/strong&gt; &lt;em&gt;SQL,Python&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;Python Libraries:&lt;/strong&gt; &lt;em&gt;Pandas, Numpy,Dash&lt;/em&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Shortage of a product</title>
+      <link>https://andresvdata.com/portfolio/project/shortage/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.com/portfolio/project/shortage/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This was a project that was followed with the CRISP-DM data mining methodology.
+
+
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;crisp.jpg&#34; &gt;
+
+
+&lt;/figure&gt;
+
+The data that could satisfy the business questions were first identified. Once obtained, an empirical cumulative distribution of the evaluated variables was constructed.
+
+
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;dae.png&#34; &gt;
+
+
+&lt;/figure&gt;
+
+Subsequently, the construction of an interpolation function was made that will be used for a group of x Monte Carlo simulations and thus obtain the probability of occurrence of each simulation.&lt;/p&gt;
+&lt;p&gt;Subsequently, the construction of an interpolation function was made that will be used in the Monte Carlo simulations that are done in the subsequent step.&lt;br&gt;
+These simulations follow a normal distribution of the correlations of the variables evaluated from the historical values obtained in the database. FThen, through the interpolation function, obtain the simulated values.&lt;/p&gt;
+&lt;p&gt;Finally, Starting from the simulated values, the probability of occurrence of the low ending inventory was determined.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Once the model was evaluated and the results were validated, this process was automatized.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tools:&lt;/strong&gt; &lt;em&gt;SQL Management Studio, Anaconda, Jupyter Notebook, GIT, Azure Devops&lt;/em&gt; &lt;br&gt;
+&lt;strong&gt;Languajes:&lt;/strong&gt; &lt;em&gt;SQL,Python&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;Python Libraries:&lt;/strong&gt; &lt;em&gt;Pandas, Numpy,Scipy,statsmodels&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Extraction, Transformation and Load (ETL) project</title>
+      <link>https://andresvdata.com/portfolio/project/etl/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.com/portfolio/project/etl/</guid>
+      <description>&lt;p&gt;Project to centralize information from various databases, through API queries and jobs built in the SQL STUDIO instance.&lt;br&gt;
+The database of this instance called Staging was the starting point, then through SSIS several data transformations were carried out to bring it to a new database called Data Universe.&lt;br&gt;
+Finally to create a star data cube it was necessary to create the dimensions and the facts, so this database can be connected to an SSAS.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tools:&lt;/strong&gt; &lt;em&gt;SQL Management Studio,SQL Server Integration Services (SSIS)&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;Languajes:&lt;/strong&gt; &lt;em&gt;SQL&lt;/em&gt;&lt;/p&gt;
+&lt;h6 id=&#34;due-to-confidentiality-issues-not-images-cannot-be-showed&#34;&gt;&lt;em&gt;Due to confidentiality issues, not images cannot be showed.&lt;/em&gt;&lt;/h6&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

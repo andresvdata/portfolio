@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on AVD / Portfolio</title>
+    <link>https://andresvdata.com/portfolio/authors/</link>
+    <description>Recent content in Authors on AVD / Portfolio</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; {year}</copyright>
+    <lastBuildDate>Fri, 02 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://andresvdata.com/portfolio/authors/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://andresvdata.com/portfolio/authors/admin/</link>
+      <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.com/portfolio/authors/admin/</guid>
+      <description>&lt;p&gt;Hi, I&amp;rsquo;m Andres Viloria 👋&lt;/p&gt;
+&lt;p&gt;Engineer with experience in &lt;code&gt;analysis, processing, and visualization&lt;/code&gt; of information. Motivated and results-oriented data scientist with proven work in the data field and process mapping with knowledge of programming languages such as &lt;code&gt;SQL&lt;/code&gt;, &lt;code&gt;Java&lt;/code&gt; and &lt;code&gt;Python&lt;/code&gt;. Knowledge of tools such as &lt;code&gt;SQL Server Management Studio&lt;/code&gt;, &lt;code&gt;Jupyter Notebook&lt;/code&gt;, &lt;code&gt;Code Studio&lt;/code&gt;, &lt;code&gt;Power BI&lt;/code&gt;, &lt;code&gt;SSIS&lt;/code&gt; and &lt;code&gt;Anaconda&lt;/code&gt;. Capacity for teamwork, initiative, logical thinking, and assertive communication.&lt;br&gt;
+I am currently a Correlation One fellow in the Data Science For All program.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
