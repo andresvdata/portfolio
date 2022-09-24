@@ -92,10 +92,10 @@ Atypical values ​​can occur due to a global phenomenon in a group of similar
     
     <item>
       <title>London Energy Consumption (SmartEnerx Dashboard)</title>
-      <link>https://andresvdata.com/portfolio/project/energy-consumption/</link>
+      <link>https://andresvdata.com/portfolio/project/how-to-embed-a-shiny-app-in-blogdown/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.com/portfolio/project/energy-consumption/</guid>
+      <guid>https://andresvdata.com/portfolio/project/how-to-embed-a-shiny-app-in-blogdown/</guid>
       <description>&lt;p&gt;This a project was made in &lt;strong&gt;Data Science For All: Colombia&lt;/strong&gt; program of &lt;a href=&#34;https://www.correlation-one.com/blog/data-science-for-all-colombia-graduates-500-new-data-professionals&#34;&gt;Correlation One&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;An entire Data Science project was developed, generating a visualization dashboard built with Dash-Python for the forecast of energy in London for the coming months.&lt;br&gt;
 The data was obtained from the real project developed by &lt;a href=&#34;https://www.ukpowernetworks.co.uk/&#34;&gt;UK Power Networks&lt;/a&gt; (Energy provider in the United Kingdom) in the page &lt;a href=&#34;https://www.kaggle.com/datasets/jeanmidev/smart-meters-in-london&#34;&gt;Kaggle&lt;/a&gt;.&lt;/p&gt;
@@ -246,13 +246,6 @@ that the most important variables were: season, and population. We&amp;rsquo;d l
 information was summarized just to have a general overview and take to most of the performance out
 of the model, to clear the bigger picture, and to stay tuned with the changes. It was also summed up
 to prevent the model to be over fitted.&lt;/p&gt;
-&lt;h3 id=&#34;certification&#34;&gt;Certification&lt;/h3&gt;
-&lt;iframe src=&#34;https://www.credential.net/embed/2de9788c-2714-491f-9d74-eece0f8b21a1&#34;    width=&#34;100%&#34;  height=&#34;800px&#34;   style=&#34;border:none;&#34; align=&#34;center&#34; &gt;&lt;/iframe&gt;
-
-&lt;h3 id=&#34;badge-earned&#34;&gt;Badge Earned&lt;/h3&gt;
-&lt;p&gt;After finished the project, our group earned a badge for demonstrating a thoughtful application of the techniques and topics taught during the program, as well as clear results, highlighting the public impact of their project and overall excellence.&lt;/p&gt;
-&lt;iframe src=&#34;https://www.credential.net/3ef4bc53-e74c-4fbb-b711-8c6b5eba0b77&#34;    width=&#34;100%&#34;  height=&#34;800px&#34;   style=&#34;border:none;&#34; align=&#34;center&#34; &gt;&lt;/iframe&gt;
-
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;

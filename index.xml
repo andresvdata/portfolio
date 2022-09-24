@@ -7,10 +7,19 @@
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; {year}</copyright>
-    <lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="https://andresvdata.com/portfolio/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>https://andresvdata.com/portfolio/talk/</link>
+      <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.com/portfolio/talk/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Projects</title>
@@ -31,6 +40,15 @@
     </item>
     
     <item>
+      <title>Slides</title>
+      <link>https://andresvdata.com/portfolio/slides/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.com/portfolio/slides/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Privacy Policy</title>
       <link>https://andresvdata.com/portfolio/privacy/</link>
       <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
@@ -46,6 +64,24 @@
       <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://andresvdata.com/portfolio/publication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cosas</title>
+      <link>https://andresvdata.com/portfolio/cosas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.com/portfolio/cosas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Posts</title>
+      <link>https://andresvdata.com/portfolio/post/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.com/portfolio/post/</guid>
       <description></description>
     </item>
     
