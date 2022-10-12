@@ -92,10 +92,10 @@ Atypical values ​​can occur due to a global phenomenon in a group of similar
     
     <item>
       <title>London Energy Consumption (SmartEnerx Dashboard)</title>
-      <link>https://andresvdata.com/portfolio/project/how-to-embed-a-shiny-app-in-blogdown/</link>
+      <link>https://andresvdata.com/portfolio/project/energy/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.com/portfolio/project/how-to-embed-a-shiny-app-in-blogdown/</guid>
+      <guid>https://andresvdata.com/portfolio/project/energy/</guid>
       <description>&lt;p&gt;This a project was made in &lt;strong&gt;Data Science For All: Colombia&lt;/strong&gt; program of &lt;a href=&#34;https://www.correlation-one.com/blog/data-science-for-all-colombia-graduates-500-new-data-professionals&#34;&gt;Correlation One&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;An entire Data Science project was developed, generating a visualization dashboard built with Dash-Python for the forecast of energy in London for the coming months.&lt;br&gt;
 The data was obtained from the real project developed by &lt;a href=&#34;https://www.ukpowernetworks.co.uk/&#34;&gt;UK Power Networks&lt;/a&gt; (Energy provider in the United Kingdom) in the page &lt;a href=&#34;https://www.kaggle.com/datasets/jeanmidev/smart-meters-in-london&#34;&gt;Kaggle&lt;/a&gt;.&lt;/p&gt;
