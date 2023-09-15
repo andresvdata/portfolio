@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Portfolio</title>
+    <title>Andrés V Data Portfolio</title>
     <link>https://andresvdata.com/portfolio/authors/admin/</link>
-    <description>Recent content on Portfolio</description>
+    <description>Recent content on Andrés V Data Portfolio</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <copyright>Copyright &amp;copy; {year}</copyright>
     <lastBuildDate>Fri, 02 Jun 2017 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="https://andresvdata.com/portfolio/authors/admin/index.xml" rel="self" type="application/rss+xml" />

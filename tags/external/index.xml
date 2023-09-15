@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>External on Andrés V Data Portfolio</title>
+    <link>https://andresvdata.com/portfolio/tags/external/</link>
+    <description>Recent content in External on Andrés V Data Portfolio</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://andresvdata.com/portfolio/tags/external/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Detection of illicit activities</title>
+      <link>https://andresvdata.com/portfolio/project/illicit-activities/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.com/portfolio/project/illicit-activities/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This was a project that was followed with the CRISP-DM data mining methodology.
+
+
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;crisp.jpg&#34; width=&#34;50%&#34; &gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;In the data collection of the commercialization and transport of a product, different business rules were identified to detect various illegal activities that may be taking place in the context of the business.&lt;br&gt;
+In identification x rules were subdivided into 2 groups:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Statistical Analysis:&lt;/strong&gt; Those rules that are sensitive to a trend and seasonality, two models were evaluated. ARIMA and PROPHET. The one that gave the best flexibility and fit to the data in the presence of outliers was selected. PROPHET was the selected model in order to train the model with the historical data to identify those atypical values ​​of the evaluated variables.&lt;br&gt;
+Atypical values ​​can occur due to a global phenomenon in a group of similar values, therefore, the determination of atypical values ​​was carried out by verifying two phases by similar groups and those values ​​that were identified as anomalous were passed through the second phase to determine if in the unique behavior it was also outside of a seasonality and historical trend.&lt;br&gt;
+
+
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;prophet.png&#34; width=&#34;50%&#34; &gt;
+
+
+&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Through the PROPHET model, the identification of atypical values is carried out (values outside of a seasonality and historical trend). Which those values that are outside a range of uncertainty that was previously evaluated and set under different parameters, is identified as an outlier after going through two verification processes.&lt;br&gt;
+
+
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;fases.JPG&#34; width=&#34;50%&#34; &gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Classification Analysis:&lt;/strong&gt; Those rules that had been exactly identified, different data extraction and/or transformation processes were carried out in order to have tangible those actions that can be considered illicit in the context of the business.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;DecisionTree.png&#34; width=&#34;50%&#34; &gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Finally, all the outliers identified from these two previous analyzes were unified in a database in order to make a visualization report of the results of the proposed models.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Once the models were evaluated and the results were validated, this process was automatized.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Not further information can be share due to confidencial information&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tools:&lt;/strong&gt; &lt;em&gt;SQL Management Studio, Anaconda, Jupyter Notebook, GIT, Azure Devops&lt;/em&gt; &lt;br&gt;
+&lt;strong&gt;Languajes:&lt;/strong&gt; &lt;em&gt;SQL,Python&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;Python Libraries:&lt;/strong&gt; &lt;em&gt;Pandas, Numpy, Seaborn, Sci-learn, Prophet, Arima,traceback&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data Visualization in Power BI</title>
+      <link>https://andresvdata.com/portfolio/project/projectpowerbi/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.com/portfolio/project/projectpowerbi/</guid>
+      <description>&lt;p&gt;This was a project in which it was necessary to show the result of a data transformation previously carried out through ETL using SSIS, which through an SSAS data cube prepares data to be consulted from a Power BI visualization dashboard.&lt;br&gt;
+The image above shows the result of some boards I was involved in together with my work team.&lt;br&gt;
+Due to the data source was a data cube, the metrics and measures were created in SSAS. These metrics and measures were connected to the visualization objects.&lt;/p&gt;
+&lt;p&gt;The following image shows SAMPLES (not real data) of the dashboards that I worked with the team based on the client requierements.
+
+
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;image.png&#34; width=&#34;80%&#34; &gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tools:&lt;/strong&gt; &lt;em&gt;Power BI, SSAS, SQL Management Studio.&lt;/em&gt; &lt;br&gt;
+&lt;strong&gt;Languajes:&lt;/strong&gt; &lt;em&gt;SQL&lt;/em&gt;&lt;/p&gt;
+&lt;h6 id=&#34;due-to-confidentiality-issues-the-images-cannot-be-showed-with-more-details&#34;&gt;&lt;em&gt;Due to confidentiality issues, the images cannot be showed with more details.&lt;/em&gt;&lt;/h6&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Shortage of a product</title>
+      <link>https://andresvdata.com/portfolio/project/shortage/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.com/portfolio/project/shortage/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This was a project that was followed with the CRISP-DM data mining methodology.
+
+
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;crisp.jpg&#34; width=&#34;50%&#34; &gt;
+
+
+&lt;/figure&gt;
+
+The data that could satisfy the business questions were first identified. Once obtained, an empirical cumulative distribution of the evaluated variables was constructed.
+
+
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;dae.png&#34; width=&#34;50%&#34; &gt;
+
+
+&lt;/figure&gt;
+
+Subsequently, the construction of an interpolation function was made that will be used for a group of x Monte Carlo simulations and thus obtain the probability of occurrence of each simulation.&lt;/p&gt;
+&lt;p&gt;Subsequently, the construction of an interpolation function was made that will be used in the Monte Carlo simulations that are done in the subsequent step.&lt;br&gt;
+These simulations follow a normal distribution of the correlations of the variables evaluated from the historical values obtained in the database. FThen, through the interpolation function, obtain the simulated values.&lt;/p&gt;
+&lt;p&gt;Finally, Starting from the simulated values, the probability of occurrence of the low ending inventory was determined.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Once the model was evaluated and the results were validated, this process was automatized.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tools:&lt;/strong&gt; &lt;em&gt;SQL Management Studio, Anaconda, Jupyter Notebook, GIT, Azure Devops&lt;/em&gt; &lt;br&gt;
+&lt;strong&gt;Languajes:&lt;/strong&gt; &lt;em&gt;SQL,Python&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;Python Libraries:&lt;/strong&gt; &lt;em&gt;Pandas, Numpy,Scipy,statsmodels&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Extraction, Transformation and Load (ETL) project</title>
+      <link>https://andresvdata.com/portfolio/project/etl/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.com/portfolio/project/etl/</guid>
+      <description>&lt;p&gt;Project to centralize information from various databases, through API queries and jobs built in the SQL STUDIO instance.&lt;br&gt;
+The database of this instance called Staging was the starting point, then through SSIS several data transformations were carried out to bring it to a new database called Data Universe.&lt;br&gt;
+Finally to create a star data cube it was necessary to create the dimensions and the facts, so this database can be connected to an SSAS.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tools:&lt;/strong&gt; &lt;em&gt;SQL Management Studio,SQL Server Integration Services (SSIS)&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;Languajes:&lt;/strong&gt; &lt;em&gt;SQL&lt;/em&gt;&lt;/p&gt;
+&lt;h6 id=&#34;due-to-confidentiality-issues-not-images-cannot-be-showed&#34;&gt;&lt;em&gt;Due to confidentiality issues, not images cannot be showed.&lt;/em&gt;&lt;/h6&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Web Development</title>
+      <link>https://andresvdata.com/portfolio/project/projectweb/</link>
+      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.com/portfolio/project/projectweb/</guid>
+      <description>&lt;p&gt;In this project, back-end development was mainly carried out.
+In the logic of the application, the JavaServer Faces framework was used, where requirements were made to the database instances where sql stored procedures were consulted. Therefore various SP and JOBS were built.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tools:&lt;/strong&gt; &lt;em&gt;SQL Management Studio and Eclipse.&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;Languajes:&lt;/strong&gt; &lt;em&gt;SQL, Java, HTML,JavaScript and CSS&lt;/em&gt;&lt;/p&gt;
+&lt;h6 id=&#34;due-to-confidentiality-issues-not-images-cannot-be-showed&#34;&gt;&lt;em&gt;Due to confidentiality issues, not images cannot be showed.&lt;/em&gt;&lt;/h6&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

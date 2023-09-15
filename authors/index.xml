@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Authors on Portfolio</title>
+    <title>Authors on Andrés V Data Portfolio</title>
     <link>https://andresvdata.com/portfolio/authors/</link>
-    <description>Recent content in Authors on Portfolio</description>
+    <description>Recent content in Authors on Andrés V Data Portfolio</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <copyright>Copyright &amp;copy; {year}</copyright>
     <lastBuildDate>Fri, 02 Jun 2017 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="https://andresvdata.com/portfolio/authors/index.xml" rel="self" type="application/rss+xml" />
@@ -18,13 +17,12 @@
       <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://andresvdata.com/portfolio/authors/admin/</guid>
-      <description>&lt;p&gt;Engineer with 2 years of experience in data &lt;strong&gt;analysis, processing, and visualization&lt;/strong&gt; for companies in various industries such as manufacturing, energy and fund management. Motivated and results-oriented professional with proven work in the data field. Capacity for teamwork, initiative, logical thinking, and assertive communication.&lt;br&gt;
-It is natural for me to analyze data in order to find root causes and data helps me to be objective and unbiased. Focused on reports on specific data discoveries and their influence on organizational growth and success to workers, departmental members, and executive management.&lt;br&gt;
-Working in IT has reaffirmed to me that lifelong learning is an individual’s greatest asset. And I look forward to expanding my knowledge and putting forth my acquired experience and skill set in my new Canadian career!.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Knowleage inProgramming languages :&lt;/strong&gt; Python, SQL and Java.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Tools:&lt;/strong&gt; SQL Server Management Studio, Jupyter Notebook, Power BI , Anaconda and SQL Microsoft Server (SQL Microsoft Integration Services and SQL Microsoft Analysis Services).&lt;/li&gt;
-&lt;/ul&gt;
+      <description>&lt;p&gt;Hi, I&amp;rsquo;m Andres Viloria 👋&lt;/p&gt;
+&lt;p&gt;I find excitement in the world of data—unraveling its stories and unlocking hidden treasures is what I do best! My journey began as an engineer, where I honed my skills in understanding, processing, and bringing data to life. Now, I&amp;rsquo;m on an exhilarating path as a data scientist, driven by a passion for turning raw information into valuable insights.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve got a great track record when it comes to understanding, cleaning up, and making data look amazing. I&amp;rsquo;m like a wizard with programming languages—SQL, R, and Python are my secret potions for talking to computers.&lt;/p&gt;
+&lt;p&gt;Tools like SQL Server Management Studio, Jupyter Notebook, Power BI, SSIS, Anaconda, and IBM Cloud are my sidekicks. They help me turn boring data into exciting insights.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m a team player with a sharp mind and a get-things-done attitude. Put me in a group, and I&amp;rsquo;ll help us reach our goals while making sure our work shines.&lt;/p&gt;
+&lt;p&gt;Currently, I&amp;rsquo;m expanding my skills with the Data Analytics program at Langara College. It&amp;rsquo;s like adding more tools to my data toolkit, making me even better at what I do.&lt;/p&gt;
 </description>
     </item>
     
