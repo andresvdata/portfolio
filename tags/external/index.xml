@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>External on Andrés V Data Portfolio</title>
-    <link>https://andresvdata.com/portfolio/tags/external/</link>
+    <link>https://andresvdata.github.io/portfolio/tags/external/</link>
     <description>Recent content in External on Andrés V Data Portfolio</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://andresvdata.com/portfolio/tags/external/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://andresvdata.github.io/portfolio/tags/external/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Detection of illicit activities</title>
-      <link>https://andresvdata.com/portfolio/project/illicit-activities/</link>
+      <link>https://andresvdata.github.io/portfolio/project/illicit-activities/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.com/portfolio/project/illicit-activities/</guid>
+      <guid>https://andresvdata.github.io/portfolio/project/illicit-activities/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;This was a project that was followed with the CRISP-DM data mining methodology.
 
@@ -92,10 +92,10 @@ Atypical values ​​can occur due to a global phenomenon in a group of similar
     
     <item>
       <title>Data Visualization in Power BI</title>
-      <link>https://andresvdata.com/portfolio/project/projectpowerbi/</link>
+      <link>https://andresvdata.github.io/portfolio/project/projectpowerbi/</link>
       <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.com/portfolio/project/projectpowerbi/</guid>
+      <guid>https://andresvdata.github.io/portfolio/project/projectpowerbi/</guid>
       <description>&lt;p&gt;This was a project in which it was necessary to show the result of a data transformation previously carried out through ETL using SSIS, which through an SSAS data cube prepares data to be consulted from a Power BI visualization dashboard.&lt;br&gt;
 The image above shows the result of some boards I was involved in together with my work team.&lt;br&gt;
 Due to the data source was a data cube, the metrics and measures were created in SSAS. These metrics and measures were connected to the visualization objects.&lt;/p&gt;
@@ -121,10 +121,10 @@ Due to the data source was a data cube, the metrics and measures were created in
     
     <item>
       <title>Shortage of a product</title>
-      <link>https://andresvdata.com/portfolio/project/shortage/</link>
+      <link>https://andresvdata.github.io/portfolio/project/shortage/</link>
       <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.com/portfolio/project/shortage/</guid>
+      <guid>https://andresvdata.github.io/portfolio/project/shortage/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;This was a project that was followed with the CRISP-DM data mining methodology.
 
@@ -167,10 +167,10 @@ These simulations follow a normal distribution of the correlations of the variab
     
     <item>
       <title>Extraction, Transformation and Load (ETL) project</title>
-      <link>https://andresvdata.com/portfolio/project/etl/</link>
+      <link>https://andresvdata.github.io/portfolio/project/etl/</link>
       <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.com/portfolio/project/etl/</guid>
+      <guid>https://andresvdata.github.io/portfolio/project/etl/</guid>
       <description>&lt;p&gt;Project to centralize information from various databases, through API queries and jobs built in the SQL STUDIO instance.&lt;br&gt;
 The database of this instance called Staging was the starting point, then through SSIS several data transformations were carried out to bring it to a new database called Data Universe.&lt;br&gt;
 Finally to create a star data cube it was necessary to create the dimensions and the facts, so this database can be connected to an SSAS.&lt;/p&gt;
@@ -182,10 +182,10 @@ Finally to create a star data cube it was necessary to create the dimensions and
     
     <item>
       <title>Web Development</title>
-      <link>https://andresvdata.com/portfolio/project/projectweb/</link>
+      <link>https://andresvdata.github.io/portfolio/project/projectweb/</link>
       <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.com/portfolio/project/projectweb/</guid>
+      <guid>https://andresvdata.github.io/portfolio/project/projectweb/</guid>
       <description>&lt;p&gt;In this project, back-end development was mainly carried out.
 In the logic of the application, the JavaServer Faces framework was used, where requirements were made to the database instances where sql stored procedures were consulted. Therefore various SP and JOBS were built.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Tools:&lt;/strong&gt; &lt;em&gt;SQL Management Studio and Eclipse.&lt;/em&gt;&lt;br&gt;

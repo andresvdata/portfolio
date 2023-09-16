@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on Andrés V Data Portfolio</title>
-    <link>https://andresvdata.com/portfolio/tags/r/</link>
+    <link>https://andresvdata.github.io/portfolio/tags/r/</link>
     <description>Recent content in R on Andrés V Data Portfolio</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Dec 2022 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://andresvdata.com/portfolio/tags/r/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://andresvdata.github.io/portfolio/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Exploratory Data Analysis (EDA) with R</title>
-      <link>https://andresvdata.com/portfolio/project/eda/</link>
+      <link>https://andresvdata.github.io/portfolio/project/eda/</link>
       <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.com/portfolio/project/eda/</guid>
+      <guid>https://andresvdata.github.io/portfolio/project/eda/</guid>
       <description>&lt;p&gt;This project explores two datasets :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Car Evaluation&lt;/li&gt;

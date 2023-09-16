@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors on Andrés V Data Portfolio</title>
-    <link>https://andresvdata.com/portfolio/authors/</link>
+    <link>https://andresvdata.github.io/portfolio/authors/</link>
     <description>Recent content in Authors on Andrés V Data Portfolio</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 02 Jun 2017 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://andresvdata.com/portfolio/authors/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://andresvdata.github.io/portfolio/authors/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>https://andresvdata.com/portfolio/authors/admin/</link>
+      <link>https://andresvdata.github.io/portfolio/authors/admin/</link>
       <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.com/portfolio/authors/admin/</guid>
+      <guid>https://andresvdata.github.io/portfolio/authors/admin/</guid>
       <description>&lt;p&gt;Hi, I&amp;rsquo;m Andres Viloria 👋&lt;/p&gt;
 &lt;p&gt;I find excitement in the world of data—unraveling its stories and unlocking hidden treasures is what I do best! My journey began as an engineer, where I honed my skills in understanding, processing, and bringing data to life. Now, I&amp;rsquo;m on an exhilarating path as a data scientist, driven by a passion for turning raw information into valuable insights.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;ve got a great track record when it comes to understanding, cleaning up, and making data look amazing. I&amp;rsquo;m like a wizard with programming languages—SQL, R, and Python are my secret potions for talking to computers.&lt;/p&gt;
