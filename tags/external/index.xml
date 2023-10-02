@@ -186,8 +186,7 @@ Finally to create a star data cube it was necessary to create the dimensions and
       <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://andresvdata.github.io/portfolio/project/projectweb/</guid>
-      <description>&lt;p&gt;In this project, back-end development was mainly carried out.
-In the logic of the application, the JavaServer Faces framework was used, where requirements were made to the database instances where sql stored procedures were consulted. Therefore various SP and JOBS were built.&lt;/p&gt;
+      <description>&lt;p&gt;In this project, our focus was on back-end development. We utilized the JavaServer Faces framework to handle the application&amp;rsquo;s logic, ensuring smooth interactions with the database. To meet the requirements, we relied on SQL stored procedures for querying the database. As a result, we constructed multiple stored procedures and jobs to fulfill the project&amp;rsquo;s needs.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Tools:&lt;/strong&gt; &lt;em&gt;SQL Management Studio and Eclipse.&lt;/em&gt;&lt;br&gt;
 &lt;strong&gt;Languajes:&lt;/strong&gt; &lt;em&gt;SQL, Java, HTML,JavaScript and CSS&lt;/em&gt;&lt;/p&gt;
 &lt;h6 id=&#34;due-to-confidentiality-issues-not-images-cannot-be-showed&#34;&gt;&lt;em&gt;Due to confidentiality issues, not images cannot be showed.&lt;/em&gt;&lt;/h6&gt;

@@ -96,7 +96,7 @@ Atypical values ​​can occur due to a global phenomenon in a group of similar
       <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>https://andresvdata.github.io/portfolio/project/energy/</guid>
-      <description>&lt;p&gt;This a project was made in &lt;strong&gt;Data Science For All: Colombia&lt;/strong&gt; program of &lt;a href=&#34;https://www.correlation-one.com/blog/data-science-for-all-colombia-graduates-500-new-data-professionals&#34;&gt;Correlation One&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;This a project was made for &lt;strong&gt;Data Science For All: Colombia&lt;/strong&gt; program of &lt;a href=&#34;https://www.correlation-one.com/&#34;&gt;Correlation One&lt;/a&gt; in collaboration with : Camila Malagón, Yesid Rivera, Óscar Nieto, Didier Santander, Eduardo González, Hollman Báez.&lt;/p&gt;
 &lt;p&gt;An entire Data Science project was developed, generating a visualization dashboard built with Dash-Python for the forecast of energy in London for the coming months.&lt;br&gt;
 The data was obtained from the real project developed by &lt;a href=&#34;https://www.ukpowernetworks.co.uk/&#34;&gt;UK Power Networks&lt;/a&gt; (Energy provider in the United Kingdom) in the page &lt;a href=&#34;https://www.kaggle.com/datasets/jeanmidev/smart-meters-in-london&#34;&gt;Kaggle&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id=&#34;context&#34;&gt;Context&lt;/h1&gt;
@@ -117,8 +117,9 @@ demand trends of London households to allow them to make better decisions in eci
 and operation of the electricity distribution networks, improving customer service and adopting of low
 carbon strategies. Last but not least, this study can be used as a guide for other countries that want
 to advance in the implementation of alternative energies.&lt;/p&gt;
-&lt;h2 id=&#34;datafolio&#34;&gt;Datafolio&lt;/h2&gt;
+&lt;h2 id=&#34;datafoliohttpsgithubcomandresvdatauk-energy-projectblobmainfinal20reportssmartenerx20datafolio20-20team2094svg&#34;&gt;&lt;a href=&#34;https://github.com/andresvdata/UK-ENERGY-Project/blob/main/final%20Reports/SmartEnerx%20Datafolio%20-%20Team%2094.svg&#34;&gt;Datafolio&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The Datafolio is visual &lt;code&gt;snapshot&lt;/code&gt; of the data project.&lt;br&gt;
+&lt;p align=&#34;center&#34;&gt;
 
 
 
@@ -127,12 +128,12 @@ to advance in the implementation of alternative energies.&lt;/p&gt;
 
 &lt;figure&gt;
 
-&lt;img src=&#34;datafolio.JPG&#34; &gt;
+&lt;img src=&#34;datafolio.JPG&#34; width=&#34;80%&#34; &gt;
 
 
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;h2 id=&#34;video-context&#34;&gt;Video Context&lt;/h2&gt;
+&lt;h2 id=&#34;final-presentation&#34;&gt;Final Presentation&lt;/h2&gt;
 &lt;p&gt;This video shows the aim to &lt;code&gt;define, analyze and process&lt;/code&gt; the information in this project.
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
@@ -141,12 +142,10 @@ to advance in the implementation of alternative energies.&lt;/p&gt;
 &lt;/p&gt;
 &lt;h2 id=&#34;exploratory-data-analysis&#34;&gt;Exploratory Data Analysis&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;EDA&lt;/code&gt; was used to analyze and investigate data sets and summarize the  main characteristics of this project, data visualization methods were employed .&lt;br&gt;
-&lt;p align=&#34;center&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;iframe src=&#34;./eda/3dfe8222-03df-48b4-80d0-191ee3ae995c.html&#34;    width=&#34;100%&#34;  height=&#34;800px&#34;   style=&#34;border:none;&#34; align=&#34;center&#34; &gt;&lt;/iframe&gt;
-&lt;br&gt;
-&lt;a href=&#34;https://jp-tok.dataplatform.cloud.ibm.com/analytics/notebooks/v2/3dfe8222-03df-48b4-80d0-191ee3ae995c/view?access_token=cd222a34f1cdfc20577db398678ff80f000b072322bd90f751409afb3ae2650a&#34;&gt;&lt;em&gt;EDA Fullscreen&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/andresvdata/73b500d6652a2e7f957179512c589050.js&#34;&gt;&lt;/script&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://jp-tok.dataplatform.cloud.ibm.com/analytics/notebooks/v2/3dfe8222-03df-48b4-80d0-191ee3ae995c/view?access_token=cd222a34f1cdfc20577db398678ff80f000b072322bd90f751409afb3ae2650a&#34;&gt;&lt;em&gt;EDA Fullscreen&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;modeling&#34;&gt;Modeling&lt;/h2&gt;
-&lt;p&gt;I have more &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; to say.&lt;/p&gt;
 &lt;p&gt;The Prophet Forecasting model
 Prophet is a time series forecasting model that is based on an additive model approach, where non-linear trends are fit with three main model components:&lt;/p&gt;
 &lt;ul&gt;
@@ -164,7 +163,11 @@ This model is an open-source tool provided by &lt;code&gt;Facebook Inc.&lt;/code
 &lt;p&gt;The modeling process can be divided into three main steps: data preparation, hyperparameter tuning and fitting of the model, and cross-validation and forecasting.&lt;br&gt;
 In this case, the model was implemented using the aggregated daily energy consumption data and the national UK holidays data. For the hyperparameter tuning and the &lt;code&gt;cross-validation&lt;/code&gt;, the dataset was automatically split into training and testing periods on a rolling basis, according to a defined train period and a forecasting horizon, which were established as 540 and 180 days. For that reason, the data used to perform the forecasting later will be included into the training set, since random samples cannot be used in time series.
 Fitting the model is a very straightforward process but some key hyperparameters were adjusted to optimize the model performance. We perform an iterative process to select which of all the hyperparameters were most likely to be tuned by comparing the &lt;code&gt;MAPE&lt;/code&gt; obtained by adjusting each individual hyperparameter  with a baseline MAPE with a standard fitted model. The most relevant hyperparameters were the type of trend, its flexibility or the seasonality and its strength, so its values were optimized using the grid search method.
-After the hyperparameter tuning and the after cross-validation we obtained the best performing model, which exhibits a MAPE of 1.357%. This model was  used for the forecasting and the comparison with the other time series models.&lt;/p&gt;
+After the hyperparameter tuning and the after cross-validation we obtained the best performing model, which exhibits a MAPE of 1.357%. This model was  used for the forecasting and the comparison with the other time series models.
+&lt;p align=&#34;center&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/andresvdata/bc4ff678bebc7df250238348093ce133.js&#34;&gt;&lt;/script&gt;
+
+&lt;p align=&#34;center&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;prophet-model-by-category&#34;&gt;Prophet model by Category&lt;/h3&gt;
 &lt;p&gt;For a more in-depth analysis, the same procedure was applied to the aggregated data by &lt;code&gt;ACORN categories&lt;/code&gt;, obtaining the corresponding metrics and forecast. This gave us insights of the behavior
 that the daily energy consumption has across the distinct &lt;code&gt;ACORN groups&lt;/code&gt; and its impact on the
@@ -185,6 +188,7 @@ to the observations
 &lt;/p&gt;
 &lt;p&gt;The described process of fitting the model was performed to the dataset of each category, obtaining
 the following metrics:&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -197,39 +201,45 @@ the following metrics:&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Comfortable Communities&lt;/td&gt;
-&lt;td&gt;0.7&lt;/td&gt;
-&lt;td&gt;0.2&lt;/td&gt;
-&lt;td&gt;2.41&lt;/td&gt;
+&lt;td&gt;0.45&lt;/td&gt;
+&lt;td&gt;0.17&lt;/td&gt;
+&lt;td&gt;1.90&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Rising Prosperity&lt;/td&gt;
-&lt;td&gt;0.73&lt;/td&gt;
-&lt;td&gt;0.23&lt;/td&gt;
-&lt;td&gt;2.27&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;0.31&lt;/td&gt;
+&lt;td&gt;3.02&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Affluent Achievers&lt;/td&gt;
-&lt;td&gt;3.54&lt;/td&gt;
-&lt;td&gt;0.49&lt;/td&gt;
-&lt;td&gt;2.98&lt;/td&gt;
+&lt;td&gt;2.48&lt;/td&gt;
+&lt;td&gt;0.45&lt;/td&gt;
+&lt;td&gt;3.01&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Financially Stretched&lt;/td&gt;
-&lt;td&gt;0.27&lt;/td&gt;
-&lt;td&gt;0.14&lt;/td&gt;
-&lt;td&gt;1.62&lt;/td&gt;
+&lt;td&gt;0.5&lt;/td&gt;
+&lt;td&gt;0.19&lt;/td&gt;
+&lt;td&gt;2.17&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Not Private Households&lt;/td&gt;
-&lt;td&gt;45.7&lt;/td&gt;
+&lt;td&gt;45.78&lt;/td&gt;
 &lt;td&gt;1.89&lt;/td&gt;
 &lt;td&gt;15.06&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Urban Adversity&lt;/td&gt;
-&lt;td&gt;0.11&lt;/td&gt;
-&lt;td&gt;0.09&lt;/td&gt;
-&lt;td&gt;1.40&lt;/td&gt;
+&lt;td&gt;0.15&lt;/td&gt;
+&lt;td&gt;0.10&lt;/td&gt;
+&lt;td&gt;1.41&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;p align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -246,6 +256,10 @@ that the most important variables were: season, and population. We&amp;rsquo;d l
 information was summarized just to have a general overview and take to most of the performance out
 of the model, to clear the bigger picture, and to stay tuned with the changes. It was also summed up
 to prevent the model to be over fitted.&lt;/p&gt;
+&lt;h3 id=&#34;final-reporthttpsgithubcomandresvdatauk-energy-projectblobmainfinal20reportsanalysis20of20residential20energy20consumption20in20londonpdf&#34;&gt;&lt;a href=&#34;https://github.com/andresvdata/UK-ENERGY-Project/blob/main/final%20Reports/Analysis%20of%20residential%20energy%20consumption%20in%20London.pdf&#34;&gt;Final Report&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The final report presented in the project was the following file:
+&lt;iframe src=&#34;./eda/finalR.pdf&#34;    width=&#34;90%&#34;  height=&#34;700px&#34;   style=&#34;border:none;&#34; align=&#34;center&#34; &gt;&lt;/iframe&gt;
+&lt;/p&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
