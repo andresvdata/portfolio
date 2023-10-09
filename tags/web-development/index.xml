@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Web Development on Andrés V Data Portfolio</title>
-    <link>https://andresvdata.github.io/portfolio/tags/web-development/</link>
-    <description>Recent content in Web Development on Andrés V Data Portfolio</description>
+    <title>Web Development on </title>
+    <link>https://andresvdata.github.io/tags/web-development/</link>
+    <description>Recent content in Web Development on </description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 31 Dec 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://andresvdata.github.io/portfolio/tags/web-development/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://andresvdata.github.io/tags/web-development/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Web Development</title>
-      <link>https://andresvdata.github.io/portfolio/project/projectweb/</link>
+      <link>https://andresvdata.github.io/project/projectweb/</link>
       <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/portfolio/project/projectweb/</guid>
+      <guid>https://andresvdata.github.io/project/projectweb/</guid>
       <description>&lt;p&gt;In this project, our focus was on back-end development. We utilized the JavaServer Faces framework to handle the application&amp;rsquo;s logic, ensuring smooth interactions with the database. To meet the requirements, we relied on SQL stored procedures for querying the database. As a result, we constructed multiple stored procedures and jobs to fulfill the project&amp;rsquo;s needs.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Tools:&lt;/strong&gt; &lt;em&gt;SQL Management Studio and Eclipse.&lt;/em&gt;&lt;br&gt;
 &lt;strong&gt;Languajes:&lt;/strong&gt; &lt;em&gt;SQL, Java, HTML,JavaScript and CSS&lt;/em&gt;&lt;/p&gt;

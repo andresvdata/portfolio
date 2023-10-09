@@ -1,86 +1,86 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Andrés V Data Portfolio</title>
-    <link>https://andresvdata.github.io/portfolio/</link>
-    <description>Recent content on Andrés V Data Portfolio</description>
+    <title></title>
+    <link>https://andresvdata.github.io/</link>
+    <description>Recent content on </description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://andresvdata.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://andresvdata.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Recent &amp; Upcoming Talks</title>
-      <link>https://andresvdata.github.io/portfolio/talk/</link>
+      <link>https://andresvdata.github.io/talk/</link>
       <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/portfolio/talk/</guid>
+      <guid>https://andresvdata.github.io/talk/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>https://andresvdata.github.io/portfolio/project/</link>
+      <link>https://andresvdata.github.io/project/</link>
       <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/portfolio/project/</guid>
+      <guid>https://andresvdata.github.io/project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cursos</title>
-      <link>https://andresvdata.github.io/portfolio/courses/</link>
+      <link>https://andresvdata.github.io/courses/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
       
-      <guid>https://andresvdata.github.io/portfolio/courses/</guid>
+      <guid>https://andresvdata.github.io/courses/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Slides</title>
-      <link>https://andresvdata.github.io/portfolio/slides/</link>
+      <link>https://andresvdata.github.io/slides/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/portfolio/slides/</guid>
+      <guid>https://andresvdata.github.io/slides/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Privacy Policy</title>
-      <link>https://andresvdata.github.io/portfolio/privacy/</link>
+      <link>https://andresvdata.github.io/privacy/</link>
       <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
       
-      <guid>https://andresvdata.github.io/portfolio/privacy/</guid>
+      <guid>https://andresvdata.github.io/privacy/</guid>
       <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Publications</title>
-      <link>https://andresvdata.github.io/portfolio/publication/</link>
+      <link>https://andresvdata.github.io/publication/</link>
       <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/portfolio/publication/</guid>
+      <guid>https://andresvdata.github.io/publication/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cosas</title>
-      <link>https://andresvdata.github.io/portfolio/cosas/</link>
+      <link>https://andresvdata.github.io/cosas/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/portfolio/cosas/</guid>
+      <guid>https://andresvdata.github.io/cosas/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Posts</title>
-      <link>https://andresvdata.github.io/portfolio/post/</link>
+      <link>https://andresvdata.github.io/post/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/portfolio/post/</guid>
+      <guid>https://andresvdata.github.io/post/</guid>
       <description></description>
     </item>
     

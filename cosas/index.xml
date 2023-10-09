@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cosas on Andrés V Data Portfolio</title>
-    <link>https://andresvdata.github.io/portfolio/cosas/</link>
-    <description>Recent content in cosas on Andrés V Data Portfolio</description>
+    <title>cosas on </title>
+    <link>https://andresvdata.github.io/cosas/</link>
+    <description>Recent content in cosas on </description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     
-	    <atom:link href="https://andresvdata.github.io/portfolio/cosas/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://andresvdata.github.io/cosas/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
