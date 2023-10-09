@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on </title>
-    <link>https://andresvdata.github.io/project/</link>
+    <link>https://andresvdata.github.io/portfolio/project/</link>
     <description>Recent content in Projects on </description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Sep 2023 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://andresvdata.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://andresvdata.github.io/portfolio/project/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Winning Space Race with Data Science (SpaceX) - Captonew Project IBM</title>
-      <link>https://andresvdata.github.io/project/spacex/</link>
+      <link>https://andresvdata.github.io/portfolio/project/spacex/</link>
       <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/project/spacex/</guid>
+      <guid>https://andresvdata.github.io/portfolio/project/spacex/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;The following is a captone project of the course &amp;ldquo;IBM Data Science&amp;rdquo;. For more details about the Professional certificate, &lt;a href=&#34;https://www.coursera.org/account/accomplishments/professional-cert/8SZDJ5ANZJDP&#34;&gt;click here&lt;/a&gt;&lt;/p&gt;
@@ -41,10 +41,10 @@ The following pdf file shows the final presentation for this project.&lt;/p&gt;
     
     <item>
       <title>Exploratory Data Analysis (EDA) with R</title>
-      <link>https://andresvdata.github.io/project/eda/</link>
+      <link>https://andresvdata.github.io/portfolio/project/eda/</link>
       <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/project/eda/</guid>
+      <guid>https://andresvdata.github.io/portfolio/project/eda/</guid>
       <description>&lt;p&gt;This project explores two datasets :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Car Evaluation&lt;/li&gt;
@@ -63,10 +63,10 @@ The following pdf file shows the final presentation for this project.&lt;/p&gt;
     
     <item>
       <title>Detection of illicit activities</title>
-      <link>https://andresvdata.github.io/project/illicit-activities/</link>
+      <link>https://andresvdata.github.io/portfolio/project/illicit-activities/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/project/illicit-activities/</guid>
+      <guid>https://andresvdata.github.io/portfolio/project/illicit-activities/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;This was a project that was followed with the CRISP-DM data mining methodology.
 
@@ -142,10 +142,10 @@ Atypical values ​​can occur due to a global phenomenon in a group of similar
     
     <item>
       <title>London Energy Consumption (SmartEnerx Dashboard)</title>
-      <link>https://andresvdata.github.io/project/energy/</link>
+      <link>https://andresvdata.github.io/portfolio/project/energy/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/project/energy/</guid>
+      <guid>https://andresvdata.github.io/portfolio/project/energy/</guid>
       <description>&lt;p&gt;This a project was made for &lt;strong&gt;Data Science For All: Colombia&lt;/strong&gt; program of &lt;a href=&#34;https://www.correlation-one.com/&#34;&gt;Correlation One&lt;/a&gt; in collaboration with : Camila Malagón, Yesid Rivera, Óscar Nieto, Didier Santander, Eduardo González, Hollman Báez.&lt;/p&gt;
 &lt;p&gt;An entire Data Science project was developed, generating a visualization dashboard built with Dash-Python for the forecast of energy in London for the coming months.&lt;br&gt;
 The data was obtained from the real project developed by &lt;a href=&#34;https://www.ukpowernetworks.co.uk/&#34;&gt;UK Power Networks&lt;/a&gt; (Energy provider in the United Kingdom) in the page &lt;a href=&#34;https://www.kaggle.com/datasets/jeanmidev/smart-meters-in-london&#34;&gt;Kaggle&lt;/a&gt;.&lt;/p&gt;
@@ -329,10 +329,10 @@ to prevent the model to be over fitted.&lt;/p&gt;
     
     <item>
       <title>Data Visualization in Power BI</title>
-      <link>https://andresvdata.github.io/project/projectpowerbi/</link>
+      <link>https://andresvdata.github.io/portfolio/project/projectpowerbi/</link>
       <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/project/projectpowerbi/</guid>
+      <guid>https://andresvdata.github.io/portfolio/project/projectpowerbi/</guid>
       <description>&lt;p&gt;This was a project in which it was necessary to show the result of a data transformation previously carried out through ETL using SSIS, which through an SSAS data cube prepares data to be consulted from a Power BI visualization dashboard.&lt;br&gt;
 The image above shows the result of some boards I was involved in together with my work team.&lt;br&gt;
 Due to the data source was a data cube, the metrics and measures were created in SSAS. These metrics and measures were connected to the visualization objects.&lt;/p&gt;
@@ -358,10 +358,10 @@ Due to the data source was a data cube, the metrics and measures were created in
     
     <item>
       <title>Shortage of a product</title>
-      <link>https://andresvdata.github.io/project/shortage/</link>
+      <link>https://andresvdata.github.io/portfolio/project/shortage/</link>
       <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/project/shortage/</guid>
+      <guid>https://andresvdata.github.io/portfolio/project/shortage/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;This was a project that was followed with the CRISP-DM data mining methodology.
 
@@ -404,10 +404,10 @@ These simulations follow a normal distribution of the correlations of the variab
     
     <item>
       <title>Extraction, Transformation and Load (ETL) project</title>
-      <link>https://andresvdata.github.io/project/etl/</link>
+      <link>https://andresvdata.github.io/portfolio/project/etl/</link>
       <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/project/etl/</guid>
+      <guid>https://andresvdata.github.io/portfolio/project/etl/</guid>
       <description>&lt;p&gt;Project to centralize information from various databases, through API queries and jobs built in the SQL STUDIO instance.&lt;br&gt;
 The database of this instance called Staging was the starting point, then through SSIS several data transformations were carried out to bring it to a new database called Data Universe.&lt;br&gt;
 Finally to create a star data cube it was necessary to create the dimensions and the facts, so this database can be connected to an SSAS.&lt;/p&gt;
@@ -419,10 +419,10 @@ Finally to create a star data cube it was necessary to create the dimensions and
     
     <item>
       <title>Web Development</title>
-      <link>https://andresvdata.github.io/project/projectweb/</link>
+      <link>https://andresvdata.github.io/portfolio/project/projectweb/</link>
       <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/project/projectweb/</guid>
+      <guid>https://andresvdata.github.io/portfolio/project/projectweb/</guid>
       <description>&lt;p&gt;In this project, our focus was on back-end development. We utilized the JavaServer Faces framework to handle the application&amp;rsquo;s logic, ensuring smooth interactions with the database. To meet the requirements, we relied on SQL stored procedures for querying the database. As a result, we constructed multiple stored procedures and jobs to fulfill the project&amp;rsquo;s needs.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Tools:&lt;/strong&gt; &lt;em&gt;SQL Management Studio and Eclipse.&lt;/em&gt;&lt;br&gt;
 &lt;strong&gt;Languajes:&lt;/strong&gt; &lt;em&gt;SQL, Java, HTML,JavaScript and CSS&lt;/em&gt;&lt;/p&gt;

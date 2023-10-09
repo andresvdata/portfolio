@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on </title>
-    <link>https://andresvdata.github.io/post/</link>
+    <link>https://andresvdata.github.io/portfolio/post/</link>
     <description>Recent content in Posts on </description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     
-	    <atom:link href="https://andresvdata.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://andresvdata.github.io/portfolio/post/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Internal on </title>
-    <link>https://andresvdata.github.io/tags/internal/</link>
+    <link>https://andresvdata.github.io/portfolio/tags/internal/</link>
     <description>Recent content in Internal on </description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Sep 2023 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://andresvdata.github.io/tags/internal/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://andresvdata.github.io/portfolio/tags/internal/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Winning Space Race with Data Science (SpaceX) - Captonew Project IBM</title>
-      <link>https://andresvdata.github.io/project/spacex/</link>
+      <link>https://andresvdata.github.io/portfolio/project/spacex/</link>
       <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/project/spacex/</guid>
+      <guid>https://andresvdata.github.io/portfolio/project/spacex/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;The following is a captone project of the course &amp;ldquo;IBM Data Science&amp;rdquo;. For more details about the Professional certificate, &lt;a href=&#34;https://www.coursera.org/account/accomplishments/professional-cert/8SZDJ5ANZJDP&#34;&gt;click here&lt;/a&gt;&lt;/p&gt;
@@ -41,10 +41,10 @@ The following pdf file shows the final presentation for this project.&lt;/p&gt;
     
     <item>
       <title>Exploratory Data Analysis (EDA) with R</title>
-      <link>https://andresvdata.github.io/project/eda/</link>
+      <link>https://andresvdata.github.io/portfolio/project/eda/</link>
       <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/project/eda/</guid>
+      <guid>https://andresvdata.github.io/portfolio/project/eda/</guid>
       <description>&lt;p&gt;This project explores two datasets :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Car Evaluation&lt;/li&gt;
@@ -63,10 +63,10 @@ The following pdf file shows the final presentation for this project.&lt;/p&gt;
     
     <item>
       <title>London Energy Consumption (SmartEnerx Dashboard)</title>
-      <link>https://andresvdata.github.io/project/energy/</link>
+      <link>https://andresvdata.github.io/portfolio/project/energy/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://andresvdata.github.io/project/energy/</guid>
+      <guid>https://andresvdata.github.io/portfolio/project/energy/</guid>
       <description>&lt;p&gt;This a project was made for &lt;strong&gt;Data Science For All: Colombia&lt;/strong&gt; program of &lt;a href=&#34;https://www.correlation-one.com/&#34;&gt;Correlation One&lt;/a&gt; in collaboration with : Camila Malagón, Yesid Rivera, Óscar Nieto, Didier Santander, Eduardo González, Hollman Báez.&lt;/p&gt;
 &lt;p&gt;An entire Data Science project was developed, generating a visualization dashboard built with Dash-Python for the forecast of energy in London for the coming months.&lt;br&gt;
 The data was obtained from the real project developed by &lt;a href=&#34;https://www.ukpowernetworks.co.uk/&#34;&gt;UK Power Networks&lt;/a&gt; (Energy provider in the United Kingdom) in the page &lt;a href=&#34;https://www.kaggle.com/datasets/jeanmidev/smart-meters-in-london&#34;&gt;Kaggle&lt;/a&gt;.&lt;/p&gt;
