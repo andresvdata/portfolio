@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Winning Space Race with Data Science (SpaceX) - Captonew Project IBM</title>
+      <title>Captone Project IBM (SpaceX dataset)</title>
       <link>https://andresvdata.github.io/portfolio/project/spacex/</link>
       <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
       
@@ -35,6 +35,28 @@ The following pdf file shows the final presentation for this project.&lt;/p&gt;
 &lt;iframe src=&#34;./html/Final%20Presentation.pdf&#34;    width=&#34;100%&#34;  height=&#34;600px&#34;   style=&#34;border:none;&#34; align=&#34;center&#34; &gt;&lt;/iframe&gt;
 
 &lt;p&gt;&lt;strong&gt;Tools:&lt;/strong&gt; &lt;em&gt;Python Management Studio,SQL Server Integration Services (SSIS)&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;Languajes:&lt;/strong&gt; &lt;em&gt;SQL&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>COVID-19 Open Research Dataset Challenge (CORD-19)</title>
+      <link>https://andresvdata.github.io/portfolio/project/covid/</link>
+      <pubDate>Thu, 01 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.github.io/portfolio/project/covid/</guid>
+      <description>&lt;p&gt;This project explores two datasets :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Car Evaluation&lt;/li&gt;
+&lt;li&gt;Hollywood movies.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The purpose is throught EDA get insigts from this dataset.
+&lt;p align=&#34;center&#34;&gt;
+&lt;iframe src=&#34;./html/Assigment2.html&#34;    width=&#34;80%&#34;  height=&#34;600px&#34;   style=&#34;border:none;&#34; align=&#34;center&#34; &gt;&lt;/iframe&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
+&lt;p&gt;Bohanec,Marko. (1997). Car Evaluation. UCI Machine Learning Repository. &lt;a href=&#34;https://doi.org/10.24432/C5JP48&#34;&gt;https://doi.org/10.24432/C5JP48&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tools:&lt;/strong&gt; &lt;em&gt;SQL Management Studio,SQL Server Integration Services (SSIS)&lt;/em&gt;&lt;br&gt;
 &lt;strong&gt;Languajes:&lt;/strong&gt; &lt;em&gt;SQL&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
