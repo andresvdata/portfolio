@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Badges on </title>
+    <link>https://andresvdata.github.io/portfolio/badges/</link>
+    <description>Recent content in Badges on </description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Oct 2023 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://andresvdata.github.io/portfolio/badges/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>10 Digital credencials</title>
+      <link>https://andresvdata.github.io/portfolio/badges/1/</link>
+      <pubDate>Sun, 01 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.github.io/portfolio/badges/1/</guid>
+      <description>&lt;p&gt;These credentials earned demonstrates hands-on proficiency in applying Data Science concepts to a real world inspired challenge. The earner can follow the data science methodology involving problem definition, data collection, data wrangling, exploratory data analysis, data visualization, model development, and model evaluation. The individual has also demonstrated proficiency in documenting their work and preparing a full formal data science project report.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
