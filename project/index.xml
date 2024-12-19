@@ -6,10 +6,91 @@
     <description>Recent content in Projects on </description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Dec 2024 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="https://andresvdata.github.io/portfolio/project/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Automated Report Generation</title>
+      <link>https://andresvdata.github.io/portfolio/project/report-generation/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.github.io/portfolio/project/report-generation/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;In this project, our team developed an automated report generation system using Python and Django, which extracts data from the OLAP datastore Apache Pinot. The goal was to create a user-friendly web application that streamlines the reporting process, providing real-time insights and analytics.&lt;/p&gt;
+&lt;h2 id=&#34;key-components&#34;&gt;Key Components&lt;/h2&gt;
+&lt;h3 id=&#34;1-programming-languages&#34;&gt;1. &lt;strong&gt;Programming Languages&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Pandas&lt;/strong&gt;: For data manipulation and analysis.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SQL&lt;/strong&gt;: Data extraction from Pinot using Python&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-django&#34;&gt;2. &lt;strong&gt;Django&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Role&lt;/strong&gt;: Web framework for building the application.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Features Implemented&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;User authentication for secure access.&lt;/li&gt;
+&lt;li&gt;Dynamic report generation based on user inputs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-apache-pinot&#34;&gt;3. &lt;strong&gt;Apache Pinot&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Role&lt;/strong&gt;: OLAP datastore for real-time data analytics.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Key Features&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Fast querying of large datasets.&lt;/li&gt;
+&lt;li&gt;Support for complex analytics, making it ideal for report generation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;workflow&#34;&gt;Workflow&lt;/h2&gt;
+&lt;h3 id=&#34;1-data-extraction&#34;&gt;1. &lt;strong&gt;Data Extraction&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Established a connection to Apache Pinot using its Python client.&lt;/li&gt;
+&lt;li&gt;Wrote SQL-like queries to retrieve relevant data, focusing on metrics and trends necessary for reporting.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-data-processing&#34;&gt;2. &lt;strong&gt;Data Processing&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Utilized Python and Pandas to clean, filter, and aggregate the imported data.&lt;/li&gt;
+&lt;li&gt;Transformed the data into formats suitable for analysis and visualization.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-report-generation&#34;&gt;3. &lt;strong&gt;Report Generation&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Generated structured reports (Excel) using Python, ensuring they were visually appealing and easy to interpret.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-django-integration&#34;&gt;4. &lt;strong&gt;Django Integration&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Developed a Django application to handle user requests and display reports.&lt;/li&gt;
+&lt;li&gt;Set up views and templates for a seamless user experience, allowing users to generate and download reports easily based on the inputs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;5-automation&#34;&gt;5. &lt;strong&gt;Automation&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Once the user enter the inputs the application will retrieve all the information needeed to export that data to a Excel document with the formated pre-stablished.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;benefits&#34;&gt;Benefits&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Efficiency&lt;/strong&gt;: Reduced manual effort in report creation, minimizing errors and saving time.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Real-time Insights&lt;/strong&gt;: Users can access up-to-date data, enabling timely decision-making.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Not further information can be share due to confidencial information&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dashboard in Power Apps</title>
+      <link>https://andresvdata.github.io/portfolio/project/dashboard-in-power-apps/</link>
+      <pubDate>Tue, 01 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.github.io/portfolio/project/dashboard-in-power-apps/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;In this project, our team developed a Power BI app for data management of a Healthcare company aimed to serve as a reliable resource for sustem administration and technical support staff, enabling them to understand, manage, and resolve issues related to the system efficiently.&lt;/p&gt;
+&lt;h2 id=&#34;key-components&#34;&gt;Key Components&lt;/h2&gt;
+&lt;h3 id=&#34;1-power-apps-power-bi&#34;&gt;1. &lt;strong&gt;Power Apps: Power BI&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Not further information can be share due to confidencial information&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Captone Project IBM (SpaceX dataset)</title>
