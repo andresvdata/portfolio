@@ -6,10 +6,23 @@
     <description>Recent content in Articules on </description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="https://andresvdata.github.io/portfolio/tags/articules/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A data-driven approach to customer lifetime value prediction using probability and machine learning models</title>
+      <link>https://andresvdata.github.io/portfolio/publication/art3/</link>
+      <pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.github.io/portfolio/publication/art3/</guid>
+      <description>&lt;p&gt;Customer lifetime value is an important marketing metric and has applications in market segmentation, strategy development, and direct marketing programs, especially when customers are not under contract. In this research, we demonstrate the prediction of the lifetime value of patients in a health service portfolio in two separate ways. The probability of a patient being alive and their value in the coming evaluation period are first predicted using a probability model that has been well-established in the marketing community. We then use several machine learning algorithms to perform the same task. The results of these two approaches are compared in terms of accuracy to gain insight into their respective strengths and weaknesses. We believe that the work is one of the first attempts to gain an understanding of the use of machine learning algorithms in this important marketing issue. The results showed that the probability model performs better than the machine learning models, probably due to the assumption required in the probability calculations. It is therefore recommended that an essential step in applying these software approaches is to verify the validity of the key assumption of regularity. In addition, in future studies, consideration should be given to a larger dataset with demographic variables beyond age and gender that were used in this study. Developing specific ML models for dealing with zero-inflated data, which is an inherent feature of customer lifetime data, will also be helpful.&lt;/p&gt;
+&lt;h5 id=&#34;to-see-articule-click-on-doi&#34;&gt;&lt;em&gt;To see articule click on &amp;ldquo;DOI&amp;rdquo;&lt;/em&gt;&lt;/h5&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+</description>
+    </item>
     
     <item>
       <title>Assessment of Different Plasticizer – Polyhydroxyalkanoate Mixtures to Obtain Biodegradable Polymeric Films</title>

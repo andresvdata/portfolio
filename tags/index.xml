@@ -6,15 +6,33 @@
     <description>Recent content in Tags on </description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="https://andresvdata.github.io/portfolio/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Articules</title>
+      <link>https://andresvdata.github.io/portfolio/tags/articules/</link>
+      <pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.github.io/portfolio/tags/articules/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Analysis</title>
+      <link>https://andresvdata.github.io/portfolio/tags/data-analysis/</link>
+      <pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.github.io/portfolio/tags/data-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Data Visualization</title>
       <link>https://andresvdata.github.io/portfolio/tags/data-visualization/</link>
-      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
       
       <guid>https://andresvdata.github.io/portfolio/tags/data-visualization/</guid>
       <description></description>
@@ -23,16 +41,25 @@
     <item>
       <title>Databases</title>
       <link>https://andresvdata.github.io/portfolio/tags/databases/</link>
-      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
       
       <guid>https://andresvdata.github.io/portfolio/tags/databases/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Exploratory Data Analysis</title>
+      <link>https://andresvdata.github.io/portfolio/tags/exploratory-data-analysis/</link>
+      <pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.github.io/portfolio/tags/exploratory-data-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>External</title>
       <link>https://andresvdata.github.io/portfolio/tags/external/</link>
-      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
       
       <guid>https://andresvdata.github.io/portfolio/tags/external/</guid>
       <description></description>
@@ -75,24 +102,6 @@
     </item>
     
     <item>
-      <title>Data Analysis</title>
-      <link>https://andresvdata.github.io/portfolio/tags/data-analysis/</link>
-      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://andresvdata.github.io/portfolio/tags/data-analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Exploratory Data Analysis</title>
-      <link>https://andresvdata.github.io/portfolio/tags/exploratory-data-analysis/</link>
-      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://andresvdata.github.io/portfolio/tags/exploratory-data-analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Machine Learning</title>
       <link>https://andresvdata.github.io/portfolio/tags/machine-learning/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
@@ -107,15 +116,6 @@
       <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://andresvdata.github.io/portfolio/tags/web-development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Articules</title>
-      <link>https://andresvdata.github.io/portfolio/tags/articules/</link>
-      <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://andresvdata.github.io/portfolio/tags/articules/</guid>
       <description></description>
     </item>
     

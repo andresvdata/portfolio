@@ -6,10 +6,46 @@
     <description>Recent content in Databases on </description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Aug 2025 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="https://andresvdata.github.io/portfolio/tags/databases/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Research Data Integration &amp; Analytics Platform</title>
+      <link>https://andresvdata.github.io/portfolio/project/data-management-portal/</link>
+      <pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://andresvdata.github.io/portfolio/project/data-management-portal/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;A comprehensive data integration and analytics solution was developed within the Research &amp;amp; Innovation department. The project brought together multiple self-hosted applications eLabFTW, Apache Airflow, and Apache Superset into a centralized, secure platform. Data workflows were automated to streamline research operations, improve reproducibility, and support advanced analytics. The system was deployed on cloud infrastructure, leveraging containerization, reverse proxy configurations, and single sign-on authentication for seamless and secure access across tools. The result was a robust environment that empowered researchers to capture, manage, and analyze data with greater efficiency and reliability.&lt;/p&gt;
+&lt;h3 id=&#34;repository-description&#34;&gt;Repository Description&lt;/h3&gt;
+&lt;p&gt;Within the Research &amp;amp; Innovation department, a fully integrated research data management and analytics environment was designed, deployed, and optimized. The work was carried out using containerized services orchestrated via Docker, ensuring portability and reproducibility across environments.&lt;/p&gt;
+&lt;p&gt;The implementation included:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;eLabFTW configured as the primary electronic lab notebook (ELN), customized for departmental research workflows, metadata standards, and timestamped data certification.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Apache Airflow deployed for ETL pipeline automation, enabling scheduled ingestion, transformation, and synchronization of data between systems.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Apache Superset integrated for interactive dashboards and visual analytics, connected to both operational and analytical databases for real-time reporting.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Security and accessibility were addressed through the deployment of Keycloak as the identity provider, using OpenID Connect and SAML protocols to enable single sign-on (SSO) across all services. Reverse proxy rules and SSL/TLS encryption were implemented via NGINX to ensure secure, domain-based access.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The cloud deployment was hosted on Azure Virtual Machines, with performance tuning applied to handle concurrent workloads from multiple research teams. Data persistence and backups were managed through mounted volumes and automated snapshot policies. The system design also allowed for role-based access control, ensuring that data governance policies were upheld without limiting research agility.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This project not only consolidated tools into a single platform but also reduced administrative overhead, improved collaboration between research staff, and laid the foundation for future machine learning applications by standardizing the data lifecycle from capture to visualization.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Not further information can be share due to confidencial information&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tools:&lt;/strong&gt; &lt;em&gt;SQL Management Studio, Anaconda, Jupyter Notebook, GIT, Azure Devops&lt;/em&gt; &lt;br&gt;
+&lt;strong&gt;Languajes:&lt;/strong&gt; &lt;em&gt;SQL,Python&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;Python Libraries:&lt;/strong&gt; &lt;em&gt;Pandas, Numpy, Seaborn, Sci-learn, Prophet, Arima,traceback&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Automated Report Generation</title>
