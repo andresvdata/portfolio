@@ -1,0 +1,38 @@
+{
+  "name": "andres-data-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portfolio of Andres Camilo Viloria Garcia — Business Intelligence, Analytics Engineering and Data.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "check:placeholders": "node scripts/check-placeholders.mjs",
+    "check:contrast": "node scripts/check-contrast.mjs",
+    "docs:sources": "node scripts/build-source-map.mjs",
+    "new:project": "node scripts/new-project.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "astro": "^7.4.8",
+    "d3-geo": "^3.1.2",
+    "topojson-client": "^3.1.0",
+    "typescript": "^6.0.3",
+    "world-atlas": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/d3-geo": "^3.1.1",
+    "@types/geojson": "^7946.0.16",
+    "@types/node": "^22.20.5",
+    "@types/topojson-client": "^3.1.5",
+    "@types/topojson-specification": "^1.0.5",
+    "yaml": "^2.9.1"
+  }
+}

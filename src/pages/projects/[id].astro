@@ -1,0 +1,202 @@
+---
+import Base from '../../layouts/Base.astro';
+import FlowDiagram from '../../components/FlowDiagram.astro';
+import { rich, typeLabel, withBase } from '../../lib/text';
+import { getProjects } from '../../lib/projects';
+
+export async function getStaticPaths() {
+  const all = await getProjects();
+  return all.map((entry, i) => ({
+    params: { id: entry.id },
+    props: { entry, prev: all[i - 1] ?? null, next: all[i + 1] ?? null },
+  }));
+}
+
+const { entry, prev, next } = Astro.props;
+const d = entry.data;
+const home = withBase('/');
+
+const images = d.evidence.filter((e) => e.kind === 'image');
+const links = d.evidence.filter((e) => e.kind === 'link');
+const notes = d.evidence.filter((e) => e.kind === 'note');
+
+// Sections are numbered in the order they appear, so optional ones never leave gaps.
+let n = 0;
+const num = () => String(++n).padStart(2, '0');
+const hasTeam = d.role.team.length > 0;
+---
+
+<Base title={d.title} description={d.summary}>
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href={`${home}#projects`}>← All projects</a>
+    </nav>
+
+    <header class="case-head">
+      <div class="tag-row">
+        <span class="badge" data-type={d.type}>{typeLabel[d.type]}</span>
+      </div>
+      <h1>{d.title}</h1>
+      <p class="summary">{d.summary}</p>
+      <p class="org-line">{d.org} · {d.period}</p>
+    </header>
+
+    <div class="case-layout">
+      <div class="case-main">
+        <section class="case-section" aria-labelledby="s-situation">
+          <h2 id="s-situation"><span class="n">{num()}</span>The situation</h2>
+          <p set:html={rich(d.situation)} />
+        </section>
+
+        <section class="case-section" aria-labelledby="s-challenge">
+          <h2 id="s-challenge"><span class="n">{num()}</span>The challenge</h2>
+          <p set:html={rich(d.challenge)} />
+        </section>
+
+        <section class="case-section" aria-labelledby="s-role">
+          <h2 id="s-role"><span class="n">{num()}</span>My role</h2>
+          <div class={hasTeam ? 'two-col' : undefined}>
+            <div>
+              <h3>What I owned</h3>
+              <ul class="bullets">
+                {d.role.owned.map((r) => <li set:html={rich(r)} />)}
+              </ul>
+            </div>
+            {hasTeam && (
+              <div>
+                <h3>What the team did</h3>
+                <ul class="bullets">
+                  {d.role.team.map((r) => <li set:html={rich(r)} />)}
+                </ul>
+              </div>
+            )}
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="s-approach">
+          <h2 id="s-approach"><span class="n">{num()}</span>The approach</h2>
+          <ol class="steps" style="list-style:none;padding:0;margin:0">
+            {d.approach.map((a) => (
+              <li>
+                <h3>{a.title}</h3>
+                <p set:html={rich(a.text)} />
+              </li>
+            ))}
+          </ol>
+          {d.flow && (
+            <FlowDiagram title={d.flow.title} stages={d.flow.stages} foundation={d.flow.foundation} note={d.flow.note} />
+          )}
+        </section>
+
+        <section class="case-section" aria-labelledby="s-result">
+          <h2 id="s-result"><span class="n">{num()}</span>The result</h2>
+          {d.metric && (
+            <div class="metric-big">
+              <strong>{d.metric.value}</strong>
+              <span>{d.metric.label}</span>
+            </div>
+          )}
+          <p set:html={rich(d.result.summary)} />
+          {d.result.points.length > 0 && (
+            <ul class="bullets">
+              {d.result.points.map((p) => <li set:html={rich(p.text)} />)}
+            </ul>
+          )}
+        </section>
+
+        <section class="case-section" aria-labelledby="s-evidence">
+          <h2 id="s-evidence"><span class="n">{num()}</span>The evidence</h2>
+          {images.length > 0 && (
+            <div class={`figures${images.length > 1 ? ' two' : ''}`}>
+              {images.map((img) => (
+                <figure class="figure">
+                  <img
+                    src={withBase(`/${img.src}`)}
+                    alt={img.alt ?? ''}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  {img.caption && <figcaption set:html={rich(img.caption)} />}
+                </figure>
+              ))}
+            </div>
+          )}
+          {links.length > 0 && (
+            <div class="evidence-links">
+              {links.map((l) => (
+                <a href={l.href} target="_blank" rel="noopener noreferrer">
+                  {l.label}<span aria-hidden="true"> ↗</span><span class="sr-only"> (opens in a new tab)</span>
+                </a>
+              ))}
+            </div>
+          )}
+          {notes.map((note) => (
+            <p class="note-box" set:html={rich(note.caption ?? note.label)} />
+          ))}
+          {d.evidence.length === 0 && (
+            <p class="note-box">
+              No public artifacts for this project. Ask me and I can walk through it.
+            </p>
+          )}
+        </section>
+
+        {d.reflection && (
+          <section class="case-section" aria-labelledby="s-reflection">
+            <h2 id="s-reflection"><span class="n">{num()}</span>What I'd do next</h2>
+            <p set:html={rich(d.reflection)} />
+          </section>
+        )}
+
+        <nav class="pager" aria-label="More case studies">
+          {prev ? (
+            <a href={withBase(`/projects/${prev.id}/`)} rel="prev">
+              <small>← Previous</small>
+              <span>{prev.data.title}</span>
+            </a>
+          ) : <span></span>}
+          {next ? (
+            <a class="next" href={withBase(`/projects/${next.id}/`)} rel="next">
+              <small>Next →</small>
+              <span>{next.data.title}</span>
+            </a>
+          ) : <span></span>}
+        </nav>
+      </div>
+
+      <aside class="case-aside" aria-label="Project facts">
+        <div class="panel">
+          <dl>
+            <div>
+              <dt>Type</dt>
+              <dd>{typeLabel[d.type]}</dd>
+            </div>
+            <div>
+              <dt>Organization</dt>
+              <dd>{d.org}</dd>
+            </div>
+            <div>
+              <dt>Period</dt>
+              <dd>{d.period}</dd>
+            </div>
+            <div>
+              <dt>Tools and methods</dt>
+              <dd>
+                <div class="tag-row">
+                  {d.tags.map((t) => <span class="tag">{t}</span>)}
+                </div>
+              </dd>
+            </div>
+            <div>
+              <dt>Sources for this page</dt>
+              <dd>
+                <ul class="bullets" style="font-size:0.875rem;color:var(--text-muted)">
+                  {d.sources.map((s) => <li>{s}</li>)}
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

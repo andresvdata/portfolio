@@ -1,0 +1,94 @@
+---
+import { getCollection } from 'astro:content';
+
+const rows = (await getCollection('skills')).sort((a, b) => a.data.order - b.data.order);
+const groups = [...new Set(rows.map((r) => r.data.group))];
+
+const cols = [
+  { key: 'oi', label: 'Owens Illinois', years: '2018–20' },
+  { key: 'softgic', label: 'Softgic', years: '2020–22' },
+  { key: 'langara', label: 'Langara', years: '2022–25' },
+  { key: 'bcspca', label: 'BC SPCA', years: '2025–now' },
+  { key: 'projects', label: 'Projects and training', years: 'DS4A, IBM, GitHub' },
+] as const;
+---
+
+<div class="panel" data-matrix>
+  <div class="panel-head">
+    <h2 class="panel-title" id="skills-title">Skills by role</h2>
+    <span class="mono" style="font-size:0.8125rem;color:var(--text-muted)">A dot appears only where the work is documented. Select one for the evidence.</span>
+  </div>
+
+  <div class="matrix-wrap" role="region" aria-labelledby="skills-title" tabindex="0">
+    <table class="matrix">
+      <caption class="sr-only">Skills and the roles where each was used. A button in a cell shows the evidence.</caption>
+      <thead>
+        <tr>
+          <th scope="col" style="text-align:left">Skill</th>
+          {cols.map((c) => (
+            <th scope="col">{c.label}<small>{c.years}</small></th>
+          ))}
+        </tr>
+      </thead>
+      {groups.map((g) => (
+        <tbody>
+          <tr><th scope="rowgroup" colspan={cols.length + 1}>{g}</th></tr>
+          {rows.filter((r) => r.data.group === g).map((r) => (
+            <tr class="row">
+              <th scope="row">{r.data.label}</th>
+              {cols.map((c) => {
+                const ev = r.data.roles[c.key];
+                return (
+                  <td>
+                    {ev ? (
+                      <button
+                        class="cell"
+                        type="button"
+                        aria-pressed="false"
+                        data-evidence={ev}
+                        data-skill={r.data.label}
+                        data-role={c.label}
+                        aria-label={`${r.data.label} at ${c.label}`}
+                      >
+                        <span class="dot"></span>
+                      </button>
+                    ) : (
+                      <span class="none"><span aria-hidden="true">·</span><span class="sr-only">Not documented</span></span>
+                    )}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      ))}
+    </table>
+  </div>
+
+  <p class="matrix-evidence" role="status" aria-live="polite" data-evidence-out>
+    Select a dot to see the evidence for that skill in that role.
+  </p>
+</div>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-matrix]');
+  if (root) {
+    const out = root.querySelector<HTMLElement>('[data-evidence-out]')!;
+    const cells = Array.from(root.querySelectorAll<HTMLButtonElement>('.cell'));
+    cells.forEach((c) =>
+      c.addEventListener('click', () => {
+        const wasOn = c.getAttribute('aria-pressed') === 'true';
+        cells.forEach((x) => x.setAttribute('aria-pressed', 'false'));
+        if (wasOn) {
+          out.textContent = 'Select a dot to see the evidence for that skill in that role.';
+          return;
+        }
+        c.setAttribute('aria-pressed', 'true');
+        out.replaceChildren();
+        const strong = document.createElement('strong');
+        strong.textContent = `${c.dataset.skill} · ${c.dataset.role}: `;
+        out.append(strong, document.createTextNode(c.dataset.evidence ?? ''));
+      }),
+    );
+  }
+</script>

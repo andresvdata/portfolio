@@ -1,0 +1,135 @@
+---
+import { getCollection } from 'astro:content';
+import { buildMap } from '../lib/map';
+
+const pins = (await getCollection('pins')).map((p) => ({ id: p.id, ...p.data }));
+const map = buildMap(pins.map((p) => ({ id: p.id, lon: p.lon, lat: p.lat })));
+const placed = new Map(map.placed.map((p) => [p.id, p]));
+const arcPath = map.arc('bogota', 'vancouver');
+
+const layers = [
+  { id: 'work', label: 'Work' },
+  { id: 'education', label: 'Education' },
+  { id: 'projects', label: 'Projects' },
+] as const;
+
+const layerLabel: Record<string, string> = { work: 'Work', education: 'Study', projects: 'Project' };
+const summary = pins.map((p) => p.label).join(', ');
+---
+
+<section class="panel map-panel" aria-labelledby="map-title" data-career-map>
+  <div class="panel-head">
+    <h2 class="panel-title" id="map-title">Career map</h2>
+    <div class="chip-row" role="group" aria-label="Map layers">
+      {layers.map((l) => (
+        <button class="chip" type="button" aria-pressed="true" data-layer={l.id}>{l.label}</button>
+      ))}
+    </div>
+  </div>
+
+  <div class="map-stage" style={`aspect-ratio: ${map.width} / ${map.height}`}>
+    <svg
+      viewBox={`0 0 ${map.width} ${map.height}`}
+      role="img"
+      aria-label={`World map with markers for ${summary}. A dashed line links Colombia to Vancouver.`}
+    >
+      <path class="map-grid" d={map.graticule}></path>
+      <path class="map-land" d={map.land}></path>
+      <path class="map-borders" d={map.borders}></path>
+      <path class="map-arc" d={arcPath}></path>
+    </svg>
+
+    {pins.map((p) => {
+      const at = placed.get(p.id)!;
+      return (
+        <button
+          class="pin"
+          type="button"
+          style={`left:${at.left}%; top:${at.top}%`}
+          data-pin={p.id}
+          aria-pressed="false"
+          aria-label={`${p.label}, ${p.entries.length} entries`}
+        >
+          <span class="pin-dot"></span>
+          <span class="pin-count" aria-hidden="true">{p.entries.length}</span>
+          <span class="pin-label" aria-hidden="true">{p.label.split(',')[0].replace(' region', '')}</span>
+        </button>
+      );
+    })}
+  </div>
+
+  <div class="map-detail" aria-live="polite" data-map-detail>
+    {pins.map((p) => (
+      <div data-pin-detail={p.id}>
+        <h3>{p.label}</h3>
+        <ul>
+          {p.entries.map((e) => (
+            <li data-layer={e.layer}>
+              <span class="layer-tag" data-layer={e.layer}>{layerLabel[e.layer]}</span>
+              <span>{e.text}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+  <p class="map-note">City-level locations only. Select a marker to see what happened there.</p>
+</section>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-career-map]');
+  if (root) {
+    const layerBtns = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-layer].chip'));
+    const pinBtns = Array.from(root.querySelectorAll<HTMLButtonElement>('.pin'));
+    const details = Array.from(root.querySelectorAll<HTMLElement>('[data-pin-detail]'));
+    const active = new Set(layerBtns.map((b) => b.dataset.layer!));
+    let selected = 'vancouver';
+
+    const visibleCount = (detail: HTMLElement) => {
+      let n = 0;
+      detail.querySelectorAll<HTMLElement>('li').forEach((li) => {
+        const on = active.has(li.dataset.layer!);
+        li.hidden = !on;
+        if (on) n++;
+      });
+      return n;
+    };
+
+    const render = () => {
+      const counts = new Map<string, number>();
+      details.forEach((d) => counts.set(d.dataset.pinDetail!, visibleCount(d)));
+      if (!counts.get(selected)) {
+        selected = [...counts.entries()].find(([, n]) => n > 0)?.[0] ?? selected;
+      }
+      pinBtns.forEach((b) => {
+        const id = b.dataset.pin!;
+        const n = counts.get(id) ?? 0;
+        b.hidden = n === 0;
+        b.setAttribute('aria-pressed', String(id === selected));
+        const badge = b.querySelector('.pin-count');
+        if (badge) badge.textContent = String(n);
+        const label = b.querySelector('.pin-label')?.textContent ?? id;
+        b.setAttribute('aria-label', `${label}, ${n} ${n === 1 ? 'entry' : 'entries'}`);
+      });
+      details.forEach((d) => { d.hidden = d.dataset.pinDetail !== selected; });
+    };
+
+    layerBtns.forEach((btn) =>
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.layer!;
+        const on = btn.getAttribute('aria-pressed') === 'true';
+        if (on && active.size === 1) return; // keep at least one layer
+        on ? active.delete(id) : active.add(id);
+        btn.setAttribute('aria-pressed', String(!on));
+        render();
+      }),
+    );
+    pinBtns.forEach((b) =>
+      b.addEventListener('click', () => {
+        selected = b.dataset.pin!;
+        render();
+      }),
+    );
+    render();
+  }
+</script>

@@ -1,0 +1,64 @@
+# The through-line: four chapters, oldest first. Each chapter states only what a source supports.
+
+- id: oi
+  order: 1
+  period: "2018 – 2020"
+  org: Owens Illinois · Manufacturing
+  title: Started on the production line
+  text: >-
+    As a junior engineer I monitored process variables for a production line with 8 operators, met all
+    production KPIs and raised productivity by 10% through data-driven insights. I also built an Excel and
+    Visual Basic tool that cut raw-material inventory query time by about 80%.
+  stats:
+    - value: "10%"
+      label: productivity gain
+    - value: "~80%"
+      label: faster inventory queries
+  source: "RES · Owens Illinois bullets 1-2"
+
+- id: softgic
+  order: 2
+  period: "2020 – 2022"
+  org: Softgic · Bogotá
+  title: Automated the pipeline
+  text: >-
+    I replaced about 90% of manual data processing with scheduled SSIS and Pentaho pipelines, then built a
+    full BI stack on top: a snowflake-schema warehouse, an SSAS cube, SSRS reports and Power BI dashboards.
+    Optimizing it cut end-to-end processing time by about 60%.
+  stats:
+    - value: "~90%"
+      label: manual processing replaced
+    - value: "~60%"
+      label: less processing time
+  source: "RES · Softgic bullets 1 and 10"
+
+- id: langara
+  order: 3
+  period: "2022 – 2025"
+  org: Langara College · Vancouver
+  title: Built platforms and models for research
+  text: >-
+    I designed a research data warehouse with Airflow pipelines, deployed an electronic lab notebook on
+    Azure, and built customer lifetime value models for healthcare stakeholders. That modeling work became
+    a journal article I co-authored in 2025.
+  stats:
+    - value: "1"
+      label: journal article (2025)
+    - value: "25%"
+      label: faster data migration
+  source: "RES · Langara Research Assistant bullets 1, 5, 7, 9 and Student Aide bullet 1; LI · Langara"
+
+- id: bcspca
+  order: 4
+  period: "2025 – now"
+  org: BC SPCA · Vancouver
+  title: Made the data trusted, and used
+  text: >-
+    I bring 40+ sources into governed Microsoft Fabric and Power BI models, agree KPI definitions with 50+
+    stakeholders, prototype before building, and support teams as they adopt the dashboards.
+  stats:
+    - value: "40+"
+      label: sources unified
+    - value: "50+"
+      label: stakeholders
+  source: "RES · BC SPCA bullets 1, 2, 4, 11, 16, 19; LI · BC SPCA"

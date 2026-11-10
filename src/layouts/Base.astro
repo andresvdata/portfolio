@@ -1,0 +1,97 @@
+---
+import '@fontsource/ibm-plex-sans/latin-400.css';
+import '@fontsource/ibm-plex-sans/latin-500.css';
+import '@fontsource/ibm-plex-sans/latin-600.css';
+import '@fontsource/ibm-plex-sans/latin-700.css';
+import '@fontsource/ibm-plex-mono/latin-400.css';
+import '@fontsource/ibm-plex-mono/latin-500.css';
+import '@fontsource/ibm-plex-mono/latin-600.css';
+import '../styles/global.css';
+
+import SiteHeader from '../components/SiteHeader.astro';
+import { site } from '../config/site';
+import { withBase } from '../lib/text';
+
+interface Props {
+  title?: string;
+  description?: string;
+  jsonLd?: Record<string, unknown>;
+}
+
+const { title, description = site.description, jsonLd } = Astro.props;
+const pageTitle = title
+  ? `${title} · ${site.shortName}`
+  : `${site.name} · Business Intelligence Developer & Analytics Engineer`;
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImage = new URL(withBase('/images/og/og-image.png'), Astro.site).toString();
+const favicon = withBase('/favicon.svg');
+const home = withBase('/');
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={favicon} type="image/svg+xml" />
+    <meta name="theme-color" content="#0a1120" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={`${site.name}: ${site.eyebrow}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+
+    <!-- Apply the saved or system theme before first paint to avoid a flash. -->
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          }
+          document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <SiteHeader />
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>© {new Date().getFullYear()} {site.name} · {site.location} · {site.workArrangement}</span>
+        <span>
+          {site.links.previousPortfolio && (
+            <a href={site.links.previousPortfolio} target="_blank" rel="noopener noreferrer">
+              Previous portfolio<span class="sr-only"> (opens in a new tab)</span>
+            </a>
+          )}
+          {site.links.previousPortfolio && ' · '}
+          {site.repoUrl ? (
+            <a href={site.repoUrl} target="_blank" rel="noopener noreferrer">
+              Source on GitHub<span class="sr-only"> (opens in a new tab)</span>
+            </a>
+          ) : (
+            <span>Built with Astro</span>
+          )}
+          {' · '}
+          <a href={`${home}#main`}>Back to top</a>
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>

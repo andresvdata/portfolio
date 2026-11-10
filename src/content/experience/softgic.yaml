@@ -1,0 +1,41 @@
+org: Softgic
+location: Bogotá, Colombia
+domain: bi
+order: 3
+phases:
+  - role: Data Analyst
+    kind: Full-time
+    start: "2020-08"
+    end: "2022-08"
+    display: "2020 – 2022"
+mission: >-
+  Replace manual data work with automated pipelines, and give managers and executives reporting they could
+  trust.
+highlights:
+  - text: >-
+      Replaced about 90% of manual data processing across internal operations by building automated ETL
+      pipelines in SSIS and Pentaho.
+    source: "RES · Softgic bullet 1"
+  - text: >-
+      Designed a complete BI solution: SSIS ETL into a snowflake-schema warehouse, an SSAS multidimensional
+      cube and SSRS executive reports, optimized to cut end-to-end processing time by about 60%.
+    source: "RES · Softgic bullet 10; LI · Summary"
+  - text: >-
+      Built and maintained 10+ Power BI dashboards used by executives and managers, backed by 50+ optimized
+      SQL queries.
+    source: "RES · Softgic bullets 2 and 4"
+  - text: >-
+      Integrated APIs, Oracle, SQL Server and JSON, XML and CSV files into scheduled pipelines, and fixed
+      recurring data issues through root-cause analysis.
+    source: "RES · Softgic bullets 5 and 7"
+stack:
+  - SSIS
+  - Pentaho
+  - SQL Server
+  - Oracle
+  - SSAS
+  - SSRS
+  - Power BI
+  - Python
+project: softgic-bi-stack
+sourceNote: "RES · Softgic (08/2020 – 08/2022, Data Analyst); LI · Softgic (Nov 2020 – Aug 2022, Data Analyst/Data Scientist). Start date and title differ."

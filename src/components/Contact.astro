@@ -1,0 +1,58 @@
+---
+import Icon from './Icon.astro';
+import ResumeButton from './ResumeButton.astro';
+import { site } from '../config/site';
+---
+
+<section class="panel contact" aria-labelledby="contact-title" data-contact>
+  <div>
+    <h2 class="h2" id="contact-title">Let's talk about your data</h2>
+    <p>
+      I'm looking for BI, analytics engineering and data roles where reliable data and clear dashboards matter.
+      Based in {site.location}, working {site.workArrangement.toLowerCase()}. The fastest way to reach me is email.
+    </p>
+  </div>
+
+  <div class="contact-actions">
+    <a class="btn btn-primary" href={`mailto:${site.email}`}>
+      <Icon name="mail" />
+      {site.email}
+    </a>
+    <div class="cta-row">
+      <button class="btn" type="button" data-copy={site.email}>
+        <Icon name="copy" />
+        Copy email
+      </button>
+      <ResumeButton variant="ghost" />
+    </div>
+    <div class="cta-row">
+      <a class="btn" href={site.links.linkedin} target="_blank" rel="noopener noreferrer">
+        <Icon name="linkedin" />
+        LinkedIn<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+      <a class="btn" href={site.links.github} target="_blank" rel="noopener noreferrer">
+        <Icon name="github" />
+        GitHub<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+    </div>
+    <p class="copy-status" role="status" aria-live="polite" data-copy-status></p>
+  </div>
+</section>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-contact]');
+  const btn = root?.querySelector<HTMLButtonElement>('[data-copy]');
+  const status = root?.querySelector<HTMLElement>('[data-copy-status]');
+  if (btn && status) {
+    btn.addEventListener('click', async () => {
+      const value = btn.dataset.copy ?? '';
+      try {
+        await navigator.clipboard.writeText(value);
+        status.textContent = 'Email address copied.';
+      } catch {
+        status.textContent = `Copy failed. The address is ${value}.`;
+      }
+      window.setTimeout(() => (status.textContent = ''), 4000);
+    });
+  }
+</script>

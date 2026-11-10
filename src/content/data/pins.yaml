@@ -1,0 +1,37 @@
+# Career map pins. Layers: work, education, projects.
+# Coordinates are city-level only (no street addresses).
+
+- id: vancouver
+  label: Vancouver, Canada
+  lon: -123.12
+  lat: 49.28
+  entries:
+    - layer: work
+      text: "BC SPCA · Business Intelligence Developer · Sep 2025 – present"
+    - layer: work
+      text: "Langara College · Student Aide, then Research Assistant (Data Analyst) · 2022 – 2025"
+    - layer: education
+      text: "Langara College · Post-Degree Diploma in Data Analytics · 2022 – 2023"
+  source: "RES · Work history and Education; LI · Experience"
+
+- id: bogota
+  label: Bogotá region, Colombia
+  lon: -74.07
+  lat: 4.71
+  entries:
+    - layer: work
+      text: "Softgic · Data Analyst · 2020 – 2022"
+    - layer: work
+      text: "Owens Illinois · Junior Engineer (plant in Cundinamarca) · 2018 – 2020"
+    - layer: education
+      text: "Universidad de América · Chemical Engineering · 2012 – 2018"
+  source: "RES · Work history and Education; LI · Experience"
+
+- id: london
+  label: London, United Kingdom
+  lon: -0.13
+  lat: 51.51
+  entries:
+    - layer: projects
+      text: "SmartEnerx · forecasting London household energy demand (data subject, DS4A team project, 2022)"
+  source: "OLD · London Energy Consumption page; GH · UK-ENERGY-Project README"

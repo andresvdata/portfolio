@@ -1,0 +1,93 @@
+/*
+ * Design tokens. Semantic names only; components never use raw hex values.
+ * Contrast is verified by `npm run check:contrast` (WCAG AA: 4.5:1 for text, 3:1 for UI).
+ * Dark is the default; the light theme is applied with data-theme="light" on <html>.
+ */
+:root {
+  color-scheme: dark;
+
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* surfaces */
+  --bg: #0a1120;
+  --bg-grid: #101a2e;
+  --panel: #111b2e;
+  --panel-2: #172540;
+  --border: #2a3d5f;
+  --border-strong: #6384b5;
+
+  /* text */
+  --text: #e8eef8;
+  --text-muted: #a9b7cd;
+
+  /* accent + data categories */
+  --accent: #2dd4bf;
+  --on-accent: #052b27;
+  --c-bi: #2dd4bf;
+  --c-research: #b4a0ff;
+  --c-eng: #fbbf24;
+  --c-edu: #7cb4ff;
+  --c-pub: #fb7185;
+
+  /* project type */
+  --type-professional: #2dd4bf;
+  --type-academic: #b4a0ff;
+  --type-personal: #fbbf24;
+
+  /* states */
+  --focus: #fde047;
+  --need-bg: #3a2a06;
+  --need-border: #fbbf24;
+  --need-text: #fde8a8;
+
+  /* map */
+  --map-sea: #0d1830;
+  --map-land: #1c2e4f;
+  --map-border: #34507d;
+  --map-grid: #1a2a47;
+  --map-arc: #2dd4bf;
+
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 8px 24px rgba(0, 0, 0, 0.25);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #f1f5fa;
+  --bg-grid: #e6edf6;
+  --panel: #ffffff;
+  --panel-2: #eef3fa;
+  --border: #ccd7e6;
+  --border-strong: #6b829f;
+
+  --text: #0f1b2d;
+  --text-muted: #44546e;
+
+  --accent: #0b7a6f;
+  --on-accent: #ffffff;
+  --c-bi: #0f8f82;
+  --c-research: #6d4bd6;
+  --c-eng: #b45309;
+  --c-edu: #1d5fd1;
+  --c-pub: #c01c47;
+
+  --type-professional: #0b7a6f;
+  --type-academic: #6d4bd6;
+  --type-personal: #b45309;
+
+  --focus: #1d4ed8;
+  --need-bg: #fff3c4;
+  --need-border: #b45309;
+  --need-text: #5c3a00;
+
+  --map-sea: #e4ecf7;
+  --map-land: #c3d2e6;
+  --map-border: #8ea6c6;
+  --map-grid: #d5e0ee;
+  --map-arc: #0b7a6f;
+
+  --shadow: 0 1px 2px rgba(15, 27, 45, 0.06), 0 6px 18px rgba(15, 27, 45, 0.06);
+}

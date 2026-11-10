@@ -1,0 +1,144 @@
+---
+import { getCollection } from 'astro:content';
+import { DOMAIN_START, domainEndIndex, formatYm, monthIndex, parseYm, pct, today, yearTicks } from '../lib/time';
+import { withBase } from '../lib/text';
+
+const total = domainEndIndex();
+const now = today();
+const nowYm = `${now.year}-${String(now.month).padStart(2, '0')}`;
+
+const exp = (await getCollection('experience')).sort((a, b) => a.data.order - b.data.order);
+
+interface Bar {
+  label: string;
+  title: string;
+  when: string;
+  domain: 'bi' | 'research' | 'engineering' | 'education';
+  start: string;
+  end: string;
+  href?: string;
+  row?: number;
+  /** Put the label outside a bar that is too short to hold it. */
+  out?: 'left' | 'right';
+}
+
+const work: Bar[] = exp.flatMap((e) =>
+  e.data.phases.map((p) => ({
+    label: e.data.org.replace(/\s*\(.*\)$/, ''),
+    title: `${e.data.org}, ${p.role}`,
+    when: p.display ?? `${formatYm(p.start)} – ${formatYm(p.end)}`,
+    domain: e.data.domain,
+    start: p.start,
+    end: p.end === 'present' ? nowYm : p.end,
+    href: `${withBase('/')}#exp-${e.id}`,
+  })),
+);
+
+// Merge the two Langara phases into one visual bar (the experience card lists both roles).
+const merged: Bar[] = [];
+for (const b of work) {
+  const prev = merged[merged.length - 1];
+  if (prev && prev.title.startsWith(b.title.split(',')[0]) && prev.domain === b.domain) {
+    prev.end = b.end;
+    prev.when = `${formatYm(prev.start)} – ${formatYm(b.end)}`;
+    prev.title = b.title.split(',')[0];
+  } else merged.push({ ...b });
+}
+
+const study: Bar[] = [
+  { label: 'Universidad de América', title: 'Universidad de América, Chemical Engineering', when: '2012 – 2018', domain: 'education', start: '2012-01', end: '2018-05', row: 0 },
+  { label: 'IBM certificate', title: 'IBM Data Science Professional Certificate', when: '2021 – 2023', domain: 'education', start: '2021-01', end: '2023-09', row: 0 },
+  { label: 'DS4A', title: 'Data Science for All (DS4A), Correlation One', when: 'Apr – Jul 2022', domain: 'education', start: '2022-04', end: '2022-07', row: 1, out: 'left' },
+  { label: 'Langara diploma', title: 'Langara College, Post-Degree Diploma in Data Analytics', when: 'Sep 2022 – Dec 2023', domain: 'education', start: '2022-09', end: '2023-12', row: 1, out: 'right' },
+];
+
+const pubs = [
+  { year: 2017, month: 6, title: 'Two chemical engineering articles (AIDIC), June 2017' },
+  { year: 2025, month: 9, title: 'Decision Analytics Journal article on customer lifetime value, September 2025' },
+];
+
+const geom = (b: Bar) => {
+  const s = parseYm(b.start);
+  const e = parseYm(b.end);
+  const left = pct(monthIndex(s.year, s.month), total);
+  const right = pct(monthIndex(e.year, e.month) + 1, total);
+  return { left, width: Math.max(right - left, 0.6), months: monthIndex(e.year, e.month) - monthIndex(s.year, s.month) + 1 };
+};
+
+const ticks = yearTicks(total);
+const listItems = [...merged, ...study].sort((a, b) => a.start.localeCompare(b.start));
+const colorFor = (d: string) =>
+  ({ bi: 'var(--c-bi)', research: 'var(--c-research)', engineering: 'var(--c-eng)', education: 'var(--c-edu)' } as Record<string, string>)[d];
+---
+
+<div class="panel">
+  <div class="panel-head">
+    <h2 class="panel-title" id="timeline-title">Timeline, {DOMAIN_START.year} to now</h2>
+    <span class="panel-meta mono tl-hint" style="font-size:0.8125rem;color:var(--text-muted)">Select a work bar to jump to the role</span>
+  </div>
+
+  <div class="tl tl-chart" aria-hidden="true">
+    <div class="tl-lane">
+      <span class="tl-lane-label">Work</span>
+      <div class="tl-track">
+        {merged.map((b) => {
+          const g = geom(b);
+          return (
+            <a class="tl-bar" data-domain={b.domain} href={b.href} tabindex="-1" style={`left:${g.left}%;width:${g.width}%`} title={`${b.title} · ${b.when}`}>
+              <span class="tl-text" data-out={b.out}>{g.months >= 11 ? b.label : ''}</span>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+    <div class="tl-lane">
+      <span class="tl-lane-label">Study</span>
+      <div class="tl-track tall">
+        {study.map((b) => {
+          const g = geom(b);
+          return (
+            <span class="tl-bar" data-domain={b.domain} data-row={b.row} style={`left:${g.left}%;width:${g.width}%`} title={`${b.title} · ${b.when}`}>
+              <span class="tl-text" data-out={b.out}>{b.out || g.months >= 20 ? b.label : ''}</span>
+            </span>
+          );
+        })}
+      </div>
+    </div>
+    <div class="tl-lane">
+      <span class="tl-lane-label">Published</span>
+      <div class="tl-track" style="margin-bottom:0.9rem">
+        {pubs.map((p) => (
+          <>
+            <span class="tl-mark" style={`left:${pct(monthIndex(p.year, p.month), total)}%`} title={p.title}></span>
+            <span class="tl-mark-label" style={`left:${pct(monthIndex(p.year, p.month), total)}%`}>{p.year}</span>
+          </>
+        ))}
+      </div>
+    </div>
+    <div class="tl-axis">
+      {ticks.map((t) => <span style={`left:${t.left}%`}>{t.year}</span>)}
+    </div>
+  </div>
+
+  <ol class="tl-list" aria-labelledby="timeline-title">
+    {listItems.map((b) => (
+      <li style={`--c:${colorFor(b.domain)}`}>
+        <strong>{b.title}</strong>
+        <span class="when">{b.when}</span>
+      </li>
+    ))}
+    {pubs.map((p) => (
+      <li style="--c:var(--c-pub)">
+        <strong>{p.title}</strong>
+      </li>
+    ))}
+  </ol>
+
+  <div class="tl-legend" aria-hidden="true">
+    <span style="--c:var(--c-bi)">BI and analytics</span>
+    <span style="--c:var(--c-research)">Research data</span>
+    <span style="--c:var(--c-eng)">Engineering</span>
+    <span style="--c:var(--c-edu)">Study and training</span>
+    <span style="--c:var(--c-pub)">Publication</span>
+  </div>
+</div>

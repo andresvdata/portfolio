@@ -1,0 +1,44 @@
+# Headline numbers shown as KPI tiles. Keep the approximate wording ("~", "+") exactly as the sources state it.
+# `bar` is an optional visual derived from the number itself (nothing extra is claimed).
+
+- id: stakeholders
+  value: "50+"
+  label: Stakeholders partnered with
+  context: Executives to frontline teams · BC SPCA
+  source: "RES · BC SPCA bullet 1; LI · Summary"
+
+- id: sources
+  value: "40+"
+  label: Data sources integrated
+  context: APIs, databases, Excel, Microsoft 365 · Fabric & Power BI · BC SPCA
+  source: "RES · BC SPCA bullet 4; LI · Summary"
+
+- id: records
+  value: "~800K"
+  label: Records in the unified models
+  context: Reporting for 4+ departments · BC SPCA
+  source: "RES · BC SPCA bullets 2 and 4; LI · Summary"
+
+- id: softgic-time
+  value: "~60%"
+  label: Less end-to-end BI processing time
+  context: SSIS → snowflake warehouse → SSAS cube · Softgic
+  bar:
+    kind: remaining
+    value: 40
+  source: "RES · Softgic bullet 10 (ETL and cube processing); LI · Summary"
+
+- id: manual
+  value: "~90%"
+  label: Manual data processing replaced
+  context: Automated SSIS and Pentaho pipelines · Softgic
+  bar:
+    kind: fill
+    value: 90
+  source: "RES · Softgic bullet 1"
+
+- id: paper
+  value: "1"
+  label: Journal article on patient lifetime value
+  context: Decision Analytics Journal · Sept 2025 · co-author
+  source: "LI · Publications and Langara bullet 6; OLD · Publications; ABS"

@@ -1,0 +1,44 @@
+---
+import { escapeHtml } from '../lib/text';
+
+interface Stage { label: string; nodes: string[] }
+interface Props {
+  title: string;
+  stages: Stage[];
+  foundation?: Stage[];
+  note?: string;
+}
+const { title, stages, foundation, note } = Astro.props;
+const id = `flow-${escapeHtml(title).toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+---
+
+<figure class="flow" role="group" aria-labelledby={`${id}-cap`}>
+  <ol class="flow-stages" style="list-style:none;padding:0;margin:0">
+    {stages.map((s, i) => (
+      <li class="flow-stage">
+        <h3><span class="sr-only">Step {i + 1}: </span>{s.label}</h3>
+        <ul>
+          {s.nodes.map((n) => <li>{n}</li>)}
+        </ul>
+      </li>
+    ))}
+  </ol>
+
+  {foundation && foundation.length > 0 && (
+    <div class="flow-foundation">
+      {foundation.map((s) => (
+        <div class="flow-stage">
+          <h3>{s.label}</h3>
+          <ul>
+            {s.nodes.map((n) => <li>{n}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  )}
+
+  <figcaption id={`${id}-cap`}>
+    <strong>{title}.</strong>
+    {note && <> {note}</>}
+  </figcaption>
+</figure>

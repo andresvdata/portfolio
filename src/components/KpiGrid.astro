@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+const items = await getCollection('highlights');
+---
+
+<ul class="kpi-grid" aria-label="Highlights">
+  {items.map((k) => (
+    <li class="kpi">
+      <span class="kpi-value">{k.data.value}</span>
+      <span class="kpi-label">{k.data.label}</span>
+      <span class="kpi-context">{k.data.context}</span>
+      {k.data.bar && (
+        <span
+          class="kpi-bar"
+          aria-hidden="true"
+          title={k.data.bar.kind === 'fill' ? 'Share replaced' : 'Time remaining after the change'}
+        >
+          <span style={`width:${k.data.bar.value}%`}></span>
+        </span>
+      )}
+    </li>
+  ))}
+</ul>

@@ -1,0 +1,133 @@
+# Smaller projects shown as compact rows under the featured case studies.
+# They link to public repositories or files. Only what the repo or old portfolio page states is claimed.
+
+- id: report-generation
+  order: 1
+  title: Automated report generation web app
+  type: professional
+  period: Dec 2024
+  blurb: >-
+    A team project: a Python and Django web app that pulls data from the Apache Pinot OLAP store with SQL, cleans
+    and aggregates it in pandas, and generates Excel reports on demand, with user authentication.
+    [NEED DETAIL: employer or client, which parts you built, and one outcome, so this can become a case study.]
+  tags: [Python, Django, Apache Pinot, SQL, pandas]
+  links:
+    - label: Earlier portfolio page
+      href: https://andresvdata.github.io/portfolio/project/report-generation/
+  source: "OLD · Automated Report Generation page (Dec 2024)"
+
+- id: power-apps-healthcare
+  order: 2
+  title: Healthcare data-management app in Power Apps and Power BI
+  type: professional
+  period: Oct 2024
+  blurb: >-
+    A team project: an app for a healthcare company that helps system administrators and technical-support staff
+    understand and resolve system issues. The earlier page states that further details are confidential, so none
+    are shown here. [NEED DETAIL: your role, and whether anything about it can be shared.]
+  tags: [Power Apps, Power BI]
+  links:
+    - label: Earlier portfolio page
+      href: https://andresvdata.github.io/portfolio/project/dashboard-in-power-apps/
+  source: "OLD · Dashboard in Power Apps page (Oct 2024)"
+
+- id: spacex
+  order: 3
+  title: SpaceX landing prediction (IBM Data Science capstone)
+  type: academic
+  period: Sep 2023
+  blurb: >-
+    Predicts whether a Falcon 9 first stage lands successfully. Data from the SpaceX API and Wikipedia;
+    SQL, Folium maps and a Plotly Dash dashboard; four classifiers that all reached about 83% accuracy and
+    tended to over-predict successful landings.
+  tags: [Python, SQL, scikit-learn, Folium, Plotly Dash, Forecasting & ML]
+  links:
+    - label: Repository
+      href: https://github.com/andresvdata/Winning-Space-Race-with-Data-Science-SpaceX_Captone-Project-IBM
+    - label: Final presentation (PDF)
+      href: https://github.com/andresvdata/Winning-Space-Race-with-Data-Science-SpaceX_Captone-Project-IBM/blob/main/Final%20Presentation.pdf
+  source: "OLD · Captone Project IBM page; GH · SpaceX repository README and Final Presentation.pdf"
+
+- id: cord19
+  order: 4
+  title: COVID-19 Open Research Dataset (CORD-19) text mining
+  type: personal
+  period: Jun 2023
+  blurb: >-
+    Kaggle challenge: exploring the CORD-19 research-article dataset and applying NLP and topic modeling
+    to surface COVID-19 risk factors.
+  tags: [Python, NLP, Forecasting & ML]
+  links:
+    - label: Repository
+      href: https://github.com/andresvdata/COVID-19-Open-Research-Dataset-Challenge-CORD-19-
+  source: "GH · CORD-19 repository README; OLD · CORD-19 page"
+
+- id: eda-r
+  order: 5
+  title: "Exploratory analysis in R: car evaluation and Hollywood movies"
+  type: personal
+  period: Dec 2022
+  blurb: >-
+    Exploratory data analysis of two public datasets, documented as an R Markdown report.
+  tags: [R, EDA]
+  links:
+    - label: Repository
+      href: https://github.com/andresvdata/EDA-car-and-movies
+  source: "GH · EDA-car-and-movies README; OLD · EDA with R page"
+
+- id: eda-three
+  order: 6
+  title: "Three exploratory analyses: salaries, Titanic, house prices"
+  type: academic
+  period: Nov 2022
+  blurb: >-
+    Exploratory analysis of three open datasets in Jupyter notebooks (Python, pandas), with HTML and PDF
+    reports, from a Langara College assignment.
+  tags: [Python, EDA]
+  links:
+    - label: Repository
+      href: https://github.com/andresvdata/EDA-Salaries-Titanic-and-House-Prices
+  source: "GH · EDA-Salaries-Titanic-and-House-Prices README.txt and Results folder"
+
+- id: playstore
+  order: 7
+  title: Google Play Store exploratory analysis
+  type: academic
+  period: 2023
+  blurb: >-
+    Exploratory data analysis of the Google Play Store apps dataset, written as an R Markdown project.
+  tags: [R, EDA]
+  links:
+    - label: Repository
+      href: https://github.com/andresvdata/DANA-project
+  source: "GH · DANA-project repository description and Project.Rmd"
+
+- id: anomaly
+  order: 8
+  title: Detection of illicit activities (anomaly detection)
+  type: professional
+  period: 2022
+  blurb: >-
+    Followed CRISP-DM to flag atypical values in commercial and transport data. Compared ARIMA and Prophet,
+    and chose Prophet for its fit when outliers are present. [NEED DETAIL: employer or client, your role and one
+    outcome, so this can become a proper case study.]
+  tags: [Python, SQL, Forecasting & ML]
+  links:
+    - label: Earlier portfolio page
+      href: https://andresvdata.github.io/portfolio/project/illicit-activities/
+  source: "OLD · Detection of illicit activities page"
+
+- id: shortage
+  order: 9
+  title: Probability of product shortage (Monte Carlo)
+  type: professional
+  period: Aug 2021
+  blurb: >-
+    Followed CRISP-DM to estimate the probability of low ending inventory using empirical distributions,
+    interpolation and Monte Carlo simulation, then automated the process. [NEED DETAIL: employer or client, your
+    role and the result.]
+  tags: [Python, SQL, Forecasting & ML]
+  links:
+    - label: Earlier portfolio page
+      href: https://andresvdata.github.io/portfolio/project/shortage/
+  source: "OLD · Shortage of a product page"

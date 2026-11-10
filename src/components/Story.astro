@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+const steps = (await getCollection('story')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<ol class="story-grid">
+  {steps.map((s) => (
+    <li class="story-step">
+      <span class="period">{s.data.period}</span>
+      <h3>{s.data.title}</h3>
+      <span class="org">{s.data.org}</span>
+      <p>{s.data.text}</p>
+      <div class="stat-row">
+        {s.data.stats.map((st) => (
+          <div class="stat">
+            <strong>{st.value}</strong>
+            <span>{st.label}</span>
+          </div>
+        ))}
+      </div>
+    </li>
+  ))}
+</ol>
+<p class="throughline">
+  The pattern is the same in all four roles: find where decisions depend on data that is manual, scattered or
+  inconsistent; build the pipeline and model that fix it; and make sure people actually use the result.
+</p>

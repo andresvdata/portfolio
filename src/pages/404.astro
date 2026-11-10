@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import { withBase } from '../lib/text';
+---
+
+<Base title="Page not found" description="This page does not exist. Go back to the portfolio home page.">
+  <section class="section">
+    <div class="container">
+      <div class="panel" style="padding:2rem;display:grid;gap:0.8rem;max-width:40rem">
+        <span class="kicker">404</span>
+        <h1 class="h2">That page isn't in this dataset</h1>
+        <p>The link may be old or mistyped. The case studies and contact details are all on the home page.</p>
+        <p><a class="btn btn-primary" href={withBase('/')}>Back to the portfolio</a></p>
+      </div>
+    </div>
+  </section>
+</Base>

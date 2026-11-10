@@ -1,0 +1,78 @@
+---
+import Icon from './Icon.astro';
+import ResumeButton from './ResumeButton.astro';
+import { site } from '../config/site';
+import { withBase } from '../lib/text';
+
+const home = withBase('/');
+const items = [
+  ['overview', 'Overview'],
+  ['story', 'Story'],
+  ['projects', 'Projects'],
+  ['skills', 'Skills'],
+  ['experience', 'Experience'],
+  ['credentials', 'Credentials'],
+  ['contact', 'Contact'],
+] as const;
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href={home} aria-label={`${site.name}, home`}>
+      <span class="brand-mark" aria-hidden="true">{site.initials}</span>
+      <span class="brand-name">{site.shortName}</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul>
+        {items.map(([id, label]) => (
+          <li><a href={`${home}#${id}`} data-nav={id}>{label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <ResumeButton variant="ghost" hideIfMissing />
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to light theme">
+        <Icon name="moon" class="theme-icon-moon" />
+        <Icon name="sun" class="theme-icon-sun" />
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Theme toggle
+  const root = document.documentElement;
+  const btn = document.getElementById('theme-toggle') as HTMLButtonElement | null;
+  const sync = () => {
+    const light = root.dataset.theme === 'light';
+    btn?.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
+  };
+  sync();
+  btn?.addEventListener('click', () => {
+    const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+    root.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch { /* storage can be unavailable */ }
+    sync();
+  });
+
+  // Highlight the current section in the nav
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-nav]'));
+  const targets = links
+    .map((a) => document.getElementById(a.dataset.nav ?? ''))
+    .filter((el): el is HTMLElement => !!el);
+  if (targets.length && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          links.forEach((a) => a.removeAttribute('aria-current'));
+          links.find((a) => a.dataset.nav === e.target.id)?.setAttribute('aria-current', 'true');
+        }
+      },
+      { rootMargin: '-35% 0px -55% 0px' },
+    );
+    targets.forEach((t) => io.observe(t));
+  }
+</script>

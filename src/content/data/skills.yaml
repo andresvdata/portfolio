@@ -1,0 +1,145 @@
+# Skills × roles matrix. A cell exists ONLY where a source documents the skill in that role.
+# Columns: oi = Owens Illinois, softgic = Softgic, langara = Langara College, bcspca = BC SPCA,
+#          projects = projects & training (DS4A, IBM certificate, personal repos).
+# The text in each cell is the evidence shown in the tooltip / screen-reader label.
+
+- id: python
+  order: 1
+  group: Integration & pipelines
+  label: Python
+  roles:
+    oi: "Centralized raw-material data and process-variable control (LinkedIn)"
+    softgic: "Exploratory analysis and modeling with scikit-learn, NumPy, Matplotlib, Seaborn"
+    langara: "Data migration, CLV models, Airflow pipelines"
+    bcspca: "Ingestion and ETL alongside Dataflow Gen2 and APIs"
+    projects: "SpaceX API and web scraping, Prophet forecasting, Dash app"
+  source: "RES · all four roles; LI · O-I and Softgic; GH · project READMEs"
+
+- id: ssis
+  order: 2
+  group: Integration & pipelines
+  label: SSIS and Pentaho
+  roles:
+    softgic: "Scheduled ETL from APIs, Oracle, SQL Server, JSON/XML/CSV"
+  source: "RES · Softgic bullets 1, 5, 10"
+
+- id: airflow
+  order: 3
+  group: Integration & pipelines
+  label: Apache Airflow
+  roles:
+    langara: "Ingestion pipelines for the research data warehouse, run in Docker"
+  source: "RES · Langara bullet 7; LI · Langara"
+
+- id: fabric
+  order: 4
+  group: Integration & pipelines
+  label: Fabric Dataflow Gen2 and Power Automate
+  roles:
+    bcspca: "Ingestion from 8+ sources, call-centre and mailbox pipelines, automated refresh"
+  source: "RES · BC SPCA bullets 5, 9, 14"
+
+- id: sql
+  order: 5
+  group: Modeling & storage
+  label: SQL
+  roles:
+    oi: "Microsoft SQL Server data management for the raw-materials area (LinkedIn)"
+    softgic: "50+ complex queries, indexing and refactoring; Oracle and SQL Server"
+    langara: "MySQL databases and warehouse"
+    bcspca: "Part of the Fabric ingestion and transformation stack"
+    projects: "SQL EDA in the SpaceX capstone; SQL Server ETL"
+  source: "RES · Softgic bullet 4, Langara bullet 6, BC SPCA bullet 5; LI · O-I; GH · SpaceX README"
+
+- id: modeling
+  order: 6
+  group: Modeling & storage
+  label: Dimensional and semantic modeling
+  roles:
+    softgic: "Snowflake-schema warehouse and SSAS multidimensional cube"
+    langara: "Snowflake-schema warehouse design"
+    bcspca: "Fabric semantic models and Power BI datasets"
+  source: "RES · Softgic bullet 10, Langara bullet 4, BC SPCA bullet 6"
+
+- id: dax
+  order: 7
+  group: Modeling & storage
+  label: DAX and Power Query (M)
+  roles:
+    bcspca: "Advanced DAX measures and Power Query transformations for KPI tracking"
+  source: "RES · BC SPCA bullet 7"
+
+- id: powerbi
+  order: 8
+  group: BI & visualization
+  label: Power BI
+  roles:
+    softgic: "10+ dashboards for executives and managers"
+    langara: "Dashboards where no suitable visualization tool existed"
+    bcspca: "Enterprise reporting, Power BI Service, governance and playbook"
+  source: "RES · Softgic bullet 2, Langara bullet 10, BC SPCA bullets 3, 12, 13, 18"
+
+- id: otherbi
+  order: 9
+  group: BI & visualization
+  label: Other BI and viz (SSRS, Superset, Dash, Folium)
+  roles:
+    softgic: "SSRS executive reports"
+    langara: "Apache Superset dashboards; Python visualizations"
+    projects: "Dash dashboard on AWS (SmartEnerx); Folium and Plotly Dash (SpaceX)"
+  source: "RES · Softgic bullet 10, Langara bullet 6; GH · UK-ENERGY-Project and SpaceX READMEs"
+
+- id: ml
+  order: 10
+  group: Data science
+  label: Statistical and machine-learning modeling
+  roles:
+    softgic: "Exploratory analysis and data preparation for modeling"
+    langara: "Customer lifetime value models (lifetimes, pandas, NumPy)"
+    projects: "Prophet forecasting, classifiers (SpaceX), topic modeling (CORD-19)"
+  source: "RES · Softgic bullet 12, Langara bullets 1 and 5; GH · project READMEs"
+
+- id: cloud
+  order: 11
+  group: Platform
+  label: Docker and cloud (Azure, AWS)
+  roles:
+    langara: "Dockerized lab notebook and platform services on Azure VMs"
+    projects: "SmartEnerx: PostgreSQL on Amazon RDS, Dash app in Docker on ECR and ECS"
+  source: "RES · Langara bullets 7-9; GH · Research-Data-Integration-Analytics-Platform and UK-ENERGY-Project READMEs"
+
+- id: excel
+  order: 12
+  group: Platform
+  label: Excel and Visual Basic
+  roles:
+    oi: "Inventory data-collection tool for the raw-materials department"
+  source: "RES · Owens Illinois bullet 2"
+
+- id: requirements
+  order: 13
+  group: Practice
+  label: Requirements and stakeholder partnership
+  roles:
+    softgic: "Requirements with managers and executives"
+    langara: "Weekly requirement meetings with scientists and healthcare stakeholders"
+    bcspca: "50+ stakeholders, BRDs, prototypes, KPI definitions"
+  source: "RES · Softgic bullet 6, Langara bullets 2 and 6, BC SPCA bullets 1-2, 11"
+
+- id: quality
+  order: 14
+  group: Practice
+  label: Data quality and validation
+  roles:
+    softgic: "Root-cause analysis of data inconsistencies and pipeline issues"
+    langara: "ETL pipelines that clean and standardize multi-source data"
+    bcspca: "Validation controls across source data, pipelines, models and reports"
+  source: "RES · Softgic bullet 7, Langara bullet 4, BC SPCA bullet 15"
+
+- id: governance
+  order: 15
+  group: Practice
+  label: Governance and standards
+  roles:
+    bcspca: "Power BI design and governance framework; Visualization Playbook; dashboard consolidation"
+  source: "RES · BC SPCA bullets 12, 13, 16"

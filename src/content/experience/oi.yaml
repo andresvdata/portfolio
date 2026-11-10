@@ -1,0 +1,30 @@
+org: Owens Illinois (O-I)
+location: Colombia
+domain: engineering
+order: 4
+phases:
+  - role: Junior Engineer
+    kind: Full-time
+    start: "2018-05"
+    end: "2020-01"
+mission: >-
+  Keep a glass-production line on target using process data, starting with the raw-materials area that feeds
+  the furnace.
+highlights:
+  - text: >-
+      Monitored manufacturing variables for a production line with 8 operators, met all production KPIs and
+      raised productivity by 10% through data-driven insights.
+    source: "RES · Owens Illinois bullet 1"
+  - text: >-
+      Built an inventory data-collection tool in Excel and Visual Basic that cut raw-material inventory query
+      time by about 80%.
+    source: "RES · Owens Illinois bullet 2"
+  - text: >-
+      Managed the raw-materials department, keeping quality standards and equipment maintenance on track so
+      the furnace received the right chemical composition.
+    source: "RES · Owens Illinois bullet 3"
+stack:
+  - Excel
+  - Visual Basic
+  - Process monitoring
+sourceNote: "RES · Owens Illinois (05/2018 – 01/2020); LI · O-I (May 2018 – Jan 2020). Plant location differs (Cogua vs Zipaquirá)."
