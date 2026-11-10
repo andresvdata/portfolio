@@ -38,13 +38,6 @@ export const site = {
     github: 'https://github.com/andresvdata',
   },
 
-  /**
-   * Paste your Google Drive (or any public) resume link here.
-   * Tip: in Drive choose Share → "Anyone with the link" → Viewer, then paste the URL.
-   * While this is empty the site shows a visible "add resume link" placeholder.
-   */
-  resumeUrl: '',
-
   /** URL of the GitHub repository that holds this site (shown in the footer). Fill in after you create it. */
   repoUrl: '',
 

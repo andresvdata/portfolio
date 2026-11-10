@@ -37,5 +37,5 @@ These stay where they are and are linked from the site, so the repository stays 
 
 ## Not reused
 
-- `files/cv.pdf` (old resume): might contain a phone number and will go out of date. Use the Drive link.
+- `files/cv.pdf` (old resume): might contain a phone number and will go out of date. No resume link is shown on the site.
 - Stock and template images (Unsplash banners, theme backgrounds), the avatar and the Hugo theme.

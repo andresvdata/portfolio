@@ -28,12 +28,9 @@ The repository already has an initial commit on `main`.
 
 On GitHub: **Settings, Pages, Build and deployment, Source: GitHub Actions**. Then open the **Actions** tab. The "Deploy to GitHub Pages" workflow runs on every push to `main` (you can also run it by hand). When it turns green, the site is live at the address above.
 
-## 4. Fill in the two links
+## 4. Optional: link to the source
 
-Edit `src/config/site.ts`:
-
-- `resumeUrl`: your Google Drive link (Share, "Anyone with the link", Viewer).
-- `repoUrl`: the new repository's address.
+In `src/config/site.ts`, `repoUrl` can hold the new repository's address; the footer then links to it. Leave it empty to show no link.
 
 Commit and push. The site updates in about a minute.
 

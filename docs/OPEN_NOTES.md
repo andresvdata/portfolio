@@ -37,7 +37,3 @@ These were visible "Need detail" notes on the site. They are removed so the site
 - confirm this is a package you built, and for which project.
 - what you would do differently, such as how you would test the pipelines or document the cube today.
 
-## `src/config/site.ts`
-
-- Paste your Google Drive resume link into `resumeUrl`. The Resume button appears automatically once it is set.
-

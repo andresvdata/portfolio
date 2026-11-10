@@ -1,7 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
-import ResumeButton from '../components/ResumeButton.astro';
 import CareerMap from '../components/CareerMap.astro';
 import FocusPanel from '../components/FocusPanel.astro';
 import KpiGrid from '../components/KpiGrid.astro';
@@ -52,7 +51,6 @@ const jsonLd = {
             <Icon name="arrow" />
           </a>
           <a class="btn" href="#projects">See the case studies</a>
-          <ResumeButton variant="ghost" />
           <a class="btn" href={site.links.linkedin} target="_blank" rel="noopener noreferrer">
             <Icon name="linkedin" />
             LinkedIn<span class="sr-only"> (opens in a new tab)</span>

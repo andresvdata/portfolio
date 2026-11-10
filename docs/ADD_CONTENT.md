@@ -32,7 +32,6 @@ Open `src/content/data/more.yaml` and copy an existing block. Give it a new `id`
 
 | I want to... | Edit |
 | --- | --- |
-| Paste my Google Drive resume link | `resumeUrl` in `src/config/site.ts` |
 | Change the headline, intro or target roles | `src/config/site.ts` |
 | Add a job | copy a file in `src/content/experience/`, set a new `order` |
 | Add a publication, certificate or award | `src/content/data/credentials.yaml` |

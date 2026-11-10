@@ -6,8 +6,7 @@ These are the open questions and places where sources disagree. Details removed 
 
 1. **Target roles.** The site shows "Open to: BI Developer, Analytics Engineer, Data Analyst, Data Engineer". Which should lead, and do you want "Data Scientist" shown too? Edit `targetRoles` in `src/config/site.ts`.
 2. **Browser-tab title.** The home page title is "Andres Camilo Viloria Garcia · Business Intelligence Developer & Analytics Engineer". Is that the title you want recruiters to see in search results?
-3. **Resume link.** Paste your Google Drive link into `resumeUrl` in `src/config/site.ts` (Drive: Share, "Anyone with the link", Viewer). Until you do, the buttons show a visible placeholder.
-4. **Repository URL.** After you create the GitHub repository, paste its URL into `repoUrl` so the footer links to the source.
+3. **Repository link (optional).** If you want the footer to link to the source, paste the new repository's URL into `repoUrl` in `src/config/site.ts`.
 5. **Recruiter filter presets.** The "Short on time?" panel maps each role to topics (for example Data Engineer shows ETL and pipelines, cloud and platforms, and data modeling). I tagged every item from the evidence in its source, but you know the roles best. Check the role presets in `src/config/focus.ts` and tell me if a role should show a different mix; a data scientist view currently surfaces only two case studies plus the smaller projects, because that is what the documented evidence supports.
 6. **Industries or companies** to emphasize: your brief says open. Do you want any industry named on the home page (for example healthcare or non-profit, which your recent work covers)?
 

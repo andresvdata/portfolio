@@ -20,7 +20,7 @@ You edit text files, not page code.
 
 | To change | Edit |
 | --- | --- |
-| Headline, intro, links, **resume URL**, target roles | `src/config/site.ts` |
+| Headline, intro, links, target roles | `src/config/site.ts` |
 | Case studies | `src/content/projects/*.md` |
 | Add a case study | `npm run new:project -- "Title"` |
 | Jobs | `src/content/experience/*.yaml` |

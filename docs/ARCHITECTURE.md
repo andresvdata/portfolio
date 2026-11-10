@@ -26,7 +26,7 @@ A portfolio is read far more than it is changed, and it holds no user data. The 
 ## Folder map
 
 ```
-src/config/site.ts        headline, links, resume URL
+src/config/site.ts        headline and links
 src/content/projects/     one Markdown file per case study
 src/content/experience/   one YAML file per employer
 src/content/data/         highlights, story, skills, map pins, credentials, compact project rows

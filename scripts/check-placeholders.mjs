@@ -38,11 +38,6 @@ function scan(file) {
 }
 
 roots.forEach((r) => walk(join(root, r)));
-// An empty resume link is also an open item.
-const site = readFileSync(join(root, 'src/config/site.ts'), 'utf8');
-if (/resumeUrl:\s*''/.test(site)) {
-  found.push({ file: 'src/config/site.ts', line: 0, note: 'Paste your Google Drive resume link into resumeUrl.', draft: false });
-}
 
 if (found.length === 0) {
   console.log('No open [NEED DETAIL] markers.');
