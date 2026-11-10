@@ -56,12 +56,14 @@ const hasTeam = d.role.team.length > 0;
         <section class="case-section" aria-labelledby="s-role">
           <h2 id="s-role"><span class="n">{num()}</span>My role</h2>
           <div class={hasTeam ? 'two-col' : undefined}>
-            <div>
-              <h3>What I owned</h3>
-              <ul class="bullets">
-                {d.role.owned.map((r) => <li set:html={rich(r)} />)}
-              </ul>
-            </div>
+            {d.role.owned.length > 0 && (
+              <div>
+                <h3>What I owned</h3>
+                <ul class="bullets">
+                  {d.role.owned.map((r) => <li set:html={rich(r)} />)}
+                </ul>
+              </div>
+            )}
             {hasTeam && (
               <div>
                 <h3>What the team did</h3>

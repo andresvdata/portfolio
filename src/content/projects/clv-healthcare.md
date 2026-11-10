@@ -29,8 +29,6 @@ role:
     - "Built the customer lifetime value models in Python (lifetimes, pandas, NumPy) for healthcare stakeholders."
     - "Facilitated weekly meetings to gather requirements and translate them into the analysis."
     - "Co-authored the resulting journal article."
-  team:
-    - "[NEED DETAIL: names or number of co-authors, and your specific contribution (modeling, analysis, writing), so the page is exact about what you did versus the team.]"
 
 approach:
   - title: Predict with a probability model
@@ -85,9 +83,6 @@ evidence:
     label: About the data
     caption: Patient data is confidential and is not shown. The article is the public record of the method and results.
 
-reflection: >-
-  [NEED DETAIL: what the comparison taught you about when a simpler probability model beats machine learning, in
-  your own words.]
 
 sources:
   - "RES · Langara Research Assistant bullets 1, 2, 5, 6"

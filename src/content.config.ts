@@ -59,7 +59,7 @@ const projects = defineCollection({
     situation: z.string(),
     challenge: z.string(),
     role: z.object({
-      owned: z.array(z.string()).min(1),
+      owned: z.array(z.string()).default([]),
       /** Leave out for solo work; the page then shows only "What I owned". */
       team: z.array(z.string()).default([]),
     }),

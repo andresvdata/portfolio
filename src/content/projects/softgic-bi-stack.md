@@ -29,8 +29,6 @@ role:
     - "Wrote and optimized 50+ complex SQL queries, using indexing and query refactoring."
     - "Built and maintained 10+ Power BI dashboards for executives and managers."
     - "Found and fixed data inconsistencies and pipeline problems through root-cause analysis."
-  team:
-    - "[NEED DETAIL: team size and who else contributed (other analysts, DBAs, the client), so the page separates your part from the team's.]"
 
 approach:
   - title: Start with managers and executives
@@ -96,12 +94,8 @@ evidence:
     src: images/projects/softgic-ssis-dataflow.webp
     alt: An SSIS data flow with a source feeding a conditional split that routes rows to United Kingdom, United States, Germany and default outputs.
     caption: >-
-      An SSIS conditional-split data flow, from my earlier ETL portfolio page. [NEED DETAIL: confirm this is a
-      package you built, and for which project.]
+      An SSIS conditional-split data flow, from my earlier ETL portfolio page.
 
-reflection: >-
-  [NEED DETAIL: what you would do differently, such as how you would test the pipelines or document the cube
-  today.]
 
 sources:
   - "RES · Softgic bullets 1-10"

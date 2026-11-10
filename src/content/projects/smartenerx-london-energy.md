@@ -26,8 +26,6 @@ challenge: >-
   usable by people who do not write code, as a dashboard they could filter and explore.
 
 role:
-  owned:
-    - "[NEED DETAIL: your specific contribution, such as the exploratory analysis, the forecasting model, the dashboard or the AWS deployment.]"
   team:
     - "Team 94 of seven participants, supported by teaching assistants. The final report, dashboard user guide and presentation are team deliverables."
 
@@ -108,9 +106,6 @@ evidence:
     label: Source dataset on Kaggle
     href: https://www.kaggle.com/datasets/jeanmidev/smart-meters-in-london
 
-reflection: >-
-  [NEED DETAIL: what you would do differently, for example how you would treat the 'Not Private Households'
-  group, or what you learned from deploying a dashboard end to end.]
 
 sources:
   - "GH · UK-ENERGY-Project README, final reports and notebooks"

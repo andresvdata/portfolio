@@ -2,7 +2,7 @@
 import Icon from './Icon.astro';
 import { site } from '../config/site';
 interface Props { variant?: 'primary' | 'ghost'; hideIfMissing?: boolean }
-const { variant = 'primary', hideIfMissing = false } = Astro.props;
+const { variant = 'primary', hideIfMissing = true } = Astro.props;
 const cls = variant === 'primary' ? 'btn btn-primary' : 'btn';
 ---
 

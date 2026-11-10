@@ -1,6 +1,6 @@
 # Questions for Andres
 
-Everything below is visible on the site as a highlighted **Need detail** note, or is a place where two sources disagree. Run `npm run check:placeholders` for the live list.
+These are the open questions and places where sources disagree. Details removed from the site so it could be deployed are saved in `docs/OPEN_NOTES.md`. Nothing on the published site shows a placeholder.
 
 ## 1. Decisions only you can make
 

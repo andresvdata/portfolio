@@ -31,8 +31,6 @@ role:
     - "Designed the Microsoft Fabric semantic models, DAX measures and Power Query transformations."
     - "Built the Dataflow Gen2 pipelines that clean and link the operational and mailbox data."
     - "Created the Power BI design and governance framework and the Visualization Playbook."
-  team:
-    - "[NEED DETAIL: who else worked on this (other developers, data owners, IT and security contacts) so the page can separate what you owned from what the team did.]"
 
 approach:
   - title: Agree the question before building
@@ -65,8 +63,6 @@ result:
       source: "RES · BC SPCA bullet 5"
     - text: "Duplicated dashboards and inconsistent metrics identified and consolidated into a more standardized reporting environment."
       source: "RES · BC SPCA bullet 16"
-    - text: "[NEED DETAIL: one measurable outcome, such as hours of manual reporting saved, refresh reliability, number of active report users, or a decision the dashboards changed.]"
-      source: "Pending input from Andres"
 
 flow:
   title: How the data moves, from sources to the people who use it

@@ -32,7 +32,6 @@ role:
     - "Set up Superset dashboards on the operational and analytical databases."
   team:
     - "The Django-based portal was built together with a multidisciplinary team."
-    - "[NEED DETAIL: who owned the Keycloak single sign-on, the NGINX reverse proxy and the Azure setup, you or a teammate?]"
 
 approach:
   - title: Start from how researchers work
@@ -72,8 +71,6 @@ result:
       source: "GH · Research-Data-Integration-Analytics-Platform README (Security)"
     - text: "A foundation for future machine-learning and predictive analytics work, as noted in the README."
       source: "GH · Research-Data-Integration-Analytics-Platform README (Impact)"
-    - text: "[NEED DETAIL: usage numbers, such as how many researchers or teams use it and how many pipelines run in production.]"
-      source: "Pending input from Andres"
 
 flow:
   title: Platform architecture
@@ -105,9 +102,6 @@ evidence:
       The platform holds research data, so none is shown here. The repository documents the architecture and
       user flow.
 
-reflection: >-
-  [NEED DETAIL: what you would improve, such as the portal UI (the README notes it was a temporary build), data
-  governance, or monitoring.]
 
 sources:
   - "RES · Langara Research Assistant bullets 4, 7, 8, 9"
