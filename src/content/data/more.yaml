@@ -1,5 +1,6 @@
 # Smaller projects shown as compact rows under the featured case studies.
-# They link to public repositories or files. Only what the repo or old portfolio page states is claimed.
+# Smaller projects, written for this site. Some link to public repositories; the rest stand on their own text.
+# Only what the repo or the original write-up states is claimed.
 
 - id: report-generation
   order: 1
@@ -7,13 +8,16 @@
   type: professional
   period: Dec 2024
   blurb: >-
-    A team project: a Python and Django web app that pulls data from the Apache Pinot OLAP store with SQL, cleans
-    and aggregates it in pandas, and generates Excel reports on demand, with user authentication.
-    [NEED DETAIL: employer or client, which parts you built, and one outcome, so this can become a case study.]
+    A team project: a web app where users enter a few inputs and download a formatted Excel report built from live
+    data. Further details are confidential.
+    [NEED DETAIL: employer or client, which parts you built, and one measurable outcome, so this can become a case study.]
+  details:
+    - Connected to the Apache Pinot OLAP store through its Python client and wrote SQL queries for the metrics and trends the reports needed.
+    - Cleaned, filtered and aggregated the results in pandas.
+    - Generated the Excel reports in Python from a pre-set format.
+    - Wrapped it in a Django app with user authentication, so people can request and download reports themselves.
+    - 'Intended benefit, as stated in the original write-up: less manual report building and up-to-date data for users. No figures are available.'
   tags: [Python, Django, Apache Pinot, SQL, pandas]
-  links:
-    - label: Earlier portfolio page
-      href: https://andresvdata.github.io/portfolio/project/report-generation/
   source: "OLD · Automated Report Generation page (Dec 2024)"
 
 - id: power-apps-healthcare
@@ -23,12 +27,9 @@
   period: Oct 2024
   blurb: >-
     A team project: an app for a healthcare company that helps system administrators and technical-support staff
-    understand and resolve system issues. The earlier page states that further details are confidential, so none
-    are shown here. [NEED DETAIL: your role, and whether anything about it can be shared.]
+    understand and resolve system issues. Further details are confidential, so none are shown here.
+    [NEED DETAIL: your role, and whether anything about it can be shared.]
   tags: [Power Apps, Power BI]
-  links:
-    - label: Earlier portfolio page
-      href: https://andresvdata.github.io/portfolio/project/dashboard-in-power-apps/
   source: "OLD · Dashboard in Power Apps page (Oct 2024)"
 
 - id: spacex
@@ -106,15 +107,18 @@
   order: 8
   title: Detection of illicit activities (anomaly detection)
   type: professional
-  period: 2022
+  period: Jul 2022
   blurb: >-
-    Followed CRISP-DM to flag atypical values in commercial and transport data. Compared ARIMA and Prophet,
-    and chose Prophet for its fit when outliers are present. [NEED DETAIL: employer or client, your role and one
-    outcome, so this can become a proper case study.]
+    Flagged atypical values in commercial and transport data that could point to illicit activity, following
+    CRISP-DM. Further details are confidential.
+    [NEED DETAIL: employer or client, your role and one outcome, so this can become a proper case study.]
+  details:
+    - Split the business rules into two groups. Statistical rules are sensitive to trend and seasonality; classification rules describe conditions that can be identified exactly.
+    - For the statistical group, compared ARIMA and Prophet, and chose Prophet for its flexibility and fit when outliers are present.
+    - Flagged values in two passes, first within groups of similar values and then against each series' own seasonality and history, using an uncertainty range tuned beforehand.
+    - Combined the outliers from both groups in one database for a visual report, and automated the process once the models were validated.
+    - 'Tools: SQL Server Management Studio, Jupyter, Git and Azure DevOps; Python with pandas, NumPy, scikit-learn and Prophet.'
   tags: [Python, SQL, Forecasting & ML]
-  links:
-    - label: Earlier portfolio page
-      href: https://andresvdata.github.io/portfolio/project/illicit-activities/
   source: "OLD · Detection of illicit activities page"
 
 - id: shortage
@@ -123,11 +127,13 @@
   type: professional
   period: Aug 2021
   blurb: >-
-    Followed CRISP-DM to estimate the probability of low ending inventory using empirical distributions,
-    interpolation and Monte Carlo simulation, then automated the process. [NEED DETAIL: employer or client, your
-    role and the result.]
+    Estimated the probability of low ending inventory, following CRISP-DM.
+    [NEED DETAIL: employer or client, your role and the result.]
+  details:
+    - Identified the data that could answer the business questions, then built empirical cumulative distributions of the variables.
+    - Built an interpolation function for the Monte Carlo simulations, which preserve the correlations seen in the historical data.
+    - Turned the simulated values into the probability that ending inventory runs low.
+    - Automated the process once the model was validated.
+    - 'Tools: SQL Server Management Studio, Jupyter, Git and Azure DevOps; Python with pandas, NumPy, SciPy and statsmodels.'
   tags: [Python, SQL, Forecasting & ML]
-  links:
-    - label: Earlier portfolio page
-      href: https://andresvdata.github.io/portfolio/project/shortage/
   source: "OLD · Shortage of a product page"

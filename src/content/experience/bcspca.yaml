@@ -7,35 +7,14 @@ phases:
     kind: Full-time
     start: "2025-09"
     end: present
-mission: >-
-  Bring operational and program data from across the organization into governed, consistent reporting that
-  leaders and frontline teams actually use.
-highlights:
-  - text: >-
-      Led delivery of Power BI and Microsoft Fabric solutions for finance, fundraising, volunteer operations,
-      the call centre and program teams, from business requirements to deployment, across 4+ departments.
-    source: "RES · BC SPCA bullet 2"
-  - text: >-
-      Built Animal Helpline reporting that joins call-centre data with Microsoft Exchange mailbox data
-      (26+ fields), giving daily monitoring and multi-year analysis of call volumes, staffing and queue
-      performance.
-    source: "RES · BC SPCA bullets 8 and 9; LI · BC SPCA"
-  - text: >-
-      Introduced HTML prototypes, a Power BI design and governance framework and a Visualization Playbook so
-      stakeholders agree on the design early and reports stay consistent.
-    source: "RES · BC SPCA bullets 11, 12, 13; LI · BC SPCA"
-  - text: >-
-      Consolidated duplicated dashboards, standardized KPI definitions, and supported business users with
-      guidance and data-literacy help.
-    source: "RES · BC SPCA bullets 1, 16, 19"
+summary: >-
+  Governed Microsoft Fabric and Power BI reporting that brings operational data together for leaders and frontline teams.
+summarySource: "RES · BC SPCA bullets 1, 2, 4; LI · BC SPCA"
 stack:
   - Microsoft Fabric
-  - Dataflow Gen2
   - Power BI Service
   - DAX
-  - Power Query (M)
   - SQL
   - Python
-  - Power Automate
 project: bcspca-reporting-foundation
 sourceNote: "RES · BC SPCA (Sep 2025 – present); LI · BC SPCA (Sep 2025 – present)"

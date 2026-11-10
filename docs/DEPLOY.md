@@ -4,11 +4,11 @@ Nothing has been pushed or deployed. These steps are for you to run when you are
 
 ## 1. Create a new repository
 
-Do not reuse `andresvdata/portfolio`. On GitHub create a new, empty repository (no README, no license). Two sensible names:
+Do not reuse your existing portfolio repository. On GitHub create a new, empty repository (no README, no license). Two sensible names:
 
 | Repository name | Site address | Notes |
 | --- | --- | --- |
-| `andresvdata.github.io` | `https://andresvdata.github.io/` | Your main site. The old portfolio keeps working at `/portfolio/` because it lives in its own repository. |
+| `andresvdata.github.io` | `https://andresvdata.github.io/` | Your main site, at the root address. |
 | `portfolio-2026` (any name) | `https://andresvdata.github.io/portfolio-2026/` | A separate address, handy for trying it before you switch. |
 
 You do not need to change any setting for either name: `astro.config.mjs` reads the repository name during the build and picks the right base path.

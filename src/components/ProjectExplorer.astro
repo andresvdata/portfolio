@@ -77,10 +77,10 @@ const total = projects.length + more.length;
     ))}
   </div>
 
-  <h3 class="more-head panel-title">More work on GitHub and earlier pages</h3>
+  <h3 class="more-head panel-title">More projects</h3>
   <div class="more-list">
     {more.map((m) => (
-      <article class="more-item" data-item data-type={m.data.type} data-tags={m.data.tags.map(slug).join('|')}>
+      <article class="more-item" id={`more-${m.id}`} data-item data-type={m.data.type} data-tags={m.data.tags.map(slug).join('|')}>
         <div>
           <div class="top">
             <span class="badge" data-type={m.data.type}>{typeLabel[m.data.type]}</span>
@@ -88,17 +88,24 @@ const total = projects.length + more.length;
           </div>
           <h4>{m.data.title}</h4>
           <p set:html={rich(m.data.blurb)} />
+          {m.data.details.length > 0 && (
+            <ul class="more-details">
+              {m.data.details.map((d) => <li set:html={rich(d)} />)}
+            </ul>
+          )}
           <div class="tag-row" style="margin-top:0.5rem">
             {m.data.tags.map((t) => <span class="tag">{t}</span>)}
           </div>
         </div>
-        <div class="links">
-          {m.data.links.map((l) => (
-            <a href={l.href} target="_blank" rel="noopener noreferrer">
-              {l.label}<span class="sr-only"> (opens in a new tab)</span>
-            </a>
-          ))}
-        </div>
+        {m.data.links.length > 0 && (
+          <div class="links">
+            {m.data.links.map((l) => (
+              <a href={l.href} target="_blank" rel="noopener noreferrer">
+                {l.label}<span class="sr-only"> (opens in a new tab)</span>
+              </a>
+            ))}
+          </div>
+        )}
       </article>
     ))}
   </div>

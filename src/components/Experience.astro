@@ -7,38 +7,34 @@ const items = (await getCollection('experience')).sort((a, b) => a.data.order - 
 const domainLabel = { bi: 'Business intelligence', research: 'Research data', engineering: 'Manufacturing engineering' } as const;
 ---
 
-<div class="exp-grid">
+<ol class="exp-list">
   {items.map((e) => (
-    <article class="exp" id={`exp-${e.id}`} data-domain={e.data.domain}>
-      <div>
+    <li class="exp" id={`exp-${e.id}`} data-domain={e.data.domain}>
+      <div class="exp-who">
         <h3>{e.data.org}</h3>
         <span class="where">{e.data.location} · {domainLabel[e.data.domain]}</span>
       </div>
 
-      {e.data.phases.map((p) => (
-        <div class="phase">
-          <strong>{p.role}</strong>
-          <span class="when">
-            {p.display ?? `${formatYm(p.start)} – ${formatYm(p.end)}`} · {p.kind}
-          </span>
-        </div>
-      ))}
-
-      <p class="mission" set:html={rich(e.data.mission)} />
-
-      <ul class="points">
-        {e.data.highlights.map((h) => <li set:html={rich(h.text)} />)}
-      </ul>
-
-      <div class="tag-row">
-        {e.data.stack.map((s) => <span class="tag">{s}</span>)}
+      <div class="exp-roles">
+        {e.data.phases.map((p) => (
+          <p>
+            <strong>{p.role}</strong>
+            <span class="when">{p.display ?? `${formatYm(p.start)} – ${formatYm(p.end)}`}</span>
+          </p>
+        ))}
       </div>
 
-      {e.data.project && (
-        <a href={withBase(`/projects/${e.data.project}/`)}>
-          Read the related case study<span aria-hidden="true"> →</span>
-        </a>
-      )}
-    </article>
+      <div class="exp-what">
+        <p set:html={rich(e.data.summary)} />
+        <div class="tag-row">
+          {e.data.stack.map((s) => <span class="tag">{s}</span>)}
+        </div>
+        {e.data.project && (
+          <a href={withBase(`/projects/${e.data.project}/`)}>
+            Related case study<span aria-hidden="true"> →</span>
+          </a>
+        )}
+      </div>
+    </li>
   ))}
-</div>
+</ol>

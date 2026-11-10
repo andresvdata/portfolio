@@ -3,7 +3,7 @@ title: From manual processing to an automated BI stack at Softgic
 type: professional
 org: Softgic
 period: 2020 – 2022
-order: 4
+order: 3
 summary: >-
   Scheduled SSIS and Pentaho pipelines, a snowflake-schema warehouse, an SSAS cube and executive dashboards that
   replaced most manual data work.

@@ -1,23 +1,49 @@
-# Career map pins. Layers: work, education, projects.
-# Coordinates are city-level only (no street addresses).
+# Career map pins.
+#
+# kind: base = a place where I lived, worked or studied.
+# kind: data = a place the DATA of a remote project comes from. I was not based there.
+#
+# Entry layers: work, education, projects (shown as "Remote projects" in the interface).
+# An entry with a `title` also appears in the remote-projects strip under the map.
+# `project` is a case-study id, or "more:<id>" to jump to a row in the smaller-projects list.
+# arcs: lines drawn from this pin. kind "move" = I relocated. kind "remote" = built remotely from here.
+# Coordinates are city-level only.
 
 - id: vancouver
+  kind: base
   label: Vancouver, Canada
   lon: -123.12
   lat: 49.28
+  arcs:
+    - to: florida
+      kind: remote
   entries:
-    - layer: work
-      text: "BC SPCA · Business Intelligence Developer · Sep 2025 – present"
-    - layer: work
-      text: "Langara College · Student Aide, then Research Assistant (Data Analyst) · 2022 – 2025"
     - layer: education
       text: "Langara College · Post-Degree Diploma in Data Analytics · 2022 – 2023"
-  source: "RES · Work history and Education; LI · Experience"
+    - layer: work
+      text: "Langara College · Student Aide, then Research Assistant (Data Analyst) · 2022 – 2025"
+    - layer: projects
+      title: CORD-19 text mining
+      text: "Remote Kaggle challenge on COVID-19 research articles (2023), using a public dataset."
+      project: "more:cord19"
+    - layer: projects
+      title: Exploratory analyses in R and Python
+      text: "Remote analyses of public datasets, including Langara coursework (2022 – 2023)."
+      project: "more:eda-r"
+    - layer: work
+      text: "BC SPCA · Business Intelligence Developer · Sep 2025 – present"
+  source: "RES · Work history, Education and Professional Development; LI · Experience; GH · CORD-19 and EDA repositories; user statement that these projects were built remotely"
 
 - id: bogota
+  kind: base
   label: Bogotá region, Colombia
   lon: -74.07
   lat: 4.71
+  arcs:
+    - to: vancouver
+      kind: move
+    - to: london
+      kind: remote
   entries:
     - layer: work
       text: "Softgic · Data Analyst · 2020 – 2022"
@@ -25,13 +51,28 @@
       text: "Owens Illinois · Junior Engineer (plant in Cundinamarca) · 2018 – 2020"
     - layer: education
       text: "Universidad de América · Chemical Engineering · 2012 – 2018"
-  source: "RES · Work history and Education; LI · Experience"
+  source: "RES · Work history, Education and Professional Development"
 
 - id: london
+  kind: data
   label: London, United Kingdom
   lon: -0.13
   lat: 51.51
   entries:
     - layer: projects
-      text: "SmartEnerx · forecasting London household energy demand (data subject, DS4A team project, 2022)"
-  source: "OLD · London Energy Consumption page; GH · UK-ENERGY-Project README"
+      title: SmartEnerx energy-demand forecasting
+      text: "Smart-meter data from London households, used by our DS4A Colombia team to forecast energy demand (2022). I was not in London: the project was remote and the data is public."
+      project: smartenerx-london-energy
+  source: "OLD · London Energy Consumption page (DS4A Colombia); GH · UK-ENERGY-Project README; user statement that he was not in London"
+
+- id: florida
+  kind: data
+  label: Florida, United States
+  lon: -80.6
+  lat: 28.5
+  entries:
+    - layer: projects
+      title: SpaceX landing prediction
+      text: "Launch-site data for my IBM Data Science capstone (2023): Cape Canaveral and Kennedy Space Center here, plus Vandenberg in California. Mapped with Folium and a Plotly Dash dashboard. Built remotely."
+      project: "more:spacex"
+  source: "GH · SpaceX capstone repository (CSV and notebooks list CCAFS SLC-40, KSC LC-39A and VAFB SLC-4E); OLD · Captone Project IBM page"

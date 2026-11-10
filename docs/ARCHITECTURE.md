@@ -11,7 +11,7 @@ A portfolio is read far more than it is changed, and it holds no user data. The 
 | Traceability | A required `source` field on each claim, plus `npm run docs:sources` | Keeps every number traceable to the resume, LinkedIn, a repository or a paper. |
 | Map | `d3-geo` and `world-atlas`, drawn to SVG **at build time** | No tile service, API key, tracking or runtime map library. Pins are real buttons, so they are keyboard accessible. |
 | Interactivity | A few small inline scripts (filters, map layers, skills matrix, theme, copy email) | No client framework needed; each works without a network call. |
-| Styling | Plain CSS with design tokens, light and dark themes | Easy to retheme in one file. Contrast is checked by `npm run check:contrast`. |
+| Styling | Plain CSS with design tokens, one light theme | Easy to retheme in one file. Contrast is checked by `npm run check:contrast`. |
 | Fonts | IBM Plex Sans and Mono, self-hosted through `@fontsource` | No third-party font request, so no extra privacy or speed cost. |
 | Hosting and deploy | **GitHub Pages** via a GitHub Actions workflow | Free, the same account as your code, and a push is a deploy. |
 | Contact | `mailto:` and a copy-to-clipboard button | No form backend to maintain or to receive spam. |

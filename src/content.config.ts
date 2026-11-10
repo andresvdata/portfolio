@@ -9,7 +9,7 @@ import { z } from 'astro/zod';
  * Source codes (see docs/SOURCE_MAP.md):
  *   RES  = Master.docx (master resume)
  *   LI   = Profile.pdf (LinkedIn export)
- *   OLD  = previous portfolio (andresvdata/portfolio repo and live site)
+ *   OLD  = the previous portfolio (used as a source only; this site never links to it)
  *   GH   = a public repository on github.com/andresvdata (README, files)
  *   ABS  = published abstract (DOI)
  *   POSTER = SmartEnerx team datafolio poster
@@ -97,8 +97,9 @@ const experience = defineCollection({
         }),
       )
       .min(1),
-    mission: z.string(),
-    highlights: z.array(textWithSource).min(2),
+    /** One line only. The full detail lives in the resume and on LinkedIn. */
+    summary: z.string(),
+    summarySource: source,
     stack: z.array(z.string()).min(1),
     project: z.string().optional(),
     sourceNote: source,
@@ -124,7 +125,7 @@ const story = defineCollection({
     org: z.string(),
     title: z.string(),
     text: z.string(),
-    stats: z.array(z.object({ value: z.string(), label: z.string() })),
+    stats: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
     source,
   }),
 });
@@ -149,14 +150,22 @@ const skills = defineCollection({
 const pins = defineCollection({
   loader: file('./src/content/data/pins.yaml'),
   schema: z.object({
+    /** base = where I lived, worked or studied. data = where a remote project's data came from. */
+    kind: z.enum(['base', 'data']),
     label: z.string(),
     lon: z.number(),
     lat: z.number(),
+    /** Lines drawn from this pin to another pin. */
+    arcs: z.array(z.object({ to: z.string(), kind: z.enum(['move', 'remote']) })).default([]),
     entries: z
       .array(
         z.object({
           layer: z.enum(['work', 'education', 'projects']),
           text: z.string(),
+          /** Short name; when set, the entry is also listed in the remote-projects strip. */
+          title: z.string().optional(),
+          /** A case-study id, or "more:<id>" to jump to a row in the smaller-projects list. */
+          project: z.string().optional(),
         }),
       )
       .min(1),
@@ -188,7 +197,10 @@ const more = defineCollection({
     period: z.coerce.string(),
     blurb: z.string(),
     tags: z.array(z.string()).min(1),
-    links: z.array(z.object({ label: z.string(), href: z.url() })).min(1),
+    /** Short method notes, written for this site. */
+    details: z.array(z.string()).default([]),
+    /** Public links only (repositories, files). Leave empty when there is nothing public to link to. */
+    links: z.array(z.object({ label: z.string(), href: z.url() })).default([]),
     source,
   }),
 });

@@ -1,20 +1,45 @@
 ---
 import { getCollection } from 'astro:content';
 import { buildMap } from '../lib/map';
+import { withBase } from '../lib/text';
 
 const pins = (await getCollection('pins')).map((p) => ({ id: p.id, ...p.data }));
 const map = buildMap(pins.map((p) => ({ id: p.id, lon: p.lon, lat: p.lat })));
 const placed = new Map(map.placed.map((p) => [p.id, p]));
-const arcPath = map.arc('bogota', 'vancouver');
+const shortName = (label: string) => label.split(',')[0].replace(' region', '');
+
+const arcs = pins.flatMap((p) =>
+  p.arcs.map((a) => ({ from: p.id, to: a.to, kind: a.kind, d: map.arc(p.id, a.to) })),
+);
 
 const layers = [
   { id: 'work', label: 'Work' },
-  { id: 'education', label: 'Education' },
-  { id: 'projects', label: 'Projects' },
+  { id: 'education', label: 'Study' },
+  { id: 'projects', label: 'Remote projects' },
 ] as const;
 
-const layerLabel: Record<string, string> = { work: 'Work', education: 'Study', projects: 'Project' };
+const layerLabel: Record<string, string> = { work: 'Work', education: 'Study', projects: 'Remote project' };
+
+/** Entries that carry a title are listed in the remote-projects strip. */
+const remote = pins.flatMap((p) =>
+  p.entries
+    .filter((e) => e.layer === 'projects' && e.title)
+    .map((e) => ({
+      title: e.title!,
+      pin: p.id,
+      where: p.kind === 'data' ? `Data from ${shortName(p.label)}` : 'Public datasets',
+    })),
+);
+
+const linkFor = (project?: string): { href: string; label: string } | null => {
+  if (!project) return null;
+  if (project.startsWith('more:')) return { href: `${withBase('/')}#more-${project.slice(5)}`, label: 'See it in the project list' };
+  return { href: withBase(`/projects/${project}/`), label: 'Read the case study' };
+};
+
 const summary = pins.map((p) => p.label).join(', ');
+const baseLabels = pins.filter((p) => p.kind === 'base').map((p) => shortName(p.label)).join(' and ');
+const dataLabels = pins.filter((p) => p.kind === 'data').map((p) => shortName(p.label)).join(', ');
 ---
 
 <section class="panel map-panel" aria-labelledby="map-title" data-career-map>
@@ -31,12 +56,12 @@ const summary = pins.map((p) => p.label).join(', ');
     <svg
       viewBox={`0 0 ${map.width} ${map.height}`}
       role="img"
-      aria-label={`World map with markers for ${summary}. A dashed line links Colombia to Vancouver.`}
+      aria-label={`World map. Round markers show where I was based: ${baseLabels}. Diamond markers show where the data of my remote projects comes from: ${dataLabels}. Lines show my move from Colombia to Canada and the projects I built remotely.`}
     >
       <path class="map-grid" d={map.graticule}></path>
       <path class="map-land" d={map.land}></path>
       <path class="map-borders" d={map.borders}></path>
-      <path class="map-arc" d={arcPath}></path>
+      {arcs.map((a) => <path class="map-arc" data-arc-kind={a.kind} d={a.d}></path>)}
     </svg>
 
     {pins.map((p) => {
@@ -47,33 +72,66 @@ const summary = pins.map((p) => p.label).join(', ');
           type="button"
           style={`left:${at.left}%; top:${at.top}%`}
           data-pin={p.id}
+          data-kind={p.kind}
           aria-pressed="false"
           aria-label={`${p.label}, ${p.entries.length} entries`}
         >
           <span class="pin-dot"></span>
           <span class="pin-count" aria-hidden="true">{p.entries.length}</span>
-          <span class="pin-label" aria-hidden="true">{p.label.split(',')[0].replace(' region', '')}</span>
+          <span class="pin-label" aria-hidden="true">{shortName(p.label)}</span>
         </button>
       );
     })}
   </div>
 
+  <ul class="map-legend" aria-label="Map legend">
+    <li><span class="lg lg-base" aria-hidden="true"></span>Where I was based</li>
+    <li><span class="lg lg-data" aria-hidden="true"></span>Where a remote project's data comes from</li>
+    <li><span class="lg lg-move" aria-hidden="true"></span>Move</li>
+    <li><span class="lg lg-remote" aria-hidden="true"></span>Built remotely</li>
+  </ul>
+
   <div class="map-detail" aria-live="polite" data-map-detail>
     {pins.map((p) => (
       <div data-pin-detail={p.id}>
-        <h3>{p.label}</h3>
+        <h3>{p.label}{p.kind === 'data' && <span class="kind-note"> · data only, I was not based here</span>}</h3>
         <ul>
-          {p.entries.map((e) => (
-            <li data-layer={e.layer}>
-              <span class="layer-tag" data-layer={e.layer}>{layerLabel[e.layer]}</span>
-              <span>{e.text}</span>
-            </li>
-          ))}
+          {p.entries.map((e) => {
+            const link = linkFor(e.project);
+            return (
+              <li data-layer={e.layer}>
+                <span class="layer-tag" data-layer={e.layer}>{layerLabel[e.layer]}</span>
+                <span>
+                  {e.text}
+                  {link && (
+                    <>
+                      {' '}
+                      <a href={link.href}>{link.label}<span class="sr-only"> for {e.title ?? p.label}</span></a>
+                    </>
+                  )}
+                </span>
+              </li>
+            );
+          })}
         </ul>
       </div>
     ))}
   </div>
-  <p class="map-note">City-level locations only. Select a marker to see what happened there.</p>
+
+  <div class="remote-strip" data-remote-strip>
+    <h3 class="panel-title">Built remotely</h3>
+    <ul>
+      {remote.map((r) => (
+        <li>
+          <button type="button" class="remote-item" data-goto={r.pin}>
+            <strong>{r.title}</strong>
+            <span>{r.where}</span>
+          </button>
+        </li>
+      ))}
+    </ul>
+  </div>
+  <p class="map-note">City-level locations only. Select a marker or a project to see what happened there.</p>
 </section>
 
 <script>
@@ -82,6 +140,9 @@ const summary = pins.map((p) => p.label).join(', ');
     const layerBtns = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-layer].chip'));
     const pinBtns = Array.from(root.querySelectorAll<HTMLButtonElement>('.pin'));
     const details = Array.from(root.querySelectorAll<HTMLElement>('[data-pin-detail]'));
+    const arcEls = Array.from(root.querySelectorAll<SVGPathElement>('.map-arc'));
+    const strip = root.querySelector<HTMLElement>('[data-remote-strip]');
+    const gotoBtns = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-goto]'));
     const active = new Set(layerBtns.map((b) => b.dataset.layer!));
     let selected = 'vancouver';
 
@@ -112,6 +173,12 @@ const summary = pins.map((p) => p.label).join(', ');
         b.setAttribute('aria-label', `${label}, ${n} ${n === 1 ? 'entry' : 'entries'}`);
       });
       details.forEach((d) => { d.hidden = d.dataset.pinDetail !== selected; });
+      arcEls.forEach((a) => {
+        const remoteArc = a.dataset.arcKind === 'remote';
+        a.style.display = (remoteArc ? active.has('projects') : active.has('work') || active.has('education')) ? '' : 'none';
+      });
+      if (strip) strip.hidden = !active.has('projects');
+      gotoBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.goto === selected)));
     };
 
     layerBtns.forEach((btn) =>
@@ -127,6 +194,12 @@ const summary = pins.map((p) => p.label).join(', ');
     pinBtns.forEach((b) =>
       b.addEventListener('click', () => {
         selected = b.dataset.pin!;
+        render();
+      }),
+    );
+    gotoBtns.forEach((b) =>
+      b.addEventListener('click', () => {
+        selected = b.dataset.goto!;
         render();
       }),
     );

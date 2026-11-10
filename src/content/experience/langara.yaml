@@ -11,34 +11,14 @@ phases:
     kind: Full-time
     start: "2024-01"
     end: "2025-08"
-mission: >-
-  Give researchers and healthcare stakeholders a data foundation they could rely on, and the analysis to go
-  with it.
-highlights:
-  - text: >-
-      Designed a data warehouse pipeline (Python, Apache Airflow, Docker) to centralize fragmented lab and
-      research data, and deployed a Dockerized electronic lab notebook on Azure.
-    source: "RES · Langara Research Assistant bullets 7 and 9; LI · Langara"
-  - text: >-
-      Built customer lifetime value models in Python (lifetimes, pandas, NumPy) for healthcare stakeholders;
-      the work was published in Decision Analytics Journal in September 2025.
-    source: "RES · Langara Research Assistant bullets 1 and 5; LI · Langara and Publications"
-  - text: >-
-      Built ETL pipelines and a snowflake-schema warehouse, plus dashboards in Power BI, Apache Superset and
-      Python, from requirements gathered in weekly stakeholder meetings.
-    source: "RES · Langara Research Assistant bullets 4, 6, 10"
-  - text: >-
-      As Student Aide, automated data migration from XML and CSV sources in Python, cutting processing time by
-      25%.
-    source: "RES · Langara Student Aide bullets 1 and 2; LI · Softgic section (migration bullets)"
+summary: >-
+  Research data platforms and customer lifetime value models for healthcare stakeholders, including a co-authored journal article (2025).
+summarySource: "RES · Langara Research Assistant bullets 1, 5, 7, 9; LI · Langara and Publications"
 stack:
   - Python
-  - Apache Airflow
+  - Airflow
   - Docker
   - Azure
-  - Django
-  - MySQL
   - Power BI
-  - Apache Superset
 project: research-data-platform
 sourceNote: "RES · Langara (two roles, Oct 2022 – Aug 2025); LI · Langara (one role, Oct 2022 – Sep 2025). Titles and end date differ."

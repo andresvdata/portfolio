@@ -26,13 +26,22 @@ The site currently follows the resume (`Master.docx`) unless noted, and shows th
 | Owens Illinois plant | Cogua | Zipaquirá | "Colombia" only | Which plant? |
 | SmartEnerx forecast error | README: 1.357% | Poster table: 1.35% | "About 1.36%" | Fine to keep? (The poster seems to truncate.) |
 
-## 3. Details missing from the case studies
+## 3. The career map and your remote projects
+
+The map separates **where you were based** (round markers) from **where a remote project's data comes from** (diamonds). I only drew what the sources and your messages support.
+
+- **SmartEnerx (2022).** The data is from London and you were not there. Where were you based while working on it (Colombia, as the DS4A Colombia program suggests, or Vancouver)? The map draws a "built remotely" line from the Bogotá region.
+- **SpaceX capstone (2023), CORD-19 (2023) and the exploratory analyses (2022 – 2023).** I drew these as built remotely from Vancouver, because that is where you lived and worked in those years. Please confirm.
+- **Florida pin.** It comes from the launch sites in the SpaceX data (Cape Canaveral and Kennedy Space Center; Vandenberg in California is mentioned in the text). Fine to keep, or would you rather show only the "Built remotely" list?
+- **Other remote projects.** Are there more projects you built remotely (for a client, an employer or a course) that should appear on the map, and what place or data do they relate to?
+
+## 4. Details missing from the case studies
 
 **BC SPCA reporting foundation**
 - Who else worked on this (developers, data owners, IT and security), so the page can separate what you owned from what the team did?
 - One measurable outcome: hours of manual reporting saved, refresh reliability, number of active report users, or a decision the dashboards changed?
-- Can you share a sanitized screenshot or one of your HTML prototypes built on synthetic data? It would be the strongest evidence for the page.
-- What did you learn about agreeing KPI definitions or driving adoption?
+- The page now uses two synthetic drawings I made (a wireframe and a dashboard layout). If you have an HTML prototype built on synthetic data, it would replace them.
+- Reflection removed: the current role is deliberately kept short. Add one back if you want it.
 
 **Research data platform (Langara)**
 - Who owned the Keycloak single sign-on, the NGINX reverse proxy and the Azure setup, you or a teammate?
@@ -51,13 +60,14 @@ The site currently follows the resume (`Master.docx`) unless noted, and shows th
 **SmartEnerx**
 - Your specific contribution: exploratory analysis, forecasting model, dashboard or AWS deployment?
 - What would you do differently (for example the "Not Private Households" group), or what did deploying end to end teach you?
-- The datafolio poster shows your teammates' names and the UK Power Networks and DS4A logos. It is on your earlier portfolio, but please confirm you are happy for it to appear here.
+- The datafolio poster shows your teammates' names and the UK Power Networks and DS4A logos. It came from your earlier portfolio, but please confirm you are happy for it to appear here.
 
 **Compact rows that could become case studies**
-- *Automated report generation (Dec 2024)*, *Power Apps healthcare app (Oct 2024)*, *Detection of illicit activities (2022)*, *Probability of product shortage (2021)*: for each, which employer or client, what was your role, and is there one outcome? The old pages never say. The Power Apps page says details are confidential, so confirm what can be shown.
+- *Automated report generation (Dec 2024)*, *Power Apps healthcare app (Oct 2024)*, *Detection of illicit activities (2022)*, *Probability of product shortage (2021)*: for each, which employer or client, what was your role, and is there one outcome? The original write-ups never say. The Power Apps page says details are confidential, so confirm what can be shown.
 
-## 4. Things I did not do, on purpose
+## 5. Things I did not do, on purpose
 
 - **Phone number.** Never published. The old portfolio's `cv.pdf` was not copied, in case it carries one. Use your Drive link instead.
+- **No link to the previous portfolio.** Nothing on the site or in these docs points to its address.
 - **Your account email** (the one tied to your Claude account) is not on the site. Only `andresvdata@gmail.com` is.
 - **No deployment.** Nothing was pushed, published or deployed.

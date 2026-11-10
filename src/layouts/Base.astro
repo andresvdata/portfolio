@@ -29,7 +29,7 @@ const home = withBase('/');
 ---
 
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -37,7 +37,7 @@ const home = withBase('/');
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href={favicon} type="image/svg+xml" />
-    <meta name="theme-color" content="#0a1120" />
+    <meta name="theme-color" content="#f1f5fa" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
@@ -50,20 +50,6 @@ const home = withBase('/');
 
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 
-    <!-- Apply the saved or system theme before first paint to avoid a flash. -->
-    <script is:inline>
-      (function () {
-        try {
-          var t = localStorage.getItem('theme');
-          if (t !== 'light' && t !== 'dark') {
-            t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-          }
-          document.documentElement.setAttribute('data-theme', t);
-        } catch (e) {
-          document.documentElement.setAttribute('data-theme', 'dark');
-        }
-      })();
-    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -75,12 +61,6 @@ const home = withBase('/');
       <div class="container footer-inner">
         <span>© {new Date().getFullYear()} {site.name} · {site.location} · {site.workArrangement}</span>
         <span>
-          {site.links.previousPortfolio && (
-            <a href={site.links.previousPortfolio} target="_blank" rel="noopener noreferrer">
-              Previous portfolio<span class="sr-only"> (opens in a new tab)</span>
-            </a>
-          )}
-          {site.links.previousPortfolio && ' · '}
           {site.repoUrl ? (
             <a href={site.repoUrl} target="_blank" rel="noopener noreferrer">
               Source on GitHub<span class="sr-only"> (opens in a new tab)</span>

@@ -1,4 +1,5 @@
-# The through-line: four chapters, oldest first. Each chapter states only what a source supports.
+# The through-line: four chapters, oldest first. One sentence each; the case studies and the resume carry the detail.
+# Each chapter states only what a source supports.
 
 - id: oi
   order: 1
@@ -6,9 +7,8 @@
   org: Owens Illinois · Manufacturing
   title: Started on the production line
   text: >-
-    As a junior engineer I monitored process variables for a production line with 8 operators, met all
-    production KPIs and raised productivity by 10% through data-driven insights. I also built an Excel and
-    Visual Basic tool that cut raw-material inventory query time by about 80%.
+    As a junior engineer I used process data to raise a production line's productivity by 10% and built an
+    inventory tool that cut query time by about 80%.
   stats:
     - value: "10%"
       label: productivity gain
@@ -22,9 +22,8 @@
   org: Softgic · Bogotá
   title: Automated the pipeline
   text: >-
-    I replaced about 90% of manual data processing with scheduled SSIS and Pentaho pipelines, then built a
-    full BI stack on top: a snowflake-schema warehouse, an SSAS cube, SSRS reports and Power BI dashboards.
-    Optimizing it cut end-to-end processing time by about 60%.
+    I replaced about 90% of manual data processing with automated pipelines, then built a full BI stack on top
+    of them.
   stats:
     - value: "~90%"
       label: manual processing replaced
@@ -38,9 +37,8 @@
   org: Langara College · Vancouver
   title: Built platforms and models for research
   text: >-
-    I designed a research data warehouse with Airflow pipelines, deployed an electronic lab notebook on
-    Azure, and built customer lifetime value models for healthcare stakeholders. That modeling work became
-    a journal article I co-authored in 2025.
+    I designed a research data platform and built customer lifetime value models that became a journal article
+    I co-authored in 2025.
   stats:
     - value: "1"
       label: journal article (2025)
@@ -54,11 +52,6 @@
   org: BC SPCA · Vancouver
   title: Made the data trusted, and used
   text: >-
-    I bring 40+ sources into governed Microsoft Fabric and Power BI models, agree KPI definitions with 50+
-    stakeholders, prototype before building, and support teams as they adopt the dashboards.
-  stats:
-    - value: "40+"
-      label: sources unified
-    - value: "50+"
-      label: stakeholders
-  source: "RES · BC SPCA bullets 1, 2, 4, 11, 16, 19; LI · BC SPCA"
+    I bring 40+ sources into governed Fabric and Power BI models that teams actually use.
+  stats: []
+  source: "RES · BC SPCA bullets 1, 4, 19; LI · BC SPCA"

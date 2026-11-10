@@ -1,12 +1,12 @@
 ---
-title: Turning 40+ scattered sources into one reporting foundation at BC SPCA
+title: One governed reporting foundation from 40+ sources at BC SPCA
 type: professional
 org: BC SPCA
 period: Sep 2025 – present
-order: 1
+order: 5
 summary: >-
-  Microsoft Fabric and Power BI reporting for the Animal Helpline, the province-wide Spay & Neuter program and the
-  finance, fundraising and volunteer teams.
+  Microsoft Fabric and Power BI reporting for several departments, built from more than 40 internal and external
+  sources and agreed with stakeholders before any dashboard was developed.
 tags: [Power BI, Microsoft Fabric, DAX, Power Query, SQL, Python, Power Automate, Data modeling, ETL, Data quality, Governance]
 metric:
   value: "40+"
@@ -14,23 +14,21 @@ metric:
   source: "RES · BC SPCA bullet 4; LI · Summary"
 
 situation: >-
-  BC SPCA's finance, fundraising, volunteer, call-centre and program teams each needed reporting, and the data
-  behind it lived in different places: APIs, databases, Excel files and Microsoft 365. I joined as the Business
-  Intelligence Developer in September 2025 to turn that into centralized, consistent reporting, starting with
-  the Animal Helpline and the province-wide Spay & Neuter program.
+  Several departments each needed reporting, and the data behind it lived in different places: APIs, databases,
+  Excel files and Microsoft 365. I joined as the Business Intelligence Developer in September 2025 to turn that
+  into centralized, consistent reporting that leaders and frontline teams could rely on.
 
 challenge: >-
-  Three things made it hard. Volume and variety: more than 40 internal and external sources feeding models of
-  about 800K records. Inconsistent definitions: duplicated dashboards and KPIs that meant different things to
-  different teams. And messy operational data: for the Helpline, call-centre records and Microsoft Exchange
-  mailbox data had to be linked across 26+ fields, with duplicates, email threads and free-text subject lines
-  to untangle.
+  Volume and variety: more than 40 internal and external sources feeding models of about 800K records.
+  Inconsistent definitions: duplicated dashboards and KPIs that meant different things to different teams.
+  Messy operational data: records and Microsoft Exchange mailbox data had to be linked across 26+ fields, with
+  duplicates, email threads and free-text subject lines to untangle.
 
 role:
   owned:
     - "Led delivery end to end across 4+ departments: requirements, business requirements definition (BRD), prototyping, development, testing, deployment and stakeholder validation."
     - "Designed the Microsoft Fabric semantic models, DAX measures and Power Query transformations."
-    - "Built the Dataflow Gen2 pipelines for call-centre and mailbox data (deduplication, thread-linking, subject-line parsing, validation)."
+    - "Built the Dataflow Gen2 pipelines that clean and link the operational and mailbox data."
     - "Created the Power BI design and governance framework and the Visualization Playbook."
   team:
     - "[NEED DETAIL: who else worked on this (other developers, data owners, IT and security contacts) so the page can separate what you owned from what the team did.]"
@@ -44,22 +42,12 @@ approach:
   - title: Prototype before Power BI
     text: >-
       Built interactive HTML prototypes and dashboard mockups so stakeholders could react to layout and
-      information architecture before any Power BI development, to reduce development iterations and keep
-      the result aligned with what they needed.
-  - title: Integrate and model
+      information architecture before any Power BI development, to reduce development iterations.
+  - title: Integrate, model and check
     text: >-
       Pulled data in with Fabric Dataflow Gen2, Python, APIs, Power Automate and SQL (automating collection
-      from 8+ sources) into semantic models, with DAX measures and Power Query transformations for dynamic KPI
-      tracking.
-  - title: Untangle the Helpline data
-    text: >-
-      Built Dataflow Gen2 pipelines with deduplication, thread-linking, subject-line parsing and validation to
-      join call-centre and mailbox data. I analyzed daily patterns (seasonal surges, staffing, queue routing)
-      to set dashboard metrics and reporting thresholds.
-  - title: Check quality at every layer
-    text: >-
-      Added data-quality and validation controls across the source data, the pipelines, the semantic models
-      and the reports.
+      from 8+ sources) into semantic models with DAX measures, and added data-quality and validation controls
+      across the sources, pipelines, models and reports.
   - title: Standardize and support adoption
     text: >-
       Published through Power BI Service (workspaces, scheduled refresh, access management), consolidated
@@ -67,9 +55,8 @@ approach:
 
 result:
   summary: >-
-    Teams now work from centralized, consistent reporting instead of one-off reports. The Animal Helpline
-    dashboards give daily operational visibility plus multi-year analysis of call volumes, staffing, queue
-    performance and service demand, to support leadership decisions.
+    Teams now work from centralized, consistent reporting instead of one-off reports, with daily operational
+    visibility and multi-year analysis to support leadership decisions.
   points:
     - text: "40+ internal and external sources integrated into unified Fabric and Power BI models, supporting about 800K records."
       source: "RES · BC SPCA bullet 4; LI · Summary"
@@ -92,24 +79,36 @@ flow:
     - label: Serve
       nodes: [Power BI Service, Workspaces, Scheduled refresh, Access management]
     - label: Use
-      nodes: [Animal Helpline, Spay & Neuter, Finance, Fundraising, Volunteer operations]
+      nodes: [Executives, Managers, Frontline teams]
   note: >-
     Drawn from the stack and workflow described in my resume. It shows the flow, not a specific production
     configuration.
 
 evidence:
-  - kind: note
-    label: Why there are no screenshots
+  - kind: image
+    label: Step 1, an HTML prototype (synthetic)
+    src: images/projects/bcspca-synthetic-prototype.webp
+    alt: >-
+      A grey dashed wireframe of a dashboard page: five filter boxes on the left, four KPI boxes across the top,
+      boxes for a line chart, a bar chart, a heatmap and a tile map, and two yellow sticky notes with open
+      questions about a KPI definition and whether a regional view is needed.
     caption: >-
-      The dashboards and data are operational, so I do not show them here. [NEED DETAIL: if you can share a
-      sanitized screenshot or one of your HTML prototypes built with synthetic data, it would be the strongest
-      evidence for this page.]
-
-reflection: >-
-  [NEED DETAIL: one or two sentences on what you would do differently, or what you learned about agreeing KPI
-  definitions or driving adoption.]
+      The kind of low-fidelity prototype I put in front of stakeholders before building in Power BI: layout, filters
+      and open questions about KPI definitions. I drew it for this page with invented content. It is not a BC SPCA
+      prototype.
+  - kind: image
+    label: Step 2, the dashboard layout (synthetic)
+    src: images/projects/bcspca-synthetic-dashboard.webp
+    alt: >-
+      A synthetic "Service Requests Overview" dashboard with a filter panel on the left, four KPI cards, a monthly
+      line chart with a previous-year comparison, a bar chart by category, a weekday-by-time heatmap and a tile map
+      of six regions. A banner states that the data is synthetic and not a BC SPCA report.
+    caption: >-
+      A polished layout in the style I build, drawn with synthetic numbers and generic labels. The operational
+      dashboards and data are not shown, so this is an illustration of the approach, not a screenshot.
 
 sources:
   - "RES · BC SPCA bullets 1-19"
   - "LI · BC SPCA and Summary"
+  - "Synthetic images: drawn for this portfolio (docs/synthetic); not BC SPCA material"
 ---

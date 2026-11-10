@@ -3,7 +3,7 @@ title: Predicting patient lifetime value, a probability model against machine le
 type: academic
 org: Langara College, healthcare analytics research
 period: 2024 – 2025, published Sep 2025
-order: 3
+order: 2
 summary: >-
   Customer lifetime value modeling for a healthcare service portfolio, published in Decision Analytics Journal
   in September 2025.
@@ -91,5 +91,5 @@ reflection: >-
 sources:
   - "RES · Langara Research Assistant bullets 1, 2, 5, 6"
   - "LI · Langara and Publications"
-  - "ABS · 10.1016/j.dajour.2025.100601 (abstract, as listed on the earlier portfolio)"
+  - "ABS · 10.1016/j.dajour.2025.100601 (abstract)"
 ---

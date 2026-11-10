@@ -9,7 +9,7 @@
 | Repositories `Basic-Python-For-beginners` and `Data-Science-and-Python` | Course exercises and lab notebooks (IBM and similar), not original projects. |
 | `andresvdata/andresvdata` and `andresvdata/andresdata-hub` | GitHub profile README and profile config files, not projects. |
 | Forks: `fastapi`, `Machine-Learning-with-Python`, `cheatsheets`, `Stress-Predict-Dataset_DANA4830` | Forks of other people's repositories. Nothing shows your own contribution, so they are not shown. |
-| `andresvdata/portfolio` | The previous portfolio itself (used only as a source of experience materials). |
+| The previous portfolio repository | The previous portfolio itself (used only as a source of facts and experience materials, never linked). |
 
 ## Claims left out or softened
 

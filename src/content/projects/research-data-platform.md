@@ -3,7 +3,7 @@ title: One secure workspace for research data, from lab notebook to dashboard
 type: professional
 org: Langara College, Research & Innovation
 period: 2024 – 2025
-order: 2
+order: 1
 summary: >-
   A containerized platform on Azure that brings an electronic lab notebook, Airflow pipelines, Superset
   dashboards and single sign-on together for research teams.

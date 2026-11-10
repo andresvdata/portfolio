@@ -15,7 +15,7 @@ export const site = {
   eyebrow: 'Business Intelligence · Analytics Engineering · Data',
   lead: 'I build the data foundations and dashboards that help teams make clearer, faster decisions.',
   intro:
-    'My work covers the whole BI lifecycle: understanding what stakeholders need, integrating and modeling the data, building the dashboards, and helping people adopt them. Today that is Microsoft Fabric and Power BI at BC SPCA. Before that: research data platforms and healthcare analytics at Langara College, executive BI at Softgic, and production analytics at a glass manufacturer.',
+    'I work across the whole BI lifecycle: understanding what stakeholders need, integrating and modeling the data, building the dashboards and helping people adopt them. My path runs from glass-plant production data to research platforms and healthcare analytics, and now to Microsoft Fabric and Power BI.',
 
   /** Short "problem → fix" chips shown in the hero. Each is backed by a resume bullet (see docs/SOURCE_MAP.md). */
   problems: [
@@ -36,8 +36,6 @@ export const site = {
   links: {
     linkedin: 'https://www.linkedin.com/in/andrescol/',
     github: 'https://github.com/andresvdata',
-    /** The earlier Hugo portfolio, kept as an archive link. Set to '' to hide it. */
-    previousPortfolio: 'https://andresvdata.github.io/portfolio/',
   },
 
   /**

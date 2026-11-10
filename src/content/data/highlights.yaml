@@ -1,32 +1,6 @@
 # Headline numbers shown as KPI tiles. Keep the approximate wording ("~", "+") exactly as the sources state it.
 # `bar` is an optional visual derived from the number itself (nothing extra is claimed).
-
-- id: stakeholders
-  value: "50+"
-  label: Stakeholders partnered with
-  context: Executives to frontline teams · BC SPCA
-  source: "RES · BC SPCA bullet 1; LI · Summary"
-
-- id: sources
-  value: "40+"
-  label: Data sources integrated
-  context: APIs, databases, Excel, Microsoft 365 · Fabric & Power BI · BC SPCA
-  source: "RES · BC SPCA bullet 4; LI · Summary"
-
-- id: records
-  value: "~800K"
-  label: Records in the unified models
-  context: Reporting for 4+ departments · BC SPCA
-  source: "RES · BC SPCA bullets 2 and 4; LI · Summary"
-
-- id: softgic-time
-  value: "~60%"
-  label: Less end-to-end BI processing time
-  context: SSIS → snowflake warehouse → SSAS cube · Softgic
-  bar:
-    kind: remaining
-    value: 40
-  source: "RES · Softgic bullet 10 (ETL and cube processing); LI · Summary"
+# One tile per role at most, so no single employer dominates the page.
 
 - id: manual
   value: "~90%"
@@ -37,8 +11,35 @@
     value: 90
   source: "RES · Softgic bullet 1"
 
+- id: softgic-time
+  value: "~60%"
+  label: Less end-to-end BI processing time
+  context: SSIS → snowflake warehouse → SSAS cube · Softgic
+  bar:
+    kind: remaining
+    value: 40
+  source: "RES · Softgic bullet 10 (ETL and cube processing); LI · Summary"
+
+- id: inventory
+  value: "~80%"
+  label: Faster raw-material inventory queries
+  context: Excel and Visual Basic tool · Owens Illinois
+  source: "RES · Owens Illinois bullet 2"
+
+- id: migration
+  value: "25%"
+  label: Faster data migration
+  context: Python automation for XML and CSV sources · Langara College
+  source: "RES · Langara Student Aide bullets 1 and 2"
+
 - id: paper
   value: "1"
   label: Journal article on patient lifetime value
   context: Decision Analytics Journal · Sept 2025 · co-author
   source: "LI · Publications and Langara bullet 6; OLD · Publications; ABS"
+
+- id: sources
+  value: "40+"
+  label: Data sources integrated
+  context: Fabric and Power BI models of about 800K records · BC SPCA
+  source: "RES · BC SPCA bullet 4; LI · Summary"

@@ -14,8 +14,7 @@ function readBlock(selectorStart) {
   return out;
 }
 
-const dark = readBlock(':root {');
-const light = { ...dark, ...readBlock(":root[data-theme='light']") };
+const light = readBlock(':root {');
 
 const lum = (hex) => {
   const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255).map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
@@ -50,11 +49,13 @@ const pairs = [
   ['type-academic', 'panel', 3, 'type: academic (graphics)'],
   ['type-personal', 'panel', 3, 'type: personal (graphics)'],
   ['map-arc', 'map-sea', 3, 'map arc on sea'],
+  ['c-research', 'map-sea', 3, 'remote arc and data pin on sea'],
+  ['c-research', 'panel', 3, 'data pin outline and remote-project accent on panel'],
   ['map-land', 'map-sea', 1.2, 'land vs sea (decorative)'],
 ];
 
 let failures = 0;
-for (const [name, theme] of [['dark', dark], ['light', light]]) {
+for (const [name, theme] of [['light', light]]) {
   console.log(`\n${name.toUpperCase()} THEME`);
   for (const [fg, bg, min, what] of pairs) {
     if (!theme[fg] || !theme[bg]) { console.log(`  ?? missing token for ${fg}/${bg}`); failures++; continue; }

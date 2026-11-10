@@ -3,7 +3,7 @@ title: SmartEnerx, forecasting London household energy demand
 type: academic
 org: Data Science for All (DS4A), Correlation One, Team 94
 period: Apr – Jul 2022
-order: 5
+order: 4
 summary: >-
   A team data-science project: exploratory analysis, a Prophet forecast and a Dash dashboard deployed on AWS,
   built on London smart-meter data.

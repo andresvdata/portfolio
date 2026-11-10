@@ -29,16 +29,16 @@ The career is told as one repeated pattern, not four jobs:
 | Langara, 2022–2025 | Research data platform and healthcare modeling, ending in a publication. |
 | BC SPCA, 2025–now | Governed Microsoft Fabric and Power BI models with stakeholders. |
 
-The home page then moves from the quick read to the proof: map and highlights, story and timeline, filterable case studies, a skills-by-role matrix (a dot only where the work is documented), a short experience section, credentials, and contact.
+The home page then moves from the quick read to the proof: map and highlights, story and timeline, filterable case studies, a skills-by-role matrix (a dot only where the work is documented), one-line experience rows, credentials, and contact.
 
 ## Choices that follow from the brief
 
-- **Dashboard look, data-engineer feel.** The page itself is a dashboard: KPI tiles, a career map with layer filters, a timeline, a filterable project explorer, an evidence matrix. Monospace labels and data-flow diagrams carry the engineering feel. The map is a build-time SVG, so it needs no map service, key or tracking.
+- **Dashboard look, data-engineer feel.** The page itself is a dashboard: KPI tiles, a career map that separates where I was based from where my remote projects' data comes from, a timeline, a filterable project explorer, an evidence matrix. Monospace labels and data-flow diagrams carry the engineering feel. The map is a build-time SVG, so it needs no map service, key or tracking.
 - **Case studies follow your seven parts:** situation, challenge, my role (what I owned versus what the team did), approach, result, evidence, reflection.
 - **Numbers keep the sources' wording.** "About" and "approximately" stay. The site shows a number only when a source states it.
 - **Gaps are visible.** Anything that needs your input shows as a highlighted **Need detail** note, and `npm run check:placeholders` lists them all. Nothing is silently filled in.
-- **Accessible by default.** Dark and light themes, contrast checked by script for both, keyboard navigation, a skip link, visible focus, 44px touch targets on touch devices, reduced-motion support, text alternatives for images and a list version of the timeline on small screens.
-- **No stock imagery.** Visuals are project evidence (dashboard samples with blurred titles, an SSIS data flow, the SmartEnerx datafolio and forecast chart) or diagrams drawn from the documented architecture.
+- **Accessible by default.** A single light theme with contrast checked by script, keyboard navigation, a skip link, visible focus, 44px touch targets on touch devices, reduced-motion support, text alternatives for images and a list version of the timeline on small screens.
+- **No stock imagery.** Visuals are project evidence (dashboard samples with blurred titles, an SSIS data flow, the SmartEnerx datafolio and forecast chart), diagrams drawn from the documented architecture, or clearly labelled synthetic drawings where the real dashboards cannot be shown (the BC SPCA case study).
 
 ## Design process note
 

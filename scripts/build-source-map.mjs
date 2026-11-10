@@ -41,7 +41,7 @@ out.push(
   '| --- | --- |',
   '| RES | `Master.docx`, the master resume (main factual source) |',
   '| LI | `Profile.pdf`, the LinkedIn export |',
-  '| OLD | The previous portfolio (repo `andresvdata/portfolio` and its live site) |',
+  '| OLD | The previous portfolio, used as a source of facts only (this site never links to it) |',
   '| GH | A public repository under `github.com/andresvdata` (README, notebooks, files) |',
   '| ABS | The published abstract of a paper (DOI) |',
   '| POSTER | The SmartEnerx team datafolio poster |',
@@ -58,7 +58,7 @@ const expRows = [];
 for (const f of exp) {
   const e = yaml(`src/content/experience/${f}`);
   expRows.push([e.org, 'Dates and titles', e.sourceNote]);
-  e.highlights.forEach((h) => expRows.push([e.org, h.text, h.source]));
+  expRows.push([e.org, e.summary, e.summarySource]);
 }
 table('Experience', ['Employer', 'Claim', 'Source'], expRows);
 

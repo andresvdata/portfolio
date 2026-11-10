@@ -36,7 +36,7 @@
   group: Integration & pipelines
   label: Fabric Dataflow Gen2 and Power Automate
   roles:
-    bcspca: "Ingestion from 8+ sources, call-centre and mailbox pipelines, automated refresh"
+    bcspca: "Ingestion from 8+ sources, operational and mailbox data pipelines, automated refresh"
   source: "RES · BC SPCA bullets 5, 9, 14"
 
 - id: sql
