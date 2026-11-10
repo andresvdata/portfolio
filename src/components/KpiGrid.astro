@@ -1,11 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
+import { focusAttrs } from '../lib/focus';
 const items = await getCollection('highlights');
 ---
 
-<ul class="kpi-grid" aria-label="Highlights">
+<ul class="kpi-grid" aria-label="Highlights" data-f-group>
   {items.map((k) => (
-    <li class="kpi">
+    <li class="kpi" {...focusAttrs({ kind: 'kpi', topics: k.data.topics, tools: k.data.tools })}>
       <span class="kpi-value">{k.data.value}</span>
       <span class="kpi-label">{k.data.label}</span>
       <span class="kpi-context">{k.data.context}</span>
@@ -21,3 +22,4 @@ const items = await getCollection('highlights');
     </li>
   ))}
 </ul>
+<p class="f-empty" data-f-empty="kpi" hidden>No highlight matches this filter.</p>

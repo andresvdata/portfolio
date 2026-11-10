@@ -1,61 +1,18 @@
 ---
 import { getCollection } from 'astro:content';
-import { rich, slug, typeLabel, withBase } from '../lib/text';
+import { rich, typeLabel, withBase } from '../lib/text';
 import { getProjects } from '../lib/projects';
+import { focusAttrs } from '../lib/focus';
 
 const projects = await getProjects();
 const more = (await getCollection('more')).sort((a, b) => a.data.order - b.data.order);
-
-// Tool filters: any tag used by at least two items, most common first.
-const counts = new Map<string, number>();
-for (const t of [...projects.flatMap((p) => p.data.tags), ...more.flatMap((m) => m.data.tags)]) {
-  counts.set(t, (counts.get(t) ?? 0) + 1);
-}
-const toolTags = [...counts.entries()]
-  .filter(([, n]) => n >= 2)
-  .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-  .map(([t, n]) => ({ label: t, key: slug(t), n }));
-
-const types = [
-  { key: 'all', label: 'All' },
-  { key: 'professional', label: typeLabel.professional },
-  { key: 'academic', label: typeLabel.academic },
-  { key: 'personal', label: typeLabel.personal },
-] as const;
-
-const total = projects.length + more.length;
 ---
 
 <div data-explorer>
-  <div class="panel filters">
-    <div class="filter-group">
-      <span class="filter-label" id="f-type">Project type</span>
-      <div class="chip-row" role="group" aria-labelledby="f-type">
-        {types.map((t) => (
-          <button class="chip" type="button" data-filter-type={t.key} aria-pressed={t.key === 'all' ? 'true' : 'false'}>{t.label}</button>
-        ))}
-      </div>
-    </div>
-    <div class="filter-group">
-      <span class="filter-label" id="f-tools">Tools and methods (show projects using any selected)</span>
-      <div class="chip-row" role="group" aria-labelledby="f-tools">
-        {toolTags.map((t) => (
-          <button class="chip" type="button" data-filter-tag={t.key} aria-pressed="false">
-            {t.label} <span class="count" aria-hidden="true">{t.n}</span>
-          </button>
-        ))}
-      </div>
-    </div>
-    <div class="filter-status">
-      <span role="status" aria-live="polite" data-count>Showing {total} of {total} projects</span>
-      <button class="link-btn" type="button" data-reset hidden>Reset filters</button>
-    </div>
-  </div>
-
   <h3 class="sr-only">Featured case studies</h3>
-  <div class="cards">
+  <div class="cards" data-f-group>
     {projects.map((p) => (
-      <article class="card" data-item data-type={p.data.type} data-tags={p.data.tags.map(slug).join('|')}>
+      <article class="card" {...focusAttrs({ kind: 'projects', topics: p.data.topics, from: p.data.tags, type: p.data.type })}>
         <div class="card-top">
           <span class="badge" data-type={p.data.type}>{typeLabel[p.data.type]}</span>
           <span class="org">{p.data.period}</span>
@@ -77,10 +34,11 @@ const total = projects.length + more.length;
     ))}
   </div>
 
+  <div data-f-group>
   <h3 class="more-head panel-title">More projects</h3>
   <div class="more-list">
     {more.map((m) => (
-      <article class="more-item" id={`more-${m.id}`} data-item data-type={m.data.type} data-tags={m.data.tags.map(slug).join('|')}>
+      <article class="more-item" id={`more-${m.id}`} {...focusAttrs({ kind: 'more', topics: m.data.topics, from: m.data.tags, type: m.data.type })}>
         <div>
           <div class="top">
             <span class="badge" data-type={m.data.type}>{typeLabel[m.data.type]}</span>
@@ -109,69 +67,9 @@ const total = projects.length + more.length;
       </article>
     ))}
   </div>
+  </div>
 
-  <p class="empty" data-empty hidden>No projects match those filters. Try removing one.</p>
+  <p class="empty f-empty" data-f-empty="projects more" hidden>
+    No project matches the current filter. <a href="#focus">Change the filter</a> to see more.
+  </p>
 </div>
-
-<script>
-  const root = document.querySelector<HTMLElement>('[data-explorer]');
-  if (root) {
-    const typeBtns = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-filter-type]'));
-    const tagBtns = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-filter-tag]'));
-    const items = Array.from(root.querySelectorAll<HTMLElement>('[data-item]'));
-    const count = root.querySelector<HTMLElement>('[data-count]')!;
-    const reset = root.querySelector<HTMLButtonElement>('[data-reset]')!;
-    const empty = root.querySelector<HTMLElement>('[data-empty]')!;
-    const moreHead = root.querySelector<HTMLElement>('.more-head')!;
-    const moreList = root.querySelector<HTMLElement>('.more-list')!;
-
-    let type = 'all';
-    const tags = new Set<string>();
-
-    const apply = () => {
-      let shown = 0;
-      let shownMore = 0;
-      items.forEach((el) => {
-        const okType = type === 'all' || el.dataset.type === type;
-        const itemTags = (el.dataset.tags ?? '').split('|');
-        const okTag = tags.size === 0 || itemTags.some((t) => tags.has(t));
-        const ok = okType && okTag;
-        el.hidden = !ok;
-        if (ok) {
-          shown++;
-          if (el.classList.contains('more-item')) shownMore++;
-        }
-      });
-      moreHead.hidden = shownMore === 0;
-      moreList.hidden = shownMore === 0;
-      empty.hidden = shown !== 0;
-      reset.hidden = type === 'all' && tags.size === 0;
-      count.textContent = `Showing ${shown} of ${items.length} projects`;
-    };
-
-    typeBtns.forEach((b) =>
-      b.addEventListener('click', () => {
-        type = b.dataset.filterType!;
-        typeBtns.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
-        apply();
-      }),
-    );
-    tagBtns.forEach((b) =>
-      b.addEventListener('click', () => {
-        const k = b.dataset.filterTag!;
-        const on = tags.has(k);
-        on ? tags.delete(k) : tags.add(k);
-        b.setAttribute('aria-pressed', String(!on));
-        apply();
-      }),
-    );
-    reset.addEventListener('click', () => {
-      type = 'all';
-      tags.clear();
-      typeBtns.forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.filterType === 'all')));
-      tagBtns.forEach((x) => x.setAttribute('aria-pressed', 'false'));
-      apply();
-    });
-    apply();
-  }
-</script>

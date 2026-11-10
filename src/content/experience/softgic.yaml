@@ -2,6 +2,7 @@ org: Softgic
 location: Bogotá, Colombia
 domain: bi
 order: 3
+topics: [pipelines, modeling, reporting]
 phases:
   - role: Data Analyst
     kind: Full-time

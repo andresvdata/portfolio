@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { focusAttrs } from '../lib/focus';
 
 const rows = (await getCollection('skills')).sort((a, b) => a.data.order - b.data.order);
 const groups = [...new Set(rows.map((r) => r.data.group))];
@@ -31,10 +32,10 @@ const cols = [
         </tr>
       </thead>
       {groups.map((g) => (
-        <tbody>
+        <tbody data-f-group>
           <tr><th scope="rowgroup" colspan={cols.length + 1}>{g}</th></tr>
           {rows.filter((r) => r.data.group === g).map((r) => (
-            <tr class="row">
+            <tr class="row" {...focusAttrs({ kind: 'skills', topics: r.data.topics, from: [r.data.label] })}>
               <th scope="row">{r.data.label}</th>
               {cols.map((c) => {
                 const ev = r.data.roles[c.key];
@@ -64,6 +65,8 @@ const cols = [
       ))}
     </table>
   </div>
+
+  <p class="f-empty" data-f-empty="skills" hidden>No skill matches this filter.</p>
 
   <p class="matrix-evidence" role="status" aria-live="polite" data-evidence-out>
     Select a dot to see the evidence for that skill in that role.

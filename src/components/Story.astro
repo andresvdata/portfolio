@@ -1,11 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
+import { focusAttrs } from '../lib/focus';
 const steps = (await getCollection('story')).sort((a, b) => a.data.order - b.data.order);
 ---
 
-<ol class="story-grid">
+<ol class="story-grid" data-f-group>
   {steps.map((s) => (
-    <li class="story-step">
+    <li class="story-step" {...focusAttrs({ kind: 'story', topics: s.data.topics, tools: s.data.tools })}>
       <span class="period">{s.data.period}</span>
       <h3>{s.data.title}</h3>
       <span class="org">{s.data.org}</span>
@@ -21,6 +22,7 @@ const steps = (await getCollection('story')).sort((a, b) => a.data.order - b.dat
     </li>
   ))}
 </ol>
+<p class="f-empty" data-f-empty="story" hidden>No role in this timeline matches the filter.</p>
 <p class="throughline">
   The pattern is the same in all four roles: find where decisions depend on data that is manual, scattered or
   inconsistent; build the pipeline and model that fix it; and make sure people actually use the result.

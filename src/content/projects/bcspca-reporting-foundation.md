@@ -8,6 +8,7 @@ summary: >-
   Microsoft Fabric and Power BI reporting for several departments, built from more than 40 internal and external
   sources and agreed with stakeholders before any dashboard was developed.
 tags: [Power BI, Microsoft Fabric, DAX, Power Query, SQL, Python, Power Automate, Data modeling, ETL, Data quality, Governance]
+topics: [reporting, modeling, practice]
 metric:
   value: "40+"
   label: data sources unified, about 800K records

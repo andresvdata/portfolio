@@ -8,6 +8,7 @@ summary: >-
   A containerized platform on Azure that brings an electronic lab notebook, Airflow pipelines, Superset
   dashboards and single sign-on together for research teams.
 tags: [Apache Airflow, Docker, Azure, PostgreSQL, Apache Superset, Django, SSO, ETL, Data warehouse, Python]
+topics: [pipelines, cloud, modeling]
 metric:
   value: "1 login"
   label: "for three research apps: eLabFTW, Airflow and Superset"

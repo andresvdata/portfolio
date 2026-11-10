@@ -1,6 +1,6 @@
 # Andres Camilo Viloria Garcia · Data portfolio
 
-A recruiter-focused portfolio for a Business Intelligence developer and analytics engineer, built as a dashboard: career map, KPI tiles, timeline, filterable case studies and a skills-by-role evidence matrix. Static site (Astro + TypeScript), deployed to GitHub Pages.
+A recruiter-focused portfolio for a Business Intelligence developer and analytics engineer, built as a dashboard: career map, KPI tiles, timeline, case studies and a skills-by-role evidence matrix, plus a "Short on time?" filter that lets a recruiter keep only the role, topics and tools they care about (and share that view as a link). Static site (Astro + TypeScript), deployed to GitHub Pages.
 
 Every claim on the site carries a `source` (resume, LinkedIn, old portfolio, public repository or paper), so the content stays accurate and traceable.
 
@@ -25,6 +25,7 @@ You edit text files, not page code.
 | Add a case study | `npm run new:project -- "Title"` |
 | Jobs | `src/content/experience/*.yaml` |
 | KPIs, story, skills, map pins, credentials, smaller projects | `src/content/data/*.yaml` |
+| Filter roles, topics and tool chips | `src/config/focus.ts` (tag content with `topics`, see ADD_CONTENT) |
 | Colors and type | `src/styles/tokens.css` |
 
 Full guide: [docs/ADD_CONTENT.md](docs/ADD_CONTENT.md).
@@ -36,7 +37,7 @@ Full guide: [docs/ADD_CONTENT.md](docs/ADD_CONTENT.md).
 | `npm run new:project -- "Title" --type personal` | Creates a draft case study from the template |
 | `npm run check:placeholders` | Lists every open `[NEED DETAIL: ...]` |
 | `npm run check` | Type and content check |
-| `npm run check:contrast` | Verifies text colors meet WCAG AA in both themes |
+| `npm run check:contrast` | Verifies text colors meet WCAG AA |
 | `npm run docs:sources` | Rebuilds `docs/SOURCE_MAP.md` |
 
 ## Publish

@@ -2,6 +2,8 @@
 # Each chapter states only what a source supports.
 
 - id: oi
+  topics: [analysis, reporting]
+  tools: [excel]
   order: 1
   period: "2018 – 2020"
   org: Owens Illinois · Manufacturing
@@ -17,6 +19,8 @@
   source: "RES · Owens Illinois bullets 1-2"
 
 - id: softgic
+  topics: [pipelines, modeling, reporting]
+  tools: [ssis, sql, power-bi]
   order: 2
   period: "2020 – 2022"
   org: Softgic · Bogotá
@@ -32,6 +36,8 @@
   source: "RES · Softgic bullets 1 and 10"
 
 - id: langara
+  topics: [pipelines, cloud, analysis, research]
+  tools: [python, airflow, docker, azure]
   order: 3
   period: "2022 – 2025"
   org: Langara College · Vancouver
@@ -47,6 +53,8 @@
   source: "RES · Langara Research Assistant bullets 1, 5, 7, 9 and Student Aide bullet 1; LI · Langara"
 
 - id: bcspca
+  topics: [reporting, modeling, practice]
+  tools: [fabric, power-bi]
   order: 4
   period: "2025 – now"
   org: BC SPCA · Vancouver

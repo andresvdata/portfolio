@@ -13,7 +13,8 @@ period: "[NEED DETAIL: e.g. 2025 or Jan 2025 – Mar 2025]"
 order: {{ORDER}}                # lower numbers appear first
 summary: >-
   [NEED DETAIL: one or two sentences: what you built and for whom.]
-tags: [Power BI, SQL]           # becomes the tool filters on the home page
+tags: [Power BI, SQL]           # shown on the card; also matched against the tool chips in the home-page filter
+topics: [reporting]             # 1 to 4 of: reporting | modeling | pipelines | analysis | cloud | practice | research (see src/config/focus.ts). Drives the home-page filter.
 
 # Optional headline number for the card and the result section. Delete the block if there is no honest number.
 metric:

@@ -37,22 +37,70 @@ const items = [
 </header>
 
 <script>
-  // Highlight the current section in the nav
+  // Highlight the section being read. It uses scroll positions, not IntersectionObserver, because observers
+  // ignore rootMargin inside cross-origin frames and then pick the wrong section.
   const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-nav]'));
   const targets = links
     .map((a) => document.getElementById(a.dataset.nav ?? ''))
     .filter((el): el is HTMLElement => !!el);
-  if (targets.length && 'IntersectionObserver' in window) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (!e.isIntersecting) continue;
-          links.forEach((a) => a.removeAttribute('aria-current'));
-          links.find((a) => a.dataset.nav === e.target.id)?.setAttribute('aria-current', 'true');
-        }
-      },
-      { rootMargin: '-35% 0px -55% 0px' },
+
+  if (targets.length) {
+    let locked = false;
+    let unlockTimer = 0;
+    let frame = 0;
+
+    const mark = (id: string) => {
+      links.forEach((a) => {
+        if (a.dataset.nav === id) a.setAttribute('aria-current', 'true');
+        else a.removeAttribute('aria-current');
+      });
+    };
+
+    const compute = () => {
+      frame = 0;
+      if (locked) return;
+      const pad = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 88;
+      const line = pad + 24; // a section counts as current once its top passes this line
+      const doc = document.documentElement;
+      let current = targets[0].id;
+      if (window.innerHeight + window.scrollY >= doc.scrollHeight - 4) {
+        current = targets[targets.length - 1].id; // the last section can never reach the line
+      } else {
+        for (const t of targets) if (t.getBoundingClientRect().top <= line) current = t.id;
+      }
+      mark(current);
+    };
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(compute);
+    };
+    const unlockSoon = () => {
+      window.clearTimeout(unlockTimer);
+      unlockTimer = window.setTimeout(() => {
+        locked = false;
+        schedule();
+      }, 160);
+    };
+
+    // A click highlights its own link at once and holds it until the scroll that follows comes to rest.
+    // If the page never scrolls (for example when it is embedded at full height), the click's choice stays.
+    links.forEach((a) =>
+      a.addEventListener('click', () => {
+        locked = true;
+        mark(a.dataset.nav!);
+      }),
     );
-    targets.forEach((t) => io.observe(t));
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (locked) unlockSoon();
+        else schedule();
+      },
+      { passive: true },
+    );
+    window.addEventListener('resize', schedule);
+    window.addEventListener('hashchange', schedule);
+    window.addEventListener('load', schedule);
+    document.addEventListener('focus-change', schedule); // the page filter changes section heights
+    schedule();
   }
 </script>

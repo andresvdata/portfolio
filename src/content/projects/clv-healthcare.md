@@ -8,6 +8,7 @@ summary: >-
   Customer lifetime value modeling for a healthcare service portfolio, published in Decision Analytics Journal
   in September 2025.
 tags: [Python, lifetimes, pandas, NumPy, Statistical modeling, Machine learning, Healthcare analytics, Forecasting & ML]
+topics: [analysis, research]
 metric:
   value: "Published"
   label: Decision Analytics Journal, Sept 2025 (co-author)

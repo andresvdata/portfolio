@@ -1,6 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob, file } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { topicIds, toolIds } from './config/focus';
 
 /**
  * Every factual claim carries a `source` so the portfolio stays traceable.
@@ -19,6 +20,11 @@ const source = z.string().min(3, 'Add a source, e.g. "RES · BC SPCA bullet 2".'
 const textWithSource = z.object({ text: z.string(), source });
 
 const projectType = z.enum(['professional', 'academic', 'personal']);
+
+/** What kinds of work an item shows. Drives the focus filter on the home page (see src/config/focus.ts). */
+const topics = z.array(z.enum(topicIds)).min(1).max(4);
+/** Tool ids for items that have no tag list to derive tools from. */
+const toolList = z.array(z.enum(toolIds)).default([]);
 
 const evidence = z.object({
   kind: z.enum(['image', 'link', 'note']),
@@ -45,6 +51,8 @@ const projects = defineCollection({
     draft: z.boolean().default(false),
     summary: z.string(),
     tags: z.array(z.string()).min(1),
+    /** Which kinds of work this shows; the home-page filter uses it. See src/config/focus.ts. */
+    topics,
     /** Optional headline number for the card and the result section. */
     metric: z.object({ value: z.string(), label: z.string(), source }).optional(),
 
@@ -85,6 +93,7 @@ const experience = defineCollection({
     location: z.string(),
     domain: z.enum(['bi', 'research', 'engineering']),
     order: z.number(),
+    topics,
     phases: z
       .array(
         z.object({
@@ -112,6 +121,8 @@ const highlights = defineCollection({
     value: z.string(),
     label: z.string(),
     context: z.string(),
+    topics,
+    tools: toolList,
     bar: z.object({ kind: z.enum(['fill', 'remaining']), value: z.number() }).optional(),
     source,
   }),
@@ -125,6 +136,8 @@ const story = defineCollection({
     org: z.string(),
     title: z.string(),
     text: z.string(),
+    topics,
+    tools: toolList,
     stats: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
     source,
   }),
@@ -136,6 +149,7 @@ const skills = defineCollection({
     order: z.number(),
     group: z.string(),
     label: z.string(),
+    topics,
     roles: z.object({
       oi: z.string().optional(),
       softgic: z.string().optional(),
@@ -184,6 +198,8 @@ const credentials = defineCollection({
     note: z.string().optional(),
     href: z.url().optional(),
     hrefLabel: z.string().optional(),
+    /** Leave empty for items that should always show (education, accomplishments). */
+    topics: z.array(z.enum(topicIds)).default([]),
     source,
   }),
 });
@@ -197,6 +213,7 @@ const more = defineCollection({
     period: z.coerce.string(),
     blurb: z.string(),
     tags: z.array(z.string()).min(1),
+    topics,
     /** Short method notes, written for this site. */
     details: z.array(z.string()).default([]),
     /** Public links only (repositories, files). Leave empty when there is nothing public to link to. */

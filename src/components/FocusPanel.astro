@@ -1,0 +1,313 @@
+---
+import Icon from './Icon.astro';
+import { roles, topics, tools, projectTypes } from '../config/focus';
+
+// Everything the script needs is passed as data, so editing src/config/focus.ts is enough to change the filter.
+const config = {
+  roles: roles.map((r) => ({ id: r.id, label: r.label, topics: r.topics, blurb: r.blurb })),
+  topics,
+  tools: tools.map((t) => ({ id: t.id, label: t.label })),
+  types: projectTypes,
+};
+---
+
+<section class="panel focus" id="focus" aria-labelledby="focus-title" data-focus data-config={JSON.stringify(config)}>
+  <div class="focus-head">
+    <span class="kicker">For recruiters and hiring managers</span>
+    <h2 class="h2" id="focus-title">Short on time? Show only what matters to you.</h2>
+    <p>
+      Pick a role, a topic or a tool. The page keeps only the matching highlights, case studies, skills and
+      experience, and you can copy a link to your view.
+    </p>
+  </div>
+
+  <div class="focus-rows">
+    <div class="filter-group">
+      <span class="filter-label" id="fr-role">I am hiring for</span>
+      <div class="chip-row" role="group" aria-labelledby="fr-role">
+        {roles.map((r) => (
+          <button class="chip chip-role" type="button" data-f-role={r.id} aria-pressed="false">{r.label}</button>
+        ))}
+      </div>
+      <p class="focus-blurb" data-focus-blurb hidden></p>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-label" id="fr-topic">Show me work on</span>
+      <div class="chip-row" role="group" aria-labelledby="fr-topic">
+        {topics.map((t) => (
+          <button class="chip" type="button" data-f-topic={t.id} aria-pressed="false">{t.label}</button>
+        ))}
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-label" id="fr-tool">Using any of these tools</span>
+      <div class="chip-row" role="group" aria-labelledby="fr-tool">
+        {tools.map((t) => (
+          <button class="chip" type="button" data-f-tool={t.id} aria-pressed="false">{t.label}</button>
+        ))}
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-label" id="fr-type">Project type</span>
+      <div class="chip-row" role="group" aria-labelledby="fr-type">
+        {projectTypes.map((t) => (
+          <button class="chip" type="button" data-f-ptype={t.id} aria-pressed="false">{t.label}</button>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="focus-foot">
+    <p class="focus-status" role="status" aria-live="polite" data-focus-status>Showing everything.</p>
+    <div class="focus-actions">
+      <button class="btn" type="button" data-focus-copy>
+        <Icon name="copy" />
+        <span data-focus-copy-label>Copy link to this view</span>
+      </button>
+      <button class="link-btn" type="button" data-focus-clear hidden>Clear filters</button>
+    </div>
+  </div>
+</section>
+
+<div class="focus-bar" data-focus-bar hidden>
+  <div class="container focus-bar-inner">
+    <span class="focus-bar-text"><strong>Filtered:</strong> <span data-focus-summary></span></span>
+    <span class="focus-bar-actions">
+      <a href="#focus">Change</a>
+      <button type="button" class="link-btn" data-focus-clear-bar>Clear</button>
+    </span>
+  </div>
+</div>
+
+<script>
+  interface Role { id: string; label: string; topics: string[]; blurb: string }
+  interface Labeled { id: string; label: string }
+  interface Config { roles: Role[]; topics: Labeled[]; tools: Labeled[]; types: Labeled[] }
+
+  const root = document.querySelector<HTMLElement>('[data-focus]');
+  if (root) {
+    const cfg = JSON.parse(root.dataset.config ?? '{}') as Config;
+    const valid = {
+      topic: new Set(cfg.topics.map((t) => t.id)),
+      tool: new Set(cfg.tools.map((t) => t.id)),
+      type: new Set(cfg.types.map((t) => t.id)),
+    };
+    const labelOf = (list: Labeled[], id: string) => list.find((x) => x.id === id)?.label ?? id;
+
+    const state = {
+      role: '',
+      topics: new Set<string>(),
+      tools: new Set<string>(),
+      types: new Set<string>(),
+    };
+
+    const KEY = 'portfolio-focus';
+    const list = (v: string | null) => (v ? v.split(',').map((s) => s.trim()).filter(Boolean) : []);
+
+    // ---- read and write the view as a URL, so a tailored link can go into an application
+    const load = (search: string) => {
+      const q = new URLSearchParams(search);
+      const role = cfg.roles.find((r) => r.id === q.get('role'));
+      state.role = role?.id ?? '';
+      state.topics = new Set(role ? role.topics : list(q.get('topics')).filter((t) => valid.topic.has(t)));
+      state.tools = new Set(list(q.get('tools')).filter((t) => valid.tool.has(t)));
+      state.types = new Set(list(q.get('type')).filter((t) => valid.type.has(t)));
+      return Boolean(role) || q.has('topics') || q.has('tools') || q.has('type');
+    };
+    const query = () => {
+      const q = new URLSearchParams();
+      if (state.role) q.set('role', state.role);
+      else if (state.topics.size) q.set('topics', [...state.topics].join(','));
+      if (state.tools.size) q.set('tools', [...state.tools].join(','));
+      if (state.types.size) q.set('type', [...state.types].join(','));
+      return q.toString();
+    };
+    const shareUrl = () => {
+      const qs = query();
+      return `${location.origin}${location.pathname}${qs ? `?${qs}` : ''}#focus`;
+    };
+
+    const isActive = () => state.topics.size + state.tools.size + state.types.size > 0;
+
+    // ---- elements
+    const q$ = <T extends HTMLElement>(sel: string) => Array.from(document.querySelectorAll<T>(sel));
+    const roleBtns = q$<HTMLButtonElement>('[data-f-role]');
+    const topicBtns = q$<HTMLButtonElement>('[data-f-topic]');
+    const toolBtns = q$<HTMLButtonElement>('[data-f-tool]');
+    const typeBtns = q$<HTMLButtonElement>('[data-f-ptype]');
+    const blurb = root.querySelector<HTMLElement>('[data-focus-blurb]')!;
+    const status = root.querySelector<HTMLElement>('[data-focus-status]')!;
+    const clearBtns = q$<HTMLButtonElement>('[data-focus-clear], [data-focus-clear-bar]');
+    const copyBtn = root.querySelector<HTMLButtonElement>('[data-focus-copy]')!;
+    const copyLabel = root.querySelector<HTMLElement>('[data-focus-copy-label]')!;
+    const bar = document.querySelector<HTMLElement>('[data-focus-bar]')!;
+    const barSummary = bar.querySelector<HTMLElement>('[data-focus-summary]')!;
+    const header = document.querySelector<HTMLElement>('.site-header');
+
+    const kindNames: Record<string, [string, string]> = {
+      projects: ['case study', 'case studies'],
+      more: ['more project', 'more projects'],
+      experience: ['role', 'roles'],
+      kpi: ['highlight', 'highlights'],
+      story: ['story chapter', 'story chapters'],
+      skills: ['skill', 'skills'],
+      credentials: ['credential', 'credentials'],
+    };
+    const statusOrder = ['projects', 'more', 'experience', 'kpi', 'skills', 'story', 'credentials'];
+
+    // ---- apply the filter to every tagged element on the page
+    const apply = () => {
+      const visible: Record<string, number> = {};
+      document.querySelectorAll<HTMLElement>('[data-f-item]').forEach((el) => {
+        const topics = (el.dataset.fTopics ?? '').split(' ').filter(Boolean);
+        const tools = (el.dataset.fTools ?? '').split(' ').filter(Boolean);
+        const type = el.dataset.fType;
+        const always = el.hasAttribute('data-f-always');
+        const okTopic = always || state.topics.size === 0 || topics.some((t) => state.topics.has(t));
+        const okTool = always || state.tools.size === 0 || tools.some((t) => state.tools.has(t));
+        const okType = !type || state.types.size === 0 || state.types.has(type);
+        const show = okTopic && okTool && okType;
+        el.hidden = !show;
+        // Items that are always shown (education, accomplishments) say nothing about the match, so they are not counted.
+        const kind = el.dataset.fKind ?? 'other';
+        if (show && !always) visible[kind] = (visible[kind] ?? 0) + 1;
+      });
+
+      // Hide a group (a column, a table section, a list with its heading) once nothing in it is left.
+      document.querySelectorAll<HTMLElement>('[data-f-group]').forEach((g) => {
+        const items = Array.from(g.querySelectorAll<HTMLElement>('[data-f-item]'));
+        g.hidden = items.length > 0 && items.every((i) => i.hidden);
+      });
+
+      // Say so in a section that ends up empty.
+      document.querySelectorAll<HTMLElement>('[data-f-empty]').forEach((note) => {
+        const kinds = (note.dataset.fEmpty ?? '').split(' ');
+        const n = kinds.reduce((sum, k) => sum + (visible[k] ?? 0), 0);
+        note.hidden = !(isActive() && n === 0);
+      });
+      return visible;
+    };
+
+    const describe = () => {
+      const parts: string[] = [];
+      if (state.role) parts.push(labelOf(cfg.roles, state.role));
+      else state.topics.forEach((t) => parts.push(labelOf(cfg.topics, t)));
+      state.tools.forEach((t) => parts.push(labelOf(cfg.tools, t)));
+      state.types.forEach((t) => parts.push(labelOf(cfg.types, t)));
+      return parts.join(' · ');
+    };
+
+    const render = () => {
+      const active = isActive();
+
+      roleBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.fRole === state.role)));
+      topicBtns.forEach((b) => b.setAttribute('aria-pressed', String(state.topics.has(b.dataset.fTopic!))));
+      toolBtns.forEach((b) => b.setAttribute('aria-pressed', String(state.tools.has(b.dataset.fTool!))));
+      typeBtns.forEach((b) => b.setAttribute('aria-pressed', String(state.types.has(b.dataset.fPtype!))));
+
+      const role = cfg.roles.find((r) => r.id === state.role);
+      blurb.hidden = !role;
+      if (role) blurb.textContent = `${role.blurb} Showing: ${role.topics.map((t) => labelOf(cfg.topics, t)).join(', ')}.`;
+
+      const visible = apply();
+      const parts = statusOrder
+        .filter((k) => visible[k])
+        .map((k) => `${visible[k]} ${kindNames[k][visible[k] === 1 ? 0 : 1]}`);
+      status.textContent = !active
+        ? 'Showing everything.'
+        : parts.length
+          ? `Showing ${parts.join(', ')}.`
+          : 'Nothing matches this combination. Remove a tool or a topic to see more.';
+
+      clearBtns.forEach((b) => (b.hidden = !active));
+      barSummary.textContent = describe();
+      document.documentElement.toggleAttribute('data-focus-active', active);
+      updateBar();
+
+      // Keep the address and this browser tab in step, so the view survives a visit to a case study and back.
+      const qs = query();
+      try {
+        history.replaceState(null, '', `${location.pathname}${qs ? `?${qs}` : ''}${location.hash}`);
+      } catch { /* some embedded previews block this */ }
+      try {
+        sessionStorage.setItem(KEY, qs);
+      } catch { /* storage can be unavailable */ }
+      document.dispatchEvent(new CustomEvent('focus-change'));
+    };
+
+    // The slim bar appears once the panel scrolls away, so a filtered page never looks like it is missing content.
+    const updateBar = () => {
+      const headerH = header?.getBoundingClientRect().height ?? 60;
+      document.documentElement.style.setProperty('--header-h', `${Math.round(headerH)}px`);
+      const panelBottom = root.getBoundingClientRect().bottom;
+      bar.hidden = !(isActive() && panelBottom < headerH);
+    };
+
+    // ---- interactions
+    const sameTopics = (a: Set<string>, b: readonly string[]) => a.size === b.length && b.every((t) => a.has(t));
+    const toggle = (set: Set<string>, id: string) => (set.has(id) ? set.delete(id) : set.add(id));
+
+    roleBtns.forEach((b) =>
+      b.addEventListener('click', () => {
+        const id = b.dataset.fRole!;
+        if (state.role === id) {
+          state.role = '';
+          state.topics.clear();
+        } else {
+          state.role = id;
+          state.topics = new Set(cfg.roles.find((r) => r.id === id)!.topics);
+        }
+        render();
+      }),
+    );
+    topicBtns.forEach((b) =>
+      b.addEventListener('click', () => {
+        toggle(state.topics, b.dataset.fTopic!);
+        // A hand-picked set that equals a role's topics counts as that role.
+        state.role = cfg.roles.find((r) => sameTopics(state.topics, r.topics))?.id ?? '';
+        render();
+      }),
+    );
+    toolBtns.forEach((b) => b.addEventListener('click', () => { toggle(state.tools, b.dataset.fTool!); render(); }));
+    typeBtns.forEach((b) => b.addEventListener('click', () => { toggle(state.types, b.dataset.fPtype!); render(); }));
+    clearBtns.forEach((b) =>
+      b.addEventListener('click', () => {
+        state.role = '';
+        state.topics.clear();
+        state.tools.clear();
+        state.types.clear();
+        render();
+      }),
+    );
+
+    let copyTimer = 0;
+    copyBtn.addEventListener('click', async () => {
+      const url = shareUrl();
+      let msg = 'Link copied';
+      try {
+        await navigator.clipboard.writeText(url);
+      } catch {
+        msg = 'Copy blocked: use the address bar';
+      }
+      copyLabel.textContent = msg;
+      window.clearTimeout(copyTimer);
+      copyTimer = window.setTimeout(() => (copyLabel.textContent = 'Copy link to this view'), 2200);
+    });
+
+    window.addEventListener('scroll', updateBar, { passive: true });
+    window.addEventListener('resize', updateBar);
+
+    // ---- start: a shared link wins; otherwise pick up where this tab left off
+    const fromUrl = load(location.search);
+    if (!fromUrl) {
+      try {
+        const saved = sessionStorage.getItem(KEY);
+        if (saved) load(saved);
+      } catch { /* ignore */ }
+    }
+    render();
+  }
+</script>

@@ -3,6 +3,7 @@
 # Only what the repo or the original write-up states is claimed.
 
 - id: report-generation
+  topics: [pipelines, reporting]
   order: 1
   title: Automated report generation web app
   type: professional
@@ -21,6 +22,7 @@
   source: "OLD · Automated Report Generation page (Dec 2024)"
 
 - id: power-apps-healthcare
+  topics: [reporting]
   order: 2
   title: Healthcare data-management app in Power Apps and Power BI
   type: professional
@@ -33,6 +35,7 @@
   source: "OLD · Dashboard in Power Apps page (Oct 2024)"
 
 - id: spacex
+  topics: [analysis]
   order: 3
   title: SpaceX landing prediction (IBM Data Science capstone)
   type: academic
@@ -50,6 +53,7 @@
   source: "OLD · Captone Project IBM page; GH · SpaceX repository README and Final Presentation.pdf"
 
 - id: cord19
+  topics: [analysis]
   order: 4
   title: COVID-19 Open Research Dataset (CORD-19) text mining
   type: personal
@@ -64,6 +68,7 @@
   source: "GH · CORD-19 repository README; OLD · CORD-19 page"
 
 - id: eda-r
+  topics: [analysis]
   order: 5
   title: "Exploratory analysis in R: car evaluation and Hollywood movies"
   type: personal
@@ -77,6 +82,7 @@
   source: "GH · EDA-car-and-movies README; OLD · EDA with R page"
 
 - id: eda-three
+  topics: [analysis]
   order: 6
   title: "Three exploratory analyses: salaries, Titanic, house prices"
   type: academic
@@ -91,6 +97,7 @@
   source: "GH · EDA-Salaries-Titanic-and-House-Prices README.txt and Results folder"
 
 - id: playstore
+  topics: [analysis]
   order: 7
   title: Google Play Store exploratory analysis
   type: academic
@@ -104,6 +111,7 @@
   source: "GH · DANA-project repository description and Project.Rmd"
 
 - id: anomaly
+  topics: [analysis]
   order: 8
   title: Detection of illicit activities (anomaly detection)
   type: professional
@@ -122,6 +130,7 @@
   source: "OLD · Detection of illicit activities page"
 
 - id: shortage
+  topics: [analysis]
   order: 9
   title: Probability of product shortage (Monte Carlo)
   type: professional

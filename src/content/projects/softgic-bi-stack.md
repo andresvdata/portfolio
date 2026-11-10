@@ -8,6 +8,7 @@ summary: >-
   Scheduled SSIS and Pentaho pipelines, a snowflake-schema warehouse, an SSAS cube and executive dashboards that
   replaced most manual data work.
 tags: [SSIS, Pentaho, SQL, SSAS, SSRS, Power BI, Data warehouse, ETL, Data modeling, Python]
+topics: [pipelines, modeling, reporting]
 metric:
   value: "~60%"
   label: less end-to-end ETL and cube processing time

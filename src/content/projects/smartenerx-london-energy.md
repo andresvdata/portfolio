@@ -8,6 +8,7 @@ summary: >-
   A team data-science project: exploratory analysis, a Prophet forecast and a Dash dashboard deployed on AWS,
   built on London smart-meter data.
 tags: [Python, Prophet, Dash, Plotly, PostgreSQL, Docker, AWS, Time series, EDA, Forecasting & ML]
+topics: [analysis, reporting, cloud]
 metric:
   value: "1.36%"
   label: MAPE of the selected Prophet model on daily consumption

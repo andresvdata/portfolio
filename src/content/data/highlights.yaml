@@ -3,6 +3,8 @@
 # One tile per role at most, so no single employer dominates the page.
 
 - id: manual
+  topics: [pipelines]
+  tools: [ssis]
   value: "~90%"
   label: Manual data processing replaced
   context: Automated SSIS and Pentaho pipelines · Softgic
@@ -12,6 +14,8 @@
   source: "RES · Softgic bullet 1"
 
 - id: softgic-time
+  topics: [pipelines, modeling]
+  tools: [ssis]
   value: "~60%"
   label: Less end-to-end BI processing time
   context: SSIS → snowflake warehouse → SSAS cube · Softgic
@@ -21,24 +25,32 @@
   source: "RES · Softgic bullet 10 (ETL and cube processing); LI · Summary"
 
 - id: inventory
+  topics: [reporting]
+  tools: [excel]
   value: "~80%"
   label: Faster raw-material inventory queries
   context: Excel and Visual Basic tool · Owens Illinois
   source: "RES · Owens Illinois bullet 2"
 
 - id: migration
+  topics: [pipelines]
+  tools: [python]
   value: "25%"
   label: Faster data migration
   context: Python automation for XML and CSV sources · Langara College
   source: "RES · Langara Student Aide bullets 1 and 2"
 
 - id: paper
+  topics: [research, analysis]
+  tools: [python]
   value: "1"
   label: Journal article on patient lifetime value
   context: Decision Analytics Journal · Sept 2025 · co-author
   source: "LI · Publications and Langara bullet 6; OLD · Publications; ABS"
 
 - id: sources
+  topics: [pipelines, modeling, reporting]
+  tools: [fabric, power-bi]
   value: "40+"
   label: Data sources integrated
   context: Fabric and Power BI models of about 800K records · BC SPCA

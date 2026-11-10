@@ -2,6 +2,7 @@ org: BC SPCA
 location: Vancouver, Canada
 domain: bi
 order: 1
+topics: [reporting, modeling, practice]
 phases:
   - role: Business Intelligence Developer
     kind: Full-time

@@ -4,6 +4,7 @@
 # The text in each cell is the evidence shown in the tooltip / screen-reader label.
 
 - id: python
+  topics: [pipelines, analysis]
   order: 1
   group: Integration & pipelines
   label: Python
@@ -16,6 +17,7 @@
   source: "RES · all four roles; LI · O-I and Softgic; GH · project READMEs"
 
 - id: ssis
+  topics: [pipelines]
   order: 2
   group: Integration & pipelines
   label: SSIS and Pentaho
@@ -24,6 +26,7 @@
   source: "RES · Softgic bullets 1, 5, 10"
 
 - id: airflow
+  topics: [pipelines, cloud]
   order: 3
   group: Integration & pipelines
   label: Apache Airflow
@@ -32,6 +35,7 @@
   source: "RES · Langara bullet 7; LI · Langara"
 
 - id: fabric
+  topics: [pipelines, modeling]
   order: 4
   group: Integration & pipelines
   label: Fabric Dataflow Gen2 and Power Automate
@@ -40,6 +44,7 @@
   source: "RES · BC SPCA bullets 5, 9, 14"
 
 - id: sql
+  topics: [modeling, pipelines]
   order: 5
   group: Modeling & storage
   label: SQL
@@ -52,6 +57,7 @@
   source: "RES · Softgic bullet 4, Langara bullet 6, BC SPCA bullet 5; LI · O-I; GH · SpaceX README"
 
 - id: modeling
+  topics: [modeling]
   order: 6
   group: Modeling & storage
   label: Dimensional and semantic modeling
@@ -62,6 +68,7 @@
   source: "RES · Softgic bullet 10, Langara bullet 4, BC SPCA bullet 6"
 
 - id: dax
+  topics: [modeling, reporting]
   order: 7
   group: Modeling & storage
   label: DAX and Power Query (M)
@@ -70,6 +77,7 @@
   source: "RES · BC SPCA bullet 7"
 
 - id: powerbi
+  topics: [reporting]
   order: 8
   group: BI & visualization
   label: Power BI
@@ -80,6 +88,7 @@
   source: "RES · Softgic bullet 2, Langara bullet 10, BC SPCA bullets 3, 12, 13, 18"
 
 - id: otherbi
+  topics: [reporting]
   order: 9
   group: BI & visualization
   label: Other BI and viz (SSRS, Superset, Dash, Folium)
@@ -90,6 +99,7 @@
   source: "RES · Softgic bullet 10, Langara bullet 6; GH · UK-ENERGY-Project and SpaceX READMEs"
 
 - id: ml
+  topics: [analysis]
   order: 10
   group: Data science
   label: Statistical and machine-learning modeling
@@ -100,6 +110,7 @@
   source: "RES · Softgic bullet 12, Langara bullets 1 and 5; GH · project READMEs"
 
 - id: cloud
+  topics: [cloud]
   order: 11
   group: Platform
   label: Docker and cloud (Azure, AWS)
@@ -109,6 +120,7 @@
   source: "RES · Langara bullets 7-9; GH · Research-Data-Integration-Analytics-Platform and UK-ENERGY-Project READMEs"
 
 - id: excel
+  topics: [reporting]
   order: 12
   group: Platform
   label: Excel and Visual Basic
@@ -117,6 +129,7 @@
   source: "RES · Owens Illinois bullet 2"
 
 - id: requirements
+  topics: [practice]
   order: 13
   group: Practice
   label: Requirements and stakeholder partnership
@@ -127,6 +140,7 @@
   source: "RES · Softgic bullet 6, Langara bullets 2 and 6, BC SPCA bullets 1-2, 11"
 
 - id: quality
+  topics: [practice]
   order: 14
   group: Practice
   label: Data quality and validation
@@ -137,6 +151,7 @@
   source: "RES · Softgic bullet 7, Langara bullet 4, BC SPCA bullet 15"
 
 - id: governance
+  topics: [practice]
   order: 15
   group: Practice
   label: Governance and standards
