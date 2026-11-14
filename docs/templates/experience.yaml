@@ -1,0 +1,23 @@
+# Copy this file to src/content/experience/<short-name>.yaml and edit it.
+# Then (optional) add a matching column in src/content/data/skill-columns.yaml
+# and a place in src/content/data/pins.yaml.
+
+org: Company name
+location: Vancouver, Canada
+domain: bi                 # bi | research | engineering  (sets the color on the timeline)
+order: 1                   # 1 = top of the list (most recent)
+topics: [reporting]        # for the recruiter filter: reporting | modeling | pipelines | analysis | cloud | practice | research
+phases:
+  - role: Job title
+    kind: Full-time
+    start: "2026-01"
+    end: present           # or "2026-12"
+summary: >-
+  One sentence about what you delivered there.
+summarySource: "RES · Company bullet 1"
+stack:                     # tools shown as tags; also matched by the tool chips in the filter
+  - Power BI
+  - SQL
+# project: case-study-id   # optional link to a case study page
+sourceNote: "RES · Company (dates)"
+# hidden: true             # keep the file but hide the job

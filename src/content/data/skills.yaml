@@ -1,13 +1,30 @@
-# Skills × roles matrix. A cell exists ONLY where a source documents the skill in that role.
-# Columns: oi = Owens Illinois, softgic = Softgic, langara = Langara College, bcspca = BC SPCA,
-#          projects = projects & training (DS4A, IBM certificate, personal repos).
-# The text in each cell is the evidence shown in the tooltip / screen-reader label.
+# Skills by role: the table on the home page.
+#
+# HOW TO EDIT
+# - Rows appear in this file's order, grouped by `group` (a new group name creates a new section).
+# - `roles` maps a column id (see skill-columns.yaml) to the evidence shown when someone taps the dot.
+#   Only add a column where you can point to real work. No entry = no dot.
+# - `topics` (1 to 4) connects the row to the recruiter filter: reporting | modeling | pipelines |
+#   analysis | cloud | practice | research.
+# - `source` says where the claim comes from (RES resume, LI LinkedIn, GH repository, ASK confirmed by you).
+# - `hidden: true` keeps a row in the file without showing it.
+#
+# Template (copy, paste, edit):
+#
+# - id: my-skill
+#   group: Integration & pipelines
+#   label: My skill
+#   topics: [pipelines]
+#   roles:
+#     bcspca: "What I did with it there"
+#   source: "ASK · Andres, 2026-11-13"
+
+# ---------- Integration & pipelines ----------
 
 - id: python
-  topics: [pipelines, analysis]
-  order: 1
   group: Integration & pipelines
   label: Python
+  topics: [pipelines, analysis]
   roles:
     oi: "Centralized raw-material data and process-variable control (LinkedIn)"
     softgic: "Exploratory analysis and modeling with scikit-learn, NumPy, Matplotlib, Seaborn"
@@ -16,38 +33,55 @@
     projects: "SpaceX API and web scraping, Prophet forecasting, Dash app"
   source: "RES · all four roles; LI · O-I and Softgic; GH · project READMEs"
 
-- id: ssis
+- id: fabric-pipelines
+  group: Integration & pipelines
+  label: Fabric Dataflow Gen2, Data pipelines and Power Automate
+  topics: [pipelines, cloud]
+  roles:
+    bcspca: "Ingestion from 8+ sources, call-centre and mailbox pipelines, Fabric Data pipelines and automated refresh"
+  source: "RES · BC SPCA bullets 5, 9, 14; ASK · Andres, 2026-11-13 (Fabric Data pipelines)"
+
+- id: notebooks
+  group: Integration & pipelines
+  label: Fabric notebooks and PySpark
+  topics: [pipelines, cloud]
+  roles:
+    bcspca: "Notebooks and PySpark in Microsoft Fabric"
+  source: "ASK · Andres, 2026-11-13"
+
+- id: apis
+  group: Integration & pipelines
+  label: APIs and multi-source integration
   topics: [pipelines]
-  order: 2
+  roles:
+    softgic: "Scheduled loads from APIs, Oracle and SQL Server in JSON, XML and CSV"
+    langara: "Python migration of XML and CSV data, 25% faster processing"
+    bcspca: "40+ sources: APIs, databases, Excel, Microsoft 365 and Exchange mailbox data"
+    projects: "SpaceX REST API and web scraping (IBM capstone)"
+  source: "RES · Softgic bullets 5, 14; Student Aide bullets 1-2; BC SPCA bullet 4; GH · SpaceX README"
+
+- id: ssis
   group: Integration & pipelines
   label: SSIS and Pentaho
+  topics: [pipelines]
   roles:
     softgic: "Scheduled ETL from APIs, Oracle, SQL Server, JSON/XML/CSV"
   source: "RES · Softgic bullets 1, 5, 10"
 
 - id: airflow
-  topics: [pipelines, cloud]
-  order: 3
   group: Integration & pipelines
   label: Apache Airflow
+  topics: [pipelines, cloud]
   roles:
     langara: "Ingestion pipelines for the research data warehouse, run in Docker"
   source: "RES · Langara bullet 7; LI · Langara"
 
-- id: fabric
-  topics: [pipelines, modeling]
-  order: 4
-  group: Integration & pipelines
-  label: Fabric Dataflow Gen2 and Power Automate
-  roles:
-    bcspca: "Ingestion from 8+ sources, operational and mailbox data pipelines, automated refresh"
-  source: "RES · BC SPCA bullets 5, 9, 14"
+# ---------- Modeling & storage ----------
 
 - id: sql
-  topics: [modeling, pipelines]
-  order: 5
   group: Modeling & storage
   label: SQL
+  topics: [modeling, pipelines]
   roles:
     oi: "Microsoft SQL Server data management for the raw-materials area (LinkedIn)"
     softgic: "50+ complex queries, indexing and refactoring; Oracle and SQL Server"
@@ -56,105 +90,205 @@
     projects: "SQL EDA in the SpaceX capstone; SQL Server ETL"
   source: "RES · Softgic bullet 4, Langara bullet 6, BC SPCA bullet 5; LI · O-I; GH · SpaceX README"
 
-- id: modeling
+- id: databases
+  group: Modeling & storage
+  label: Databases (SQL Server, Oracle, MySQL, PostgreSQL)
   topics: [modeling]
-  order: 6
+  roles:
+    oi: "Microsoft SQL Server (LinkedIn)"
+    softgic: "Oracle and SQL Server sources"
+    langara: "MySQL; PostgreSQL behind the research data platform"
+    projects: "PostgreSQL on Amazon RDS (SmartEnerx)"
+  source: "LI · O-I; RES · Softgic bullet 14, Langara bullet 6; GH · Research-Data-Integration-Analytics-Platform and UK-ENERGY-Project READMEs"
+
+- id: lakehouse
+  group: Modeling & storage
+  label: Fabric Lakehouse, Warehouse and OneLake
+  topics: [modeling, cloud]
+  roles:
+    bcspca: "Lakehouse, Warehouse and OneLake storage behind the reporting models"
+  source: "ASK · Andres, 2026-11-13"
+
+- id: modeling
   group: Modeling & storage
   label: Dimensional and semantic modeling
+  topics: [modeling]
   roles:
     softgic: "Snowflake-schema warehouse and SSAS multidimensional cube"
     langara: "Snowflake-schema warehouse design"
-    bcspca: "Fabric semantic models and Power BI datasets"
-  source: "RES · Softgic bullet 10, Langara bullet 4, BC SPCA bullet 6"
+    bcspca: "Fabric semantic models and Power BI datasets, including Direct Lake"
+  source: "RES · Softgic bullet 10, Langara bullet 4, BC SPCA bullet 6; ASK · Andres, 2026-11-13 (Direct Lake)"
 
 - id: dax
-  topics: [modeling, reporting]
-  order: 7
   group: Modeling & storage
   label: DAX and Power Query (M)
+  topics: [modeling, reporting]
   roles:
     bcspca: "Advanced DAX measures and Power Query transformations for KPI tracking"
   source: "RES · BC SPCA bullet 7"
 
+# ---------- BI & visualization ----------
+
 - id: powerbi
-  topics: [reporting]
-  order: 8
   group: BI & visualization
   label: Power BI
+  topics: [reporting]
   roles:
     softgic: "10+ dashboards for executives and managers"
     langara: "Dashboards where no suitable visualization tool existed"
-    bcspca: "Enterprise reporting, Power BI Service, governance and playbook"
-  source: "RES · Softgic bullet 2, Langara bullet 10, BC SPCA bullets 3, 12, 13, 18"
+    bcspca: "Enterprise reporting, governance and the Visualization Playbook"
+  source: "RES · Softgic bullet 2, Langara bullet 10, BC SPCA bullets 3, 12, 13"
+
+- id: pbi-service
+  group: BI & visualization
+  label: Power BI Service, deployment pipelines and incremental refresh
+  topics: [reporting, cloud]
+  roles:
+    bcspca: "Workspaces, scheduled and incremental refresh, deployment pipelines, access management"
+  source: "RES · BC SPCA bullet 18; ASK · Andres, 2026-11-13 (deployment pipelines, incremental refresh)"
+
+- id: tableau
+  group: BI & visualization
+  label: Tableau
+  topics: [reporting]
+  roles:
+    softgic: "Tableau dashboards"
+    langara: "Tableau dashboards"
+    projects: "Tableau in projects and training"
+  source: "ASK · Andres, 2026-11-13"
 
 - id: otherbi
-  topics: [reporting]
-  order: 9
   group: BI & visualization
   label: Other BI and viz (SSRS, Superset, Dash, Folium)
+  topics: [reporting]
   roles:
     softgic: "SSRS executive reports"
     langara: "Apache Superset dashboards; Python visualizations"
     projects: "Dash dashboard on AWS (SmartEnerx); Folium and Plotly Dash (SpaceX)"
   source: "RES · Softgic bullet 10, Langara bullet 6; GH · UK-ENERGY-Project and SpaceX READMEs"
 
+- id: powerapps
+  group: BI & visualization
+  label: Power Apps
+  topics: [reporting]
+  roles:
+    bcspca: "Power Apps alongside Power BI"
+    projects: "Healthcare data-management app with Power BI (team project, 2024)"
+  source: "ASK · Andres, 2026-11-13; OLD · Dashboard in Power Apps page (Oct 2024)"
+
+# ---------- Data science & AI ----------
+
 - id: ml
-  topics: [analysis]
-  order: 10
-  group: Data science
+  group: Data science & AI
   label: Statistical and machine-learning modeling
+  topics: [analysis]
   roles:
     softgic: "Exploratory analysis and data preparation for modeling"
     langara: "Customer lifetime value models (lifetimes, pandas, NumPy)"
     projects: "Prophet forecasting, classifiers (SpaceX), topic modeling (CORD-19)"
   source: "RES · Softgic bullet 12, Langara bullets 1 and 5; GH · project READMEs"
 
+- id: forecasting
+  group: Data science & AI
+  label: Forecasting and time series
+  topics: [analysis]
+  roles:
+    langara: "Customer lifetime value models that support revenue forecasting"
+    bcspca: "Seasonal demand and staffing patterns in daily helpline data"
+    projects: "Prophet energy-demand forecasts by household group (SmartEnerx)"
+  source: "RES · Langara bullet 1, BC SPCA bullet 10; GH · UK-ENERGY-Project README"
+
+- id: genai
+  group: Data science & AI
+  label: Generative AI (Copilot, LLMs)
+  topics: [analysis, practice]
+  roles:
+    bcspca: "Copilot in Fabric and Power BI; LLMs for prototypes and documentation"
+  source: "RES · BC SPCA bullet 20; ASK · Andres, 2026-11-13 (Copilot, prototyping and docs)"
+
+# ---------- Platform & engineering ----------
+
 - id: cloud
-  topics: [cloud]
-  order: 11
-  group: Platform
+  group: Platform & engineering
   label: Docker and cloud (Azure, AWS)
+  topics: [cloud]
   roles:
     langara: "Dockerized lab notebook and platform services on Azure VMs"
     projects: "SmartEnerx: PostgreSQL on Amazon RDS, Dash app in Docker on ECR and ECS"
   source: "RES · Langara bullets 7-9; GH · Research-Data-Integration-Analytics-Platform and UK-ENERGY-Project READMEs"
 
+- id: git
+  group: Platform & engineering
+  label: Git, version control and CI/CD
+  topics: [pipelines, practice]
+  roles:
+    softgic: "Git branching strategy, commit conventions and release tagging"
+    bcspca: "Fabric Git integration and CI/CD for Power BI and Fabric items"
+    projects: "Public projects on GitHub"
+  source: "RES · Softgic bullet 11; ASK · Andres, 2026-11-13 (Git integration, CI/CD); GH · github.com/andresvdata"
+
+- id: webapps
+  group: Platform & engineering
+  label: Web apps (Django, Spring Boot, HTML/CSS)
+  topics: [cloud]
+  roles:
+    softgic: "New website features with Java Spring Boot and SQL, HTML/CSS front end"
+    langara: "Django data platform, built with a multidisciplinary team"
+    bcspca: "Interactive HTML prototypes before Power BI builds"
+  source: "RES · Softgic bullet 15, Langara bullet 8, BC SPCA bullet 11"
+
 - id: excel
-  topics: [reporting]
-  order: 12
-  group: Platform
+  group: Platform & engineering
   label: Excel and Visual Basic
+  topics: [reporting]
   roles:
     oi: "Inventory data-collection tool for the raw-materials department"
   source: "RES · Owens Illinois bullet 2"
 
+# ---------- Practice ----------
+
 - id: requirements
-  topics: [practice]
-  order: 13
   group: Practice
   label: Requirements and stakeholder partnership
+  topics: [practice]
   roles:
     softgic: "Requirements with managers and executives"
     langara: "Weekly requirement meetings with scientists and healthcare stakeholders"
     bcspca: "50+ stakeholders, BRDs, prototypes, KPI definitions"
   source: "RES · Softgic bullet 6, Langara bullets 2 and 6, BC SPCA bullets 1-2, 11"
 
-- id: quality
+- id: agile
+  group: Practice
+  label: Agile delivery (Scrum, Jira)
   topics: [practice]
-  order: 14
+  roles:
+    softgic: "Agile delivery of several data projects in parallel"
+    langara: "Agile work with the research platform team"
+    bcspca: "Agile delivery of BI projects"
+  source: "ASK · Andres, 2026-11-13; RES · Softgic bullet 9"
+
+- id: quality
   group: Practice
   label: Data quality and validation
+  topics: [practice]
   roles:
     softgic: "Root-cause analysis of data inconsistencies and pipeline issues"
     langara: "ETL pipelines that clean and standardize multi-source data"
     bcspca: "Validation controls across source data, pipelines, models and reports"
   source: "RES · Softgic bullet 7, Langara bullet 4, BC SPCA bullet 15"
 
+- id: security
+  group: Practice
+  label: Data security (row-level, object-level, PII protection)
+  topics: [practice, modeling]
+  roles:
+    bcspca: "Row-level and object-level security in semantic models to protect personal data"
+  source: "ASK · Andres, 2026-11-13"
+
 - id: governance
-  topics: [practice]
-  order: 15
   group: Practice
   label: Governance and standards
+  topics: [practice]
   roles:
     bcspca: "Power BI design and governance framework; Visualization Playbook; dashboard consolidation"
   source: "RES · BC SPCA bullets 12, 13, 16"

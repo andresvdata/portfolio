@@ -45,6 +45,7 @@ out.push(
   '| GH | A public repository under `github.com/andresvdata` (README, notebooks, files) |',
   '| ABS | The published abstract of a paper (DOI) |',
   '| POSTER | The SmartEnerx team datafolio poster |',
+  '| ASK | Confirmed by Andres in a review session (date given next to the code) |',
   '',
   'When sources disagree, the site uses the more conservative value and the conflict is listed in `docs/QUESTIONS_FOR_ANDRES.md`.',
   '',

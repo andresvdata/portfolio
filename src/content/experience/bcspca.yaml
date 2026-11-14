@@ -13,6 +13,7 @@ summary: >-
 summarySource: "RES · BC SPCA bullets 1, 2, 4; LI · BC SPCA"
 stack:
   - Microsoft Fabric
+  - Fabric Lakehouse
   - Power BI Service
   - DAX
   - SQL

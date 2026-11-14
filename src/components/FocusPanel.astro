@@ -1,10 +1,20 @@
 ---
 import Icon from './Icon.astro';
-import { roles, topics, tools, projectTypes } from '../config/focus';
+import { roles, topics, tools, toolGroups, projectTypes } from '../config/focus';
 
 // Everything the script needs is passed as data, so editing src/config/focus.ts is enough to change the filter.
+const toolIdSet = new Set<string>(tools.map((t) => t.id));
+roles.forEach((r) =>
+  r.tools.forEach((t) => {
+    if (!toolIdSet.has(t)) throw new Error(`src/config/focus.ts: role "${r.id}" uses unknown tool "${t}".`);
+  }),
+);
+const groupedTools = toolGroups
+  .map((g) => ({ ...g, items: tools.filter((t) => t.group === g.id) }))
+  .filter((g) => g.items.length > 0);
+
 const config = {
-  roles: roles.map((r) => ({ id: r.id, label: r.label, topics: r.topics, blurb: r.blurb })),
+  roles: roles.map((r) => ({ id: r.id, label: r.label, topics: r.topics, tools: r.tools, blurb: r.blurb })),
   topics,
   tools: tools.map((t) => ({ id: t.id, label: t.label })),
   types: projectTypes,
@@ -13,11 +23,9 @@ const config = {
 
 <section class="panel focus" id="focus" aria-labelledby="focus-title" data-focus data-config={JSON.stringify(config)}>
   <div class="focus-head">
-    <span class="kicker">For recruiters and hiring managers</span>
-    <h2 class="h2" id="focus-title">Short on time? Filter.</h2>
-    <p>
-      Pick a role, topic or tool. The page keeps only what matches.
-    </p>
+    <span class="focus-badge"><Icon name="filter" />Recruiters &amp; hiring managers</span>
+    <h2 class="h2" id="focus-title">Short on time? Filter my experience.</h2>
+    <p>Pick a role, topic or tool. The whole page keeps only what matches.</p>
   </div>
 
   <div class="focus-rows">
@@ -33,7 +41,7 @@ const config = {
 
     <div class="filter-group">
       <span class="filter-label" id="fr-topic">Show me work on</span>
-      <div class="chip-row" role="group" aria-labelledby="fr-topic">
+      <div class="chip-row chip-scroll" role="group" aria-labelledby="fr-topic">
         {topics.map((t) => (
           <button class="chip" type="button" data-f-topic={t.id} aria-pressed="false">{t.label}</button>
         ))}
@@ -41,17 +49,24 @@ const config = {
     </div>
 
     <div class="filter-group">
-      <span class="filter-label" id="fr-tool">Using any of these tools</span>
-      <div class="chip-row" role="group" aria-labelledby="fr-tool">
-        {tools.map((t) => (
-          <button class="chip" type="button" data-f-tool={t.id} aria-pressed="false">{t.label}</button>
+      <span class="filter-label" id="fr-tool">Using any of these tools and skills</span>
+      <div class="tool-groups">
+        {groupedTools.map((g) => (
+          <div class="tool-group">
+            <span class="tool-group-label" id={`fr-tg-${g.id}`}>{g.label}</span>
+            <div class="chip-row chip-scroll" role="group" aria-labelledby={`fr-tool fr-tg-${g.id}`}>
+              {g.items.map((t) => (
+                <button class="chip" type="button" data-f-tool={t.id} aria-pressed="false">{t.label}</button>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </div>
 
     <div class="filter-group">
       <span class="filter-label" id="fr-type">Project type</span>
-      <div class="chip-row" role="group" aria-labelledby="fr-type">
+      <div class="chip-row chip-scroll" role="group" aria-labelledby="fr-type">
         {projectTypes.map((t) => (
           <button class="chip" type="button" data-f-ptype={t.id} aria-pressed="false">{t.label}</button>
         ))}
@@ -82,7 +97,7 @@ const config = {
 </div>
 
 <script>
-  interface Role { id: string; label: string; topics: string[]; blurb: string }
+  interface Role { id: string; label: string; topics: string[]; tools: string[]; blurb: string }
   interface Labeled { id: string; label: string }
   interface Config { roles: Role[]; topics: Labeled[]; tools: Labeled[]; types: Labeled[] }
 
@@ -112,7 +127,9 @@ const config = {
       const role = cfg.roles.find((r) => r.id === q.get('role'));
       state.role = role?.id ?? '';
       state.topics = new Set(role ? role.topics : list(q.get('topics')).filter((t) => valid.topic.has(t)));
-      state.tools = new Set(list(q.get('tools')).filter((t) => valid.tool.has(t)));
+      state.tools = new Set(
+        q.has('tools') ? list(q.get('tools')).filter((t) => valid.tool.has(t)) : role ? role.tools : [],
+      );
       state.types = new Set(list(q.get('type')).filter((t) => valid.type.has(t)));
       return Boolean(role) || q.has('topics') || q.has('tools') || q.has('type');
     };
@@ -120,7 +137,7 @@ const config = {
       const q = new URLSearchParams();
       if (state.role) q.set('role', state.role);
       else if (state.topics.size) q.set('topics', [...state.topics].join(','));
-      if (state.tools.size) q.set('tools', [...state.tools].join(','));
+      if (!state.role && state.tools.size) q.set('tools', [...state.tools].join(','));
       if (state.types.size) q.set('type', [...state.types].join(','));
       return q.toString();
     };
@@ -192,9 +209,10 @@ const config = {
 
     const describe = () => {
       const parts: string[] = [];
-      if (state.role) parts.push(labelOf(cfg.roles, state.role));
+      const role = cfg.roles.find((r) => r.id === state.role);
+      if (role) parts.push(role.label);
       else state.topics.forEach((t) => parts.push(labelOf(cfg.topics, t)));
-      state.tools.forEach((t) => parts.push(labelOf(cfg.tools, t)));
+      state.tools.forEach((t) => { if (!role?.tools.includes(t)) parts.push(labelOf(cfg.tools, t)); });
       state.types.forEach((t) => parts.push(labelOf(cfg.types, t)));
       return parts.join(' · ');
     };
@@ -209,7 +227,11 @@ const config = {
 
       const role = cfg.roles.find((r) => r.id === state.role);
       blurb.hidden = !role;
-      if (role) blurb.textContent = `${role.blurb} Showing: ${role.topics.map((t) => labelOf(cfg.topics, t)).join(', ')}.`;
+      if (role) {
+        const what = role.topics.map((t) => labelOf(cfg.topics, t)).join(', ');
+        const using = role.tools.length ? ` Using: ${role.tools.map((t) => labelOf(cfg.tools, t)).join(', ')}.` : '';
+        blurb.textContent = `${role.blurb} Showing: ${what}.${using}`;
+      }
 
       const visible = apply();
       const parts = statusOrder
@@ -248,6 +270,11 @@ const config = {
     // ---- interactions
     const sameTopics = (a: Set<string>, b: readonly string[]) => a.size === b.length && b.every((t) => a.has(t));
     const toggle = (set: Set<string>, id: string) => (set.has(id) ? set.delete(id) : set.add(id));
+    // A hand-picked set that equals a role's topics and tools counts as that role.
+    const matchRole = () => {
+      state.role =
+        cfg.roles.find((r) => sameTopics(state.topics, r.topics) && sameTopics(state.tools, r.tools))?.id ?? '';
+    };
 
     roleBtns.forEach((b) =>
       b.addEventListener('click', () => {
@@ -255,9 +282,12 @@ const config = {
         if (state.role === id) {
           state.role = '';
           state.topics.clear();
+          state.tools.clear();
         } else {
+          const role = cfg.roles.find((r) => r.id === id)!;
           state.role = id;
-          state.topics = new Set(cfg.roles.find((r) => r.id === id)!.topics);
+          state.topics = new Set(role.topics);
+          state.tools = new Set(role.tools);
         }
         render();
       }),
@@ -265,12 +295,11 @@ const config = {
     topicBtns.forEach((b) =>
       b.addEventListener('click', () => {
         toggle(state.topics, b.dataset.fTopic!);
-        // A hand-picked set that equals a role's topics counts as that role.
-        state.role = cfg.roles.find((r) => sameTopics(state.topics, r.topics))?.id ?? '';
+        matchRole();
         render();
       }),
     );
-    toolBtns.forEach((b) => b.addEventListener('click', () => { toggle(state.tools, b.dataset.fTool!); render(); }));
+    toolBtns.forEach((b) => b.addEventListener('click', () => { toggle(state.tools, b.dataset.fTool!); matchRole(); render(); }));
     typeBtns.forEach((b) => b.addEventListener('click', () => { toggle(state.types, b.dataset.fPtype!); render(); }));
     clearBtns.forEach((b) =>
       b.addEventListener('click', () => {

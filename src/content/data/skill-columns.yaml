@@ -1,0 +1,29 @@
+# Columns of the "Skills by role" table, left to right.
+#
+# To add a job: add a row here, then use its `id` inside `roles:` in skills.yaml.
+#   id      short key used in skills.yaml (letters, no spaces)
+#   label   column title on desktop
+#   short   (optional) shorter name on phones
+#   years   small text under the title
+#   hidden  (optional) true = hide the whole column
+
+- id: oi
+  label: Owens Illinois
+  years: 2018–20
+
+- id: softgic
+  label: Softgic
+  years: 2020–22
+
+- id: langara
+  label: Langara
+  years: 2022–25
+
+- id: bcspca
+  label: BC SPCA
+  years: 2025–now
+
+- id: projects
+  label: Projects and training
+  short: Projects
+  years: DS4A, IBM, GitHub

@@ -1,17 +1,29 @@
 ---
 import { getCollection } from 'astro:content';
 import { focusAttrs } from '../lib/focus';
+import { fileOrder } from '../lib/order';
+import rawColumns from '../content/data/skill-columns.yaml?raw';
+import rawSkills from '../content/data/skills.yaml?raw';
 
-const rows = (await getCollection('skills')).sort((a, b) => a.data.order - b.data.order);
+const colOrder = fileOrder(rawColumns);
+const rowOrder = fileOrder(rawSkills);
+
+// Columns come from src/content/data/skill-columns.yaml, rows from src/content/data/skills.yaml.
+const cols = (await getCollection('skillColumns'))
+  .sort((a, b) => (colOrder.get(a.id) ?? 0) - (colOrder.get(b.id) ?? 0))
+  .filter((c) => !c.data.hidden)
+  .map((c) => ({ key: c.id, label: c.data.label, short: c.data.short ?? c.data.label, years: c.data.years }));
+const allCols = new Set((await getCollection('skillColumns')).map((c) => c.id));
+const rows = (await getCollection('skills'))
+  .map((r) => ({ ...r, pos: r.data.order ?? rowOrder.get(r.id) ?? 0 }))
+  .filter((r) => !r.data.hidden)
+  .sort((a, b) => a.pos - b.pos);
+rows.forEach((r) =>
+  Object.keys(r.data.roles).forEach((k) => {
+    if (!allCols.has(k)) throw new Error(`skills.yaml: "${r.id}" uses column "${k}". Add it to skill-columns.yaml.`);
+  }),
+);
 const groups = [...new Set(rows.map((r) => r.data.group))];
-
-const cols = [
-  { key: 'oi', label: 'Owens Illinois', years: '2018–20' },
-  { key: 'softgic', label: 'Softgic', years: '2020–22' },
-  { key: 'langara', label: 'Langara', years: '2022–25' },
-  { key: 'bcspca', label: 'BC SPCA', years: '2025–now' },
-  { key: 'projects', label: 'Projects and training', years: 'DS4A, IBM, GitHub' },
-] as const;
 ---
 
 <div class="panel" data-matrix>
@@ -35,7 +47,7 @@ const cols = [
         <tbody data-f-group>
           <tr><th scope="rowgroup" colspan={cols.length + 1}>{g}</th></tr>
           {rows.filter((r) => r.data.group === g).map((r) => (
-            <tr class="row" {...focusAttrs({ kind: 'skills', topics: r.data.topics, from: [r.data.label] })}>
+            <tr class="row" {...focusAttrs({ kind: 'skills', topics: r.data.topics, from: [r.data.label, ...Object.values(r.data.roles)] })}>
               <th scope="row">{r.data.label}</th>
               {cols.map((c) => {
                 const ev = r.data.roles[c.key];
@@ -52,6 +64,7 @@ const cols = [
                         aria-label={`${r.data.label} at ${c.label}`}
                       >
                         <span class="dot"></span>
+                        <span class="cell-role" aria-hidden="true">{c.short}</span>
                       </button>
                     ) : (
                       <span class="none"><span aria-hidden="true">·</span><span class="sr-only">Not documented</span></span>

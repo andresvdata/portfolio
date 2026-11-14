@@ -1,6 +1,7 @@
 ---
 import { site } from '../config/site';
 import { withBase } from '../lib/text';
+import Icon from './Icon.astro';
 
 const home = withBase('/');
 const items = [
@@ -29,6 +30,12 @@ const items = [
       </ul>
     </nav>
 
+    <div class="header-actions">
+      <a class="btn btn-primary header-cta" href={`${home}#focus`}>
+        <Icon name="filter" />
+        <span class="cta-long">Recruiter filter</span><span class="cta-short">Filter</span>
+      </a>
+    </div>
   </div>
 </header>
 

@@ -28,18 +28,52 @@ It appears automatically in the project cards, the home-page filter, the previou
 
 Open `src/content/data/more.yaml` and copy an existing block. Give it a new `id`, `title`, `type`, `period`, `blurb`, `tags`, `topics`, `links` and `source`. Lower `order` numbers show first.
 
-## Other common edits
+## Quick reference: where each thing lives
+
+Everything you see on the page comes from a text file. You never need to touch the components.
 
 | I want to... | Edit |
 | --- | --- |
-| Change the headline, intro or target roles | `src/config/site.ts` |
-| Add a job | copy a file in `src/content/experience/`, set a new `order` |
+| Change the headline, intro, email or target roles | `src/config/site.ts` |
+| Add a skill, or a dot in the skills table | `src/content/data/skills.yaml` (template at the top of the file) |
+| Add, rename, reorder or hide a column of the skills table | `src/content/data/skill-columns.yaml` |
+| Add a job | copy `docs/templates/experience.yaml` to `src/content/experience/<name>.yaml` |
+| Hide a job, a skill row, a map place or one map entry | add `hidden: true` to it |
+| Add a place on the map | `src/content/data/pins.yaml` (city-level latitude and longitude) |
+| Choose what the map shows (layers, lines, legend, labels, "Built remotely" list) | `src/config/map.ts` |
 | Add a publication, certificate or award | `src/content/data/credentials.yaml` |
-| Add a skill row or a skill-by-role dot | `src/content/data/skills.yaml` (add a dot only where a source documents it) |
-| Change the KPI tiles | `src/content/data/highlights.yaml` (each tile needs `topics`, and `tools` if it should answer a tool chip) |
-| Change the map pins | `src/content/data/pins.yaml` (latitude and longitude, city level only) |
-| Change what the home-page filter offers (roles, topics, tool chips) | `src/config/focus.ts` |
+| Change the KPI tiles | `src/content/data/highlights.yaml` |
+| Change the filter's roles, topics or tool chips | `src/config/focus.ts` |
 | Change colors | `src/styles/tokens.css`, then run `npm run check:contrast` |
+
+Order on the page follows the order in the file for skills, skill columns and map places. Jobs, projects, credentials and KPI tiles use their `order` number.
+
+## Add a skill
+
+1. Open `src/content/data/skills.yaml` and copy the template at the top.
+2. Put it under the right `group` (a new group name creates a new section in the table).
+3. Under `roles`, add one line per column where you used it, with a short piece of evidence. That line is what people read when they tap the dot.
+4. Give it 1 to 2 `topics` so the recruiter filter can find it, and a `source`.
+
+## Add a job
+
+1. Copy `docs/templates/experience.yaml` to `src/content/experience/<name>.yaml` and fill it in.
+2. To give it a column in the skills table, add `- id: <name>` with a `label` and `years` in `skill-columns.yaml`, then use `<name>:` under `roles` in `skills.yaml`.
+3. To show it on the map, add an entry with `layer: work` to the right place in `pins.yaml`.
+
+## Choose what the map shows
+
+`src/config/map.ts` has one switch per element:
+
+- `layers`: each button above the map. `show: false` removes a layer; `on: false` keeps it but starts switched off. Change `label`, `tag` or `color` freely. You can add a layer (for example `{ id: 'volunteering', ... }`) and use it as `layer:` in `pins.yaml`.
+- `startPin`: the place selected when the page opens.
+- `showDataPins`: places where only a remote project's data comes from (London, Florida).
+- `showMoveLines`, `showRemoteLines`: the dashed and dotted lines.
+- `showRemoteStrip`, `showLegend`, `alwaysShowLabels`.
+
+For a single place or entry, use `hidden: true` in `pins.yaml` instead of deleting it.
+
+If you make a typo in a column or layer id, the build stops with a message that names the file and the id to fix.
 
 ## Checks before you push
 
@@ -54,19 +88,33 @@ The deploy workflow also runs the build, so a broken file never goes live.
 
 ## The recruiter filter ("Short on time?")
 
-The panel under the introduction lets a reader keep only what matters to them: a role preset, topics, tools and a project type. Everything is driven by two things, so there is no filter code to edit:
+The panel under the introduction lets a reader keep only what matters to them: a role, topics, tools and a project type. It is driven by data, so there is no filter code to edit:
 
-1. **`src/config/focus.ts`** lists the topics, the role presets (each role switches on a set of topics) and the tool chips (each with the aliases it matches).
-2. **A `topics` list on every item** (highlights, story chapters, jobs, case studies, smaller projects, skills; optional on publications and certificates). Education and accomplishments have none, so they always stay visible.
+1. **`src/config/focus.ts`** lists the topics, the roles and the tool chips.
+   - A **role** switches on its `topics` and, when set, its `tools` (for example "Power BI / Fabric Developer" turns on Power BI, DAX, Fabric, Power Automate, Power Apps and data security).
+   - A **tool** belongs to a `group` (Microsoft BI, Data engineering, Cloud & DevOps, Analytics & AI, Ways of working) and has `match` words. An item matches when its tags, stack, skill label or skill evidence contains one of those words.
+2. **A `topics` list on every item** (highlights, story chapters, jobs, case studies, smaller projects, skills; optional on publications and certificates). Education and accomplishments always stay visible.
 
-Rules of thumb: tag an item with the 1 to 3 kinds of work it really shows, not everything it touches. An item with no matching topic or tool is hidden when a filter is on, so a missing tag is the usual reason something "disappears".
+You rarely need to tag tools by hand: a job and its story chapter automatically match every tool that `skills.yaml` credits to that job. Add a dot in the skills table and the filter finds the job.
+
+To add a tool chip, add a line to `tools` in `src/config/focus.ts`, for example:
+
+```ts
+{ id: 'dbt', group: 'engineering', label: 'dbt', match: ['dbt'] },
+```
+
+To add a role:
+
+```ts
+{ id: 'powerbi-admin', label: 'Power BI Administrator', topics: ['reporting', 'practice'], tools: ['power-bi', 'security'], blurb: 'One sentence.' },
+```
 
 The filter state lives in the address bar, so a recruiter can share a view, and you can put a role-specific link in an application:
 
 ```
+https://<your-site>/?role=power-bi-developer
 https://<your-site>/?role=data-engineer
-https://<your-site>/?role=bi-developer&tools=power-bi,fabric
-https://<your-site>/?topics=pipelines,cloud&type=professional
+https://<your-site>/?topics=pipelines,cloud&tools=python,airflow&type=professional
 ```
 
 Parameters: `role` (one id from `roles`), `topics` and `tools` (comma-separated ids; an item matches if it has any of them), `type` (`professional`, `academic` or `personal`).

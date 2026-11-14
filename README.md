@@ -25,6 +25,8 @@ You edit text files, not page code.
 | Add a case study | `npm run new:project -- "Title"` |
 | Jobs | `src/content/experience/*.yaml` |
 | KPIs, story, skills, map pins, credentials, smaller projects | `src/content/data/*.yaml` |
+| Skills table columns | `src/content/data/skill-columns.yaml` |
+| What the map shows | `src/config/map.ts` |
 | Filter roles, topics and tool chips | `src/config/focus.ts` (tag content with `topics`, see ADD_CONTENT) |
 | Colors and type | `src/styles/tokens.css` |
 

@@ -3,14 +3,16 @@ import { getCollection } from 'astro:content';
 import { formatYm } from '../lib/time';
 import { rich, withBase } from '../lib/text';
 import { focusAttrs } from '../lib/focus';
+import { skillTextsFor } from '../lib/skills';
 
-const items = (await getCollection('experience')).sort((a, b) => a.data.order - b.data.order);
+const items = (await getCollection('experience')).filter((e) => !e.data.hidden).sort((a, b) => a.data.order - b.data.order);
+const skillTexts = Object.fromEntries(await Promise.all(items.map(async (e) => [e.id, await skillTextsFor(e.id)])));
 const domainLabel = { bi: 'Business intelligence', research: 'Research data', engineering: 'Manufacturing engineering' } as const;
 ---
 
 <ol class="exp-list" data-f-group>
   {items.map((e) => (
-    <li class="exp" id={`exp-${e.id}`} data-domain={e.data.domain} {...focusAttrs({ kind: 'experience', topics: e.data.topics, from: e.data.stack })}>
+    <li class="exp" id={`exp-${e.id}`} data-domain={e.data.domain} {...focusAttrs({ kind: 'experience', topics: e.data.topics, from: [...e.data.stack, ...skillTexts[e.id]] })}>
       <div class="exp-who">
         <h3>{e.data.org}</h3>
         <span class="where">{e.data.location} · {domainLabel[e.data.domain]}</span>

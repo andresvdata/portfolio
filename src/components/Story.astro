@@ -1,12 +1,16 @@
 ---
 import { getCollection } from 'astro:content';
-import { focusAttrs } from '../lib/focus';
+import { focusAttrs, toolsFrom } from '../lib/focus';
+import { skillTextsFor } from '../lib/skills';
 const steps = (await getCollection('story')).sort((a, b) => a.data.order - b.data.order);
+const derived = Object.fromEntries(
+  await Promise.all(steps.map(async (s) => [s.id, toolsFrom(await skillTextsFor(s.id))])),
+);
 ---
 
 <ol class="story-grid" data-f-group>
   {steps.map((s) => (
-    <li class="story-step" {...focusAttrs({ kind: 'story', topics: s.data.topics, tools: s.data.tools })}>
+    <li class="story-step" {...focusAttrs({ kind: 'story', topics: s.data.topics, tools: [...new Set([...s.data.tools, ...derived[s.id]])] })}>
       <span class="period">{s.data.period}</span>
       <h3>{s.data.title}</h3>
       <span class="org">{s.data.org}</span>

@@ -14,6 +14,7 @@ import { topicIds, toolIds } from './config/focus';
  *   GH   = a public repository on github.com/andresvdata (README, files)
  *   ABS  = published abstract (DOI)
  *   POSTER = SmartEnerx team datafolio poster
+ *   ASK  = confirmed by Andres in a review session
  */
 const source = z.string().min(3, 'Add a source, e.g. "RES · BC SPCA bullet 2".');
 
@@ -91,6 +92,8 @@ const experience = defineCollection({
   schema: z.object({
     org: z.string(),
     location: z.string(),
+    /** true = keep the file but do not show this job. */
+    hidden: z.boolean().default(false),
     domain: z.enum(['bi', 'research', 'engineering']),
     order: z.number(),
     topics,
@@ -143,20 +146,30 @@ const story = defineCollection({
   }),
 });
 
+/** Columns of the skills table (one per job, plus "Projects and training"). Order = file order. */
+const skillColumns = defineCollection({
+  loader: file('./src/content/data/skill-columns.yaml'),
+  schema: z.object({
+    label: z.string(),
+    /** Shorter name used on phones. Defaults to the label. */
+    short: z.string().optional(),
+    years: z.string().default(''),
+    hidden: z.boolean().default(false),
+  }),
+});
+
 const skills = defineCollection({
   loader: file('./src/content/data/skills.yaml'),
   schema: z.object({
-    order: z.number(),
+    /** Optional. Rows are shown in file order; set `order` only to override it. */
+    order: z.number().optional(),
     group: z.string(),
     label: z.string(),
     topics,
-    roles: z.object({
-      oi: z.string().optional(),
-      softgic: z.string().optional(),
-      langara: z.string().optional(),
-      bcspca: z.string().optional(),
-      projects: z.string().optional(),
-    }),
+    /** Column id (from skill-columns.yaml) → evidence text. Leave a column out when there is no evidence. */
+    roles: z.record(z.string(), z.string()),
+    /** true = keep the row in the file but do not show it. */
+    hidden: z.boolean().default(false),
     source,
   }),
 });
@@ -167,6 +180,8 @@ const pins = defineCollection({
     /** base = where I lived, worked or studied. data = where a remote project's data came from. */
     kind: z.enum(['base', 'data']),
     label: z.string(),
+    /** true = keep the place in the file but do not show it on the map. */
+    hidden: z.boolean().default(false),
     lon: z.number(),
     lat: z.number(),
     /** Lines drawn from this pin to another pin. */
@@ -174,7 +189,10 @@ const pins = defineCollection({
     entries: z
       .array(
         z.object({
-          layer: z.enum(['work', 'education', 'projects']),
+          /** A layer id from src/config/map.ts (work, education, projects by default). */
+          layer: z.string(),
+          /** true = keep the entry in the file but do not show it. */
+          hidden: z.boolean().default(false),
           text: z.string(),
           /** Short name; when set, the entry is also listed in the remote-projects strip. */
           title: z.string().optional(),
@@ -222,4 +240,4 @@ const more = defineCollection({
   }),
 });
 
-export const collections = { projects, experience, highlights, story, skills, pins, credentials, more };
+export const collections = { projects, experience, highlights, story, skillColumns, skills, pins, credentials, more };

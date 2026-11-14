@@ -8,6 +8,12 @@
 # `project` is a case-study id, or "more:<id>" to jump to a row in the smaller-projects list.
 # arcs: lines drawn from this pin. kind "move" = I relocated. kind "remote" = built remotely from here.
 # Coordinates are city-level only.
+#
+# HOW TO EDIT
+# - Add a place: copy a block below, give it a new `id`, `label`, `lon`, `lat` (city level) and entries.
+# - Hide a place or a single entry without deleting it: add `hidden: true`.
+# - Layers (Work, Study, Remote projects), lines, the legend and the "Built remotely" list are switched on
+#   or off in src/config/map.ts.
 
 - id: vancouver
   kind: base
