@@ -115,8 +115,8 @@
   type: professional
   period: Jul 2022
   blurb: >-
-    Flagged atypical values in commercial and transport data that could point to illicit activity, following
-    CRISP-DM. Further details are confidential.
+    This project focused on identifying nationwide anomalies in the oil supply chain. By analyzing storage and distribution patterns across gas stations throughout the country, the system successfully flagged irregularities in fuel transportation and inventory.
+
   details:
     - Split the business rules into two groups. Statistical rules are sensitive to trend and seasonality; classification rules describe conditions that can be identified exactly.
     - For the statistical group, compared ARIMA and Prophet, and chose Prophet for its flexibility and fit when outliers are present.

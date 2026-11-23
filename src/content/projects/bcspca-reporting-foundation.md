@@ -1,11 +1,11 @@
 ---
-title: One governed reporting foundation from 40+ sources at BC SPCA
+title: One governed reporting foundation from 40+ sources
 type: professional
 org: BC SPCA
 period: Sep 2025 – present
-order: 5
+order: 1
 summary: >-
-  Microsoft Fabric and Power BI reporting for several departments, built from more than 40 internal and external
+  Microsoft Fabric and Power BI reporting for several departments, built from more than 5 internal and external
   sources and agreed with stakeholders before any dashboard was developed.
 tags: [Power BI, Microsoft Fabric, DAX, Power Query, SQL, Python, Power Automate, Data modeling, ETL, Data quality, Governance]
 topics: [reporting, modeling, practice]
@@ -91,7 +91,7 @@ evidence:
       questions about a KPI definition and whether a regional view is needed.
     caption: >-
       The kind of low-fidelity prototype I put in front of stakeholders before building in Power BI: layout, filters
-      and open questions about KPI definitions. I drew it for this page with invented content. It is not a BC SPCA
+      and open questions about KPI definitions. I drew it for this page with invented content. It is not organizational content
       prototype.
   - kind: image
     label: Step 2, the dashboard layout (synthetic)
@@ -99,13 +99,11 @@ evidence:
     alt: >-
       A synthetic "Service Requests Overview" dashboard with a filter panel on the left, four KPI cards, a monthly
       line chart with a previous-year comparison, a bar chart by category, a weekday-by-time heatmap and a tile map
-      of six regions. A banner states that the data is synthetic and not a BC SPCA report.
+      of six regions. A banner states that the data is synthetic and not real data report.
     caption: >-
       A polished layout in the style I build, drawn with synthetic numbers and generic labels. The operational
       dashboards and data are not shown, so this is an illustration of the approach, not a screenshot.
 
 sources:
-  - "RES · BC SPCA bullets 1-19"
-  - "LI · BC SPCA and Summary"
-  - "Synthetic images: drawn for this portfolio (docs/synthetic); not BC SPCA material"
+  - "Synthetic images: drawn for this portfolio (docs/synthetic); not real data"
 ---
