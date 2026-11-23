@@ -118,7 +118,9 @@
     This project focused on identifying nationwide anomalies in the oil supply chain. By analyzing storage and distribution patterns across gas stations throughout the country, the system successfully flagged irregularities in fuel transportation and inventory.
 
   details:
-    - Split the business rules into two groups. Statistical rules are sensitive to trend and seasonality; classification rules describe conditions that can be identified exactly.
+    - Understand the business; Gather stakeholder's requirements.  
+    - Select the variables needed to solve the business questions.
+    - Data preparation for the models - Split the business rules into two groups. Statistical rules are sensitive to trend and seasonality; classification rules describe conditions that can be identified exactly.
     - For the statistical group, compared ARIMA and Prophet, and chose Prophet for its flexibility and fit when outliers are present.
     - Flagged values in two passes, first within groups of similar values and then against each series' own seasonality and history, using an uncertainty range tuned beforehand.
     - Combined the outliers from both groups in one database for a visual report, and automated the process once the models were validated.
